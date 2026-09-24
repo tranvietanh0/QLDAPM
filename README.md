@@ -2,6 +2,8 @@
 
 Hồ sơ quản lý dự án môn Quản lý dự án phần mềm. Sinh viên: Trần Việt Anh (kiêm PM, BA, FE, BE, TEST).
 
+**Quy trình làm việc và bàn giao giữa các vai trò: [docs/WORKFLOW.md](docs/WORKFLOW.md)**
+
 Mọi số liệu (WBS, ngày, giờ công, User Story, test case, rủi ro) nằm trong `src/ims_data.py`.
 Ba file đầu ra được sinh từ cùng nguồn đó nên luôn khớp nhau:
 
@@ -12,5 +14,6 @@ Ba file đầu ra được sinh từ cùng nguồn đó nên luôn khớp nhau:
 | `python src/build_jira_csv.py out/IMS_Jira_Import.csv --sprint-ids 1,2,3,4,5,6 --assignee you@mail.com` | CSV import Jira (131 work item) |
 | `python src/build_jira_csv.py out/IMS_Jira_Test_5rows.csv --sample` | CSV thử 5 dòng |
 | `python src/build_jira_guide.py out/Huong_dan_Jira_IMS.docx` | Hướng dẫn Jira từng bước |
+| `python src/build_workflow_md.py docs/WORKFLOW.md` | Quy trình làm việc + bảng bàn giao |
 
 Chạy từ thư mục `src/` (các script import `ims_data`). Trên Windows đặt `PYTHONIOENCODING=utf-8` nếu terminal báo lỗi Unicode.

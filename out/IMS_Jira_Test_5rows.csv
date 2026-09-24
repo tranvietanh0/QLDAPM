@@ -68,6 +68,7 @@ TIÊU CHÍ HOÀN THÀNH (DoD)
 - Swagger cập nhật
 
 PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 5.1 Chốt Acceptance Criteria US-01..US-04 và ma trận quyền 3 role trước Sprint Planning
 - WBS 4.4 Khởi tạo Spring Boot 3: cấu trúc package, Spring Data JPA, migration Flyway V1
 - WBS 3.5 Đặc tả 36 endpoint /api/v1 bằng OpenAPI kèm DTO và bảng mã lỗi 400/401/403/404/409
 

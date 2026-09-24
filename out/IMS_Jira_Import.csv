@@ -1146,6 +1146,7 @@ TIÊU CHÍ HOÀN THÀNH (DoD)
 
 PHỤ THUỘC (chỉ bắt đầu khi xong)
 - WBS 5.10 Nghiệm thu nội bộ UI-01, UI-10, UI-11 theo Acceptance Criteria US-01..US-04
+- WBS 5.9 Nạp seed data: 1 Admin, 3 phòng ban, 3 Mentor, 10 Intern kiểm thử
 - WBS 9.2 Viết 40 test case TC-AUTH..TC-EXP trên Excel và dựng bộ dữ liệu kiểm thử
 
 THAM CHIẾU
@@ -1949,6 +1950,7 @@ TIÊU CHÍ HOÀN THÀNH (DoD)
 - Swagger cập nhật
 
 PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 5.1 Chốt Acceptance Criteria US-01..US-04 và ma trận quyền 3 role trước Sprint Planning
 - WBS 4.4 Khởi tạo Spring Boot 3: cấu trúc package, Spring Data JPA, migration Flyway V1
 - WBS 3.5 Đặc tả 36 endpoint /api/v1 bằng OpenAPI kèm DTO và bảng mã lỗi 400/401/403/404/409
 
@@ -2119,6 +2121,7 @@ TIÊU CHÍ HOÀN THÀNH (DoD)
 - TC-REG-01..03 đạt
 
 PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 6.1 Chốt Acceptance Criteria US-05..US-08 và quy tắc BR-01..BR-05
 - WBS 5.4 Cấu hình Spring Security: filter JWT và @PreAuthorize theo 3 role (US-02)
 
 THAM CHIẾU
@@ -2306,6 +2309,7 @@ TIÊU CHÍ HOÀN THÀNH (DoD)
 - TC-TASK-01..03 đạt
 
 PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 7.1 Chốt Acceptance Criteria US-09..US-12, vòng đời Task và quy tắc chấm công BR-06..BR-10
 - WBS 6.8 Viết API /mentors và phân Mentor cho Intern, tối đa 5 Intern/Mentor theo BR-04 (US-08)
 
 THAM CHIẾU
@@ -2490,6 +2494,7 @@ TIÊU CHÍ HOÀN THÀNH (DoD)
 - TC-EVA-01..03 đạt
 
 PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 8.1 Chốt 5 tiêu chí đánh giá thang 10, công thức tính tiến độ và chỉ số dashboard
 - WBS 6.8 Viết API /mentors và phân Mentor cho Intern, tối đa 5 Intern/Mentor theo BR-04 (US-08)
 
 THAM CHIẾU
