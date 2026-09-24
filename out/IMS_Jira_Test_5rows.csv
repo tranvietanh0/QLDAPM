@@ -1,16 +1,105 @@
 Work item ID,Work type,Summary,Parent,Description,Priority,Assignee,Sprint,Story point estimate,Original Estimate,Start date,Due date,Labels,Labels,Labels
-5,Epic,"5. Sprint 1 - Đăng nhập, phân quyền, tài khoản và phòng ban",,"Nhóm công việc WBS 5. Vai trò chính: PM (Project Manager).
-Thời gian kế hoạch: 14/09/2026 - 25/09/2026.",High,,,,,14/09/2026,25/09/2026,WBS-5,,
+5,Epic,"5. Sprint 1 - Đăng nhập, phân quyền, tài khoản và phòng ban",,"PHẠM VI
+Sprint 1: đăng nhập JWT, phân quyền 3 role, quản lý tài khoản và phòng ban (US-01..US-04, 13 SP).
+
+TIÊU CHÍ HOÀN THÀNH EPIC
+- US-01..US-04 Done theo Definition of Done
+- Test case AUTH, RBAC, USR, DEP đạt; đạt mốc M2 ngày 25/09/2026
+
+CÔNG VIỆC CON (12)
+- 5.1 [BA] Chốt Acceptance Criteria US-01..US-04 và ma trận quyền 3 role trước Sprint Planning
+- 5.2 [BE] Viết API POST /auth/login, /auth/logout, GET /auth/me phát hành JWT (US-01)
+- 5.3 [FE] Dựng màn hình đăng nhập UI-01, lưu token và điều hướng theo role (US-01)
+- 5.4 [BE] Cấu hình Spring Security: filter JWT và @PreAuthorize theo 3 role (US-02)
+- 5.5 [FE] Chặn route, ẩn menu theo role trên frontend và trang lỗi 403 (US-02)
+- 5.6 [BE] Viết API CRUD /users kèm khóa/mở tài khoản và đổi mật khẩu (US-03)
+- 5.7 [BE] Viết API CRUD /departments, chặn xóa phòng ban còn Intern (US-04)
+- 5.8 [FE] Dựng màn hình quản lý tài khoản UI-10 và phòng ban UI-11 (US-03, US-04)
+- 5.9 [BE] Nạp seed data: 1 Admin, 3 phòng ban, 3 Mentor, 10 Intern kiểm thử
+- 5.10 [BA] Nghiệm thu nội bộ UI-01, UI-10, UI-11 theo Acceptance Criteria US-01..US-04
+- 5.11 [TEST] Chạy TC-AUTH-01..04, TC-RBAC-01..03, TC-USR-01..02, TC-DEP-01 và lưu evidence
+- 5.12 [BA] Refine backlog Sprint 2: bổ sung Acceptance Criteria US-05..US-08 và cập nhật RTM
+
+THÔNG TIN
+- Vai trò chính: PM (Project Manager)
+- Kế hoạch: 14/09/2026 - 25/09/2026",High,,,,,14/09/2026,25/09/2026,WBS-5,,
 101,Story,US-01 Đăng nhập / đăng xuất bằng JWT,5,"Là người dùng, tôi muốn đăng nhập bằng email và mật khẩu để truy cập chức năng theo vai trò của mình.
 
 Acceptance Criteria:
 AC1. Given tài khoản hợp lệ đang hoạt động, When nhập đúng email và mật khẩu, Then hệ thống cấp JWT và chuyển tới dashboard đúng role.
 AC2. Given mật khẩu sai, When đăng nhập, Then hiển thị 'Email hoặc mật khẩu không đúng' và không cấp token.
-AC3. Given tài khoản bị khóa, When đăng nhập, Then hiển thị 'Tài khoản đã bị khóa'.",Highest,,,5,,14/09/2026,18/09/2026,US-01,Sprint-1,
-1033,Task,[BA] 5.1 Chốt Acceptance Criteria US-01..US-04 và ma trận quyền 3 role trước Sprint Planning,5,"WBS 5.1 - vai trò BA (Business Analyst).
-Kế hoạch: 14/09/2026 - 15/09/2026, ước lượng 2 giờ.",Medium,,,,7200,14/09/2026,15/09/2026,BA,Sprint-1,WBS-5.1
-1075,Sub-task,"[BE] 5.2 Viết API POST /auth/login, /auth/logout, GET /auth/me phát hành JWT (US-01)",101,"WBS 5.2 - vai trò BE (Backend Developer).
-Kế hoạch: 14/09/2026 - 16/09/2026, ước lượng 5 giờ.
-Nằm trên đường găng: trễ việc này là trễ cả dự án.",High,,,,18000,14/09/2026,16/09/2026,BE,Sprint-1,WBS-5.2
-1076,Sub-task,"[FE] 5.3 Dựng màn hình đăng nhập UI-01, lưu token và điều hướng theo role (US-01)",101,"WBS 5.3 - vai trò FE (Frontend Developer).
-Kế hoạch: 16/09/2026 - 18/09/2026, ước lượng 4 giờ.",Medium,,,,14400,16/09/2026,18/09/2026,FE,Sprint-1,WBS-5.3
+AC3. Given tài khoản bị khóa, When đăng nhập, Then hiển thị 'Tài khoản đã bị khóa'.",Highest,,18,5,,14/09/2026,18/09/2026,US-01,Sprint-1,
+1033,Task,[BA] 5.1 Chốt Acceptance Criteria US-01..US-04 và ma trận quyền 3 role trước Sprint Planning,5,"MỤC TIÊU
+Đảm bảo Story Sprint 1 sẵn sàng phát triển.
+
+VIỆC CẦN LÀM
+- Rà AC US-01..US-04
+- Lập ma trận quyền 3 role x chức năng
+
+ĐẦU RA
+- AC chốt + ma trận quyền
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- 4 Story đạt Definition of Ready
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 2.7 Viết 16 User Story US-01..US-16 kèm Acceptance Criteria dạng Given - When - Then
+
+THAM CHIẾU
+- US-01..US-04, FR-01..FR-06
+
+THÔNG TIN
+- Vai trò: BA (Business Analyst) | WBS 5.1
+- Kế hoạch: 14/09/2026 - 15/09/2026, ước lượng 2 giờ",Medium,,18,,7200,14/09/2026,15/09/2026,BA,Sprint-1,WBS-5.1
+1075,Sub-task,"[BE] 5.2 Viết API POST /auth/login, /auth/logout, GET /auth/me phát hành JWT (US-01)",101,"MỤC TIÊU
+Cho phép người dùng đăng nhập và nhận JWT.
+
+VIỆC CẦN LÀM
+- Tạo AuthController: POST /auth/login, /auth/logout, GET /auth/me
+- Mật khẩu băm BCrypt, JWT hạn 8 giờ
+- Sai mật khẩu trả 401, tài khoản khóa trả 403 kèm thông điệp
+- Unit test AuthService
+
+ĐẦU RA
+- API xác thực + unit test
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- TC-AUTH-01..04 đạt trên Postman
+- Swagger cập nhật
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 4.4 Khởi tạo Spring Boot 3: cấu trúc package, Spring Data JPA, migration Flyway V1
+- WBS 3.5 Đặc tả 36 endpoint /api/v1 bằng OpenAPI kèm DTO và bảng mã lỗi 400/401/403/404/409
+
+THAM CHIẾU
+- FR-01, FR-02, NFR-02, BR tài khoản khóa; User Story US-01
+
+THÔNG TIN
+- Vai trò: BE (Backend Developer) | WBS 5.2
+- Kế hoạch: 14/09/2026 - 16/09/2026, ước lượng 5 giờ
+- ĐƯỜNG GĂNG: trễ việc này là trễ cả dự án",High,,,,18000,14/09/2026,16/09/2026,BE,Sprint-1,WBS-5.2
+1076,Sub-task,"[FE] 5.3 Dựng màn hình đăng nhập UI-01, lưu token và điều hướng theo role (US-01)",101,"MỤC TIÊU
+Giao diện đăng nhập.
+
+VIỆC CẦN LÀM
+- Dựng UI-01 theo wireframe, validate email/mật khẩu
+- Lưu token, redirect dashboard theo role
+- Hiển thị lỗi từ API
+
+ĐẦU RA
+- Màn hình Login
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- Đăng nhập đủ 3 role chuyển đúng dashboard
+- AC1-AC3 của US-01 đạt
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 5.2 Viết API POST /auth/login, /auth/logout, GET /auth/me phát hành JWT (US-01)
+- WBS 4.5 Khởi tạo React + Vite + Tailwind: router, layout, axios interceptor, xử lý lỗi tập trung
+
+THAM CHIẾU
+- UI-01, FR-01; User Story US-01
+
+THÔNG TIN
+- Vai trò: FE (Frontend Developer) | WBS 5.3
+- Kế hoạch: 16/09/2026 - 18/09/2026, ước lượng 4 giờ",Medium,,,,14400,16/09/2026,18/09/2026,FE,Sprint-1,WBS-5.3

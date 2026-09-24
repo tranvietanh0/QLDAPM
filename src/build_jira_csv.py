@@ -16,6 +16,7 @@ import csv
 
 from ims_data import (CONTINUOUS_TASKS, CRITICAL_PATH, MILESTONE_GROUP, ROLE_NAMES, SPRINTS,
                       US_TITLES, USER_STORIES, WBS, children, is_group, sprint_of)
+from ims_details import DETAILS, EPIC_DETAILS, MILESTONE_DETAILS
 
 HEADER = ["Work item ID", "Work type", "Summary", "Parent", "Description", "Priority",
           "Assignee", "Sprint", "Story point estimate", "Original Estimate",
@@ -23,6 +24,44 @@ HEADER = ["Work item ID", "Work type", "Summary", "Parent", "Description", "Prio
 DATE_FMT = "%d/%m/%Y"  # map in the wizard as dd/MM/yyyy
 SECONDS_PER_HOUR = 3600
 EPIC_ID_BASE, STORY_ID_BASE, ITEM_ID_BASE = 1, 101, 1001
+
+
+def bullets(items):
+    return "\n".join(f"- {x}" for x in items)
+
+
+def task_description(tid, owner, start, due, hours, us):
+    title_of = {t[0]: t[1] for t in WBS}
+    if tid.startswith(MILESTONE_GROUP + "."):
+        return (f"MỐC KIỂM SOÁT {tid} - ngày {due:%d/%m/%Y}\n\nTIÊU CHÍ ĐẠT\n- {MILESTONE_DETAILS[tid]}\n\n"
+                "CÁCH XỬ LÝ\n- PM kiểm tra tiêu chí vào ngày mốc, ghi kết quả go/no-go vào comment "
+                "và Weekly Status Report")
+    if tid not in DETAILS:
+        raise SystemExit(f"Missing description for WBS {tid} in ims_details.py")
+    goal, steps, deliverable, dod, deps, refs = DETAILS[tid]
+    parts = [f"MỤC TIÊU\n{goal}", f"VIỆC CẦN LÀM\n{bullets(steps)}", f"ĐẦU RA\n- {deliverable}",
+             f"TIÊU CHÍ HOÀN THÀNH (DoD)\n{bullets(dod)}"]
+    if deps:
+        parts.append("PHỤ THUỘC (chỉ bắt đầu khi xong)\n" + bullets(f"WBS {d} {title_of[d]}" for d in deps))
+    if refs:
+        parts.append(f"THAM CHIẾU\n- {refs}" + (f"; User Story {us}" if us else ""))
+    info = (f"THÔNG TIN\n- Vai trò: {owner} ({ROLE_NAMES[owner]}) | WBS {tid}\n"
+            f"- Kế hoạch: {start:%d/%m/%Y} - {due:%d/%m/%Y}, ước lượng {hours} giờ")
+    if tid in CRITICAL_PATH:
+        info += "\n- ĐƯỜNG GĂNG: trễ việc này là trễ cả dự án"
+    if tid in CONTINUOUS_TASKS:
+        info += "\n- Việc lặp lại mỗi Sprint: cập nhật tiến độ trong comment, đóng khi kết thúc dự án"
+    parts.append(info)
+    return "\n\n".join(parts)
+
+
+def epic_description(gid, owner, start, due):
+    scope, exit_criteria = EPIC_DETAILS[gid]
+    kids = children(gid)
+    return (f"PHẠM VI\n{scope}\n\nTIÊU CHÍ HOÀN THÀNH EPIC\n{bullets(exit_criteria)}\n\n"
+            f"CÔNG VIỆC CON ({len(kids)})\n" + bullets(f"{k[0]} [{k[2]}] {k[1]}" for k in kids) +
+            f"\n\nTHÔNG TIN\n- Vai trò chính: {owner} ({ROLE_NAMES[owner]})\n"
+            f"- Kế hoạch: {start:%d/%m/%Y} - {due:%d/%m/%Y}")
 
 
 def sprint_label(day):
@@ -51,8 +90,7 @@ def build_rows(sprint_ids, assignee):
     groups = [g for g in WBS if is_group(g[0]) and g[0] != MILESTONE_GROUP]
     for n, (gid, title, owner, start, due, _h, _s) in enumerate(groups):
         epic_ids[gid] = EPIC_ID_BASE + n
-        desc = (f"Nhóm công việc WBS {gid}. Vai trò chính: {owner} ({ROLE_NAMES[owner]}).\n"
-                f"Thời gian kế hoạch: {start:%d/%m/%Y} - {due:%d/%m/%Y}.")
+        desc = epic_description(gid, owner, start, due)
         rows.append(row(epic_ids[gid], "Epic", f"{gid}. {title}", description=desc, priority="High",
                         assignee=assignee, start=start, due=due, labels=[f"WBS-{gid}"]))
 
@@ -80,12 +118,7 @@ def build_rows(sprint_ids, assignee):
         labels = [owner, "milestone" if milestone else ("continuous" if continuous else sprint_label(start)),
                   f"WBS-{tid}"]
         prio = "High" if (tid in CRITICAL_PATH or milestone) else "Medium"
-        desc = (f"WBS {tid} - vai trò {owner} ({ROLE_NAMES[owner]}).\n"
-                f"Kế hoạch: {start:%d/%m/%Y} - {due:%d/%m/%Y}, ước lượng {hours or 0} giờ.")
-        if tid in CRITICAL_PATH:
-            desc += "\nNằm trên đường găng: trễ việc này là trễ cả dự án."
-        if continuous:
-            desc += "\nViệc lặp lại mỗi Sprint: cập nhật tiến độ trong comment, đóng khi kết thúc dự án."
+        desc = task_description(tid, owner, start, due, hours, us)
         summary = f"[{owner}] {tid} {title}"
         if us:
             subtasks.append(row(None, "Sub-task", summary, parent=story_ids[us], description=desc, priority=prio,

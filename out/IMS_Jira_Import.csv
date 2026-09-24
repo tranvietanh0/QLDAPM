@@ -1,350 +1,2664 @@
 Work item ID,Work type,Summary,Parent,Description,Priority,Assignee,Sprint,Story point estimate,Original Estimate,Start date,Due date,Labels,Labels,Labels
-1,Epic,1. Quản trị dự án,,"Nhóm công việc WBS 1. Vai trò chính: PM (Project Manager).
-Thời gian kế hoạch: 31/08/2026 - 20/11/2026.",High,,,,,31/08/2026,20/11/2026,WBS-1,,
-2,Epic,2. Phân tích nghiệp vụ và đặc tả yêu cầu,,"Nhóm công việc WBS 2. Vai trò chính: BA (Business Analyst).
-Thời gian kế hoạch: 31/08/2026 - 06/11/2026.",High,,,,,31/08/2026,06/11/2026,WBS-2,,
-3,Epic,3. Thiết kế hệ thống,,"Nhóm công việc WBS 3. Vai trò chính: BE (Backend Developer).
-Thời gian kế hoạch: 03/09/2026 - 11/09/2026.",High,,,,,03/09/2026,11/09/2026,WBS-3,,
-4,Epic,4. Thiết lập hạ tầng và môi trường,,"Nhóm công việc WBS 4. Vai trò chính: BE (Backend Developer).
-Thời gian kế hoạch: 31/08/2026 - 16/09/2026.",High,,,,,31/08/2026,16/09/2026,WBS-4,,
-5,Epic,"5. Sprint 1 - Đăng nhập, phân quyền, tài khoản và phòng ban",,"Nhóm công việc WBS 5. Vai trò chính: PM (Project Manager).
-Thời gian kế hoạch: 14/09/2026 - 25/09/2026.",High,,,,,14/09/2026,25/09/2026,WBS-5,,
-6,Epic,6. Sprint 2 - Hồ sơ thực tập sinh và Mentor,,"Nhóm công việc WBS 6. Vai trò chính: PM (Project Manager).
-Thời gian kế hoạch: 28/09/2026 - 09/10/2026.",High,,,,,28/09/2026,09/10/2026,WBS-6,,
-7,Epic,"7. Sprint 3 - Giao việc, chấm công và báo cáo tuần",,"Nhóm công việc WBS 7. Vai trò chính: PM (Project Manager).
-Thời gian kế hoạch: 12/10/2026 - 23/10/2026.",High,,,,,12/10/2026,23/10/2026,WBS-7,,
-8,Epic,"8. Sprint 4 - Đánh giá, tiến độ, dashboard và xuất kết quả",,"Nhóm công việc WBS 8. Vai trò chính: PM (Project Manager).
-Thời gian kế hoạch: 26/10/2026 - 06/11/2026.",High,,,,,26/10/2026,06/11/2026,WBS-8,,
-9,Epic,9. Kiểm thử và đảm bảo chất lượng,,"Nhóm công việc WBS 9. Vai trò chính: TEST (Tester / QA).
-Thời gian kế hoạch: 14/09/2026 - 13/11/2026.",High,,,,,14/09/2026,13/11/2026,WBS-9,,
-10,Epic,"10. Sprint 5 - Ổn định, nghiệm thu và phát hành",,"Nhóm công việc WBS 10. Vai trò chính: PM (Project Manager).
-Thời gian kế hoạch: 09/11/2026 - 20/11/2026.",High,,,,,09/11/2026,20/11/2026,WBS-10,,
+1,Epic,1. Quản trị dự án,,"PHẠM VI
+Lập kế hoạch, theo dõi và kiểm soát toàn bộ dự án theo PMBOK: phạm vi, lịch, chi phí, rủi ro, truyền thông.
+
+TIÊU CHÍ HOÀN THÀNH EPIC
+- Charter, Scope, WBS, Gantt, Risk Register được duyệt ở M1
+- Status Report nộp đủ 12 tuần, Burndown mỗi Sprint được lưu
+- Báo cáo tổng kết và lessons learned hoàn thành trước 20/11/2026
+
+CÔNG VIỆC CON (10)
+- 1.1 [PM] Viết Project Charter: mục tiêu, phạm vi, stakeholder, tiêu chí thành công SC-01..SC-06
+- 1.2 [PM] Lập Scope Statement: chốt in-scope FR-01..FR-30 và danh sách out-of-scope
+- 1.3 [PM] Phân rã WBS 10 nhóm công việc, ước lượng Story Point (Planning Poker) và giờ công
+- 1.4 [PM] Lập Gantt baseline, xác định đường găng và 6 mốc kiểm soát M1..M6
+- 1.5 [PM] Lập kế hoạch nguồn lực 1 người - 5 vai trò: lịch luân phiên vai trò và ma trận RACI
+- 1.6 [PM] Tạo project Jira Scrum: 10 Epic, 6 Sprint, 16 User Story; import backlog bằng CSV
+- 1.7 [PM] Lập Risk Register R-01..R-12, Communication Plan và biểu mẫu Change Request
+- 1.8 [PM] Chủ trì Sprint Planning, Daily log, Sprint Review và Retrospective cho 5 Sprint
+- 1.9 [PM] Cập nhật Burndown, Weekly Status Report và chỉ số EVM (PV, EV, AC, SPI, CPI) hằng tuần
+- 1.10 [PM] Viết báo cáo tổng kết, lessons learned và bàn giao hồ sơ dự án
+
+THÔNG TIN
+- Vai trò chính: PM (Project Manager)
+- Kế hoạch: 31/08/2026 - 20/11/2026",High,,,,,31/08/2026,20/11/2026,WBS-1,,
+2,Epic,2. Phân tích nghiệp vụ và đặc tả yêu cầu,,"PHẠM VI
+Thu thập, đặc tả và quản lý yêu cầu: SRS, Use Case, User Story, RTM; giữ yêu cầu đồng bộ suốt dự án.
+
+TIÊU CHÍ HOÀN THÀNH EPIC
+- SRS có 30 FR, 10 NFR, 15 BR được duyệt
+- 16 User Story có AC kiểm thử được
+- RTM phủ 100% FR tới User Story và Test Case
+
+CÔNG VIỆC CON (9)
+- 2.1 [BA] Khảo sát quy trình thực tập: phỏng vấn giả lập Admin (HR), Mentor, Intern
+- 2.2 [BA] Viết đặc tả 30 yêu cầu chức năng FR-01..FR-30 vào tài liệu SRS
+- 2.3 [BA] Viết 10 yêu cầu phi chức năng NFR-01..NFR-10 kèm ngưỡng đo được
+- 2.4 [BA] Viết 15 Business Rule BR-01..BR-15 cho đăng ký, phân Mentor, chấm công, báo cáo, đánh giá
+- 2.5 [BA] Vẽ Use Case Diagram 3 actor và đặc tả 12 Use Case UC-01..UC-12
+- 2.6 [BA] Vẽ Activity Diagram luồng thực tập và State Diagram cho hồ sơ Intern và Task
+- 2.7 [BA] Viết 16 User Story US-01..US-16 kèm Acceptance Criteria dạng Given - When - Then
+- 2.8 [BA] Lập ma trận truy vết RTM nối FR - User Story - API/UI - Test Case
+- 2.9 [BA] Cập nhật RTM và Acceptance Criteria sau mỗi Change Request được duyệt
+
+THÔNG TIN
+- Vai trò chính: BA (Business Analyst)
+- Kế hoạch: 31/08/2026 - 06/11/2026",High,,,,,31/08/2026,06/11/2026,WBS-2,,
+3,Epic,3. Thiết kế hệ thống,,"PHẠM VI
+Thiết kế giao diện, kiến trúc, cơ sở dữ liệu và API làm baseline cho phát triển.
+
+TIÊU CHÍ HOÀN THÀNH EPIC
+- Wireframe các màn hình chính, ERD 12 bảng, OpenAPI 36 endpoint
+- Design Baseline được ký duyệt ở mốc M1
+
+CÔNG VIỆC CON (7)
+- 3.1 [FE] Vẽ sitemap 3 role và luồng chuyển màn hình cho 12 giao diện UI-01..UI-12
+- 3.2 [FE] Vẽ wireframe Figma: Login, Dashboard, Intern List/Detail, Task, Weekly Report, Evaluation
+- 3.3 [BE] Chốt kiến trúc: React SPA + Spring Boot REST 3 lớp Controller - Service - Repository
+- 3.4 [BE] Thiết kế ERD 12 bảng MySQL, khóa ngoại, ràng buộc UNIQUE và index
+- 3.5 [BE] Đặc tả 36 endpoint /api/v1 bằng OpenAPI kèm DTO và bảng mã lỗi 400/401/403/404/409
+- 3.6 [BA] Đối chiếu thiết kế UI-01..UI-12 và API với FR-01..FR-30, BR-01..BR-15
+- 3.7 [PM] Rà soát chéo toàn bộ thiết kế và ký duyệt Design Baseline
+
+THÔNG TIN
+- Vai trò chính: BE (Backend Developer)
+- Kế hoạch: 03/09/2026 - 11/09/2026",High,,,,,03/09/2026,11/09/2026,WBS-3,,
+4,Epic,4. Thiết lập hạ tầng và môi trường,,"PHẠM VI
+Chuẩn bị môi trường phát triển, quản lý mã nguồn, CI và công cụ quản lý dự án.
+
+TIÊU CHÍ HOÀN THÀNH EPIC
+- Repo GitHub có main/develop được bảo vệ
+- docker compose up chạy được MySQL + backend + frontend
+- GitHub Actions chạy build và test cho mỗi PR
+
+CÔNG VIỆC CON (6)
+- 4.1 [BE] Tạo GitHub repository, bảo vệ nhánh main/develop, quy ước Git Flow và Pull Request
+- 4.2 [BE] Kết nối Jira với GitHub (GitHub for Jira), quy ước commit/branch chứa mã IMS-xx
+- 4.3 [BE] Viết docker-compose.yml cho MySQL 8, backend, frontend và phpMyAdmin
+- 4.4 [BE] Khởi tạo Spring Boot 3: cấu trúc package, Spring Data JPA, migration Flyway V1
+- 4.5 [FE] Khởi tạo React + Vite + Tailwind: router, layout, axios interceptor, xử lý lỗi tập trung
+- 4.6 [BE] Cấu hình GitHub Actions: build, unit test và lint cho mỗi Pull Request
+
+THÔNG TIN
+- Vai trò chính: BE (Backend Developer)
+- Kế hoạch: 31/08/2026 - 16/09/2026",High,,,,,31/08/2026,16/09/2026,WBS-4,,
+5,Epic,"5. Sprint 1 - Đăng nhập, phân quyền, tài khoản và phòng ban",,"PHẠM VI
+Sprint 1: đăng nhập JWT, phân quyền 3 role, quản lý tài khoản và phòng ban (US-01..US-04, 13 SP).
+
+TIÊU CHÍ HOÀN THÀNH EPIC
+- US-01..US-04 Done theo Definition of Done
+- Test case AUTH, RBAC, USR, DEP đạt; đạt mốc M2 ngày 25/09/2026
+
+CÔNG VIỆC CON (12)
+- 5.1 [BA] Chốt Acceptance Criteria US-01..US-04 và ma trận quyền 3 role trước Sprint Planning
+- 5.2 [BE] Viết API POST /auth/login, /auth/logout, GET /auth/me phát hành JWT (US-01)
+- 5.3 [FE] Dựng màn hình đăng nhập UI-01, lưu token và điều hướng theo role (US-01)
+- 5.4 [BE] Cấu hình Spring Security: filter JWT và @PreAuthorize theo 3 role (US-02)
+- 5.5 [FE] Chặn route, ẩn menu theo role trên frontend và trang lỗi 403 (US-02)
+- 5.6 [BE] Viết API CRUD /users kèm khóa/mở tài khoản và đổi mật khẩu (US-03)
+- 5.7 [BE] Viết API CRUD /departments, chặn xóa phòng ban còn Intern (US-04)
+- 5.8 [FE] Dựng màn hình quản lý tài khoản UI-10 và phòng ban UI-11 (US-03, US-04)
+- 5.9 [BE] Nạp seed data: 1 Admin, 3 phòng ban, 3 Mentor, 10 Intern kiểm thử
+- 5.10 [BA] Nghiệm thu nội bộ UI-01, UI-10, UI-11 theo Acceptance Criteria US-01..US-04
+- 5.11 [TEST] Chạy TC-AUTH-01..04, TC-RBAC-01..03, TC-USR-01..02, TC-DEP-01 và lưu evidence
+- 5.12 [BA] Refine backlog Sprint 2: bổ sung Acceptance Criteria US-05..US-08 và cập nhật RTM
+
+THÔNG TIN
+- Vai trò chính: PM (Project Manager)
+- Kế hoạch: 14/09/2026 - 25/09/2026",High,,,,,14/09/2026,25/09/2026,WBS-5,,
+6,Epic,6. Sprint 2 - Hồ sơ thực tập sinh và Mentor,,"PHẠM VI
+Sprint 2: đăng ký thực tập, duyệt hồ sơ, quản lý Intern, quản lý và phân công Mentor (US-05..US-08, 14 SP).
+
+TIÊU CHÍ HOÀN THÀNH EPIC
+- US-05..US-08 Done
+- Test case REG, APR, INT, MEN đạt; đạt mốc M3 ngày 09/10/2026
+
+CÔNG VIỆC CON (12)
+- 6.1 [BA] Chốt Acceptance Criteria US-05..US-08 và quy tắc BR-01..BR-05
+- 6.2 [BE] Viết API POST /applications nhận đơn đăng ký và CV PDF tối đa 5 MB (US-05)
+- 6.3 [FE] Dựng form đăng ký thực tập UI-02 có kiểm tra dữ liệu đầu vào (US-05)
+- 6.4 [BE] Viết API duyệt/từ chối hồ sơ, tự tạo tài khoản Intern và gửi email thông báo (US-06)
+- 6.5 [FE] Dựng màn hình danh sách và duyệt hồ sơ đăng ký UI-03 (US-06)
+- 6.6 [BE] Viết API /interns: tìm kiếm, lọc, phân trang, cập nhật hồ sơ, phân phòng ban (US-07)
+- 6.7 [FE] Dựng màn hình Intern List UI-04 và Intern Detail UI-05 (US-07)
+- 6.8 [BE] Viết API /mentors và phân Mentor cho Intern, tối đa 5 Intern/Mentor theo BR-04 (US-08)
+- 6.9 [FE] Dựng màn hình Mentor List UI-06 và hộp thoại phân công Mentor (US-08)
+- 6.10 [BA] Nghiệm thu nội bộ UI-02..UI-06 theo Acceptance Criteria US-05..US-08
+- 6.11 [TEST] Chạy TC-REG-01..03, TC-APR-01..02, TC-INT-01..03, TC-MEN-01..02 và lưu evidence
+- 6.12 [BA] Refine backlog Sprint 3: bổ sung Acceptance Criteria US-09..US-12 và cập nhật RTM
+
+THÔNG TIN
+- Vai trò chính: PM (Project Manager)
+- Kế hoạch: 28/09/2026 - 09/10/2026",High,,,,,28/09/2026,09/10/2026,WBS-6,,
+7,Epic,"7. Sprint 3 - Giao việc, chấm công và báo cáo tuần",,"PHẠM VI
+Sprint 3: giao và theo dõi task, chấm công, báo cáo tuần (US-09..US-12, 16 SP).
+
+TIÊU CHÍ HOÀN THÀNH EPIC
+- US-09..US-12 Done
+- Test case TASK, ATT, RPT đạt; đạt mốc M4 ngày 23/10/2026
+
+CÔNG VIỆC CON (12)
+- 7.1 [BA] Chốt Acceptance Criteria US-09..US-12, vòng đời Task và quy tắc chấm công BR-06..BR-10
+- 7.2 [BE] Viết API POST /tasks và danh sách task theo Intern cho Mentor (US-09)
+- 7.3 [FE] Dựng Task Board của Mentor UI-07 và form giao task có deadline (US-09)
+- 7.4 [BE] Viết API GET /tasks/my-tasks, PUT /tasks/{id}/status và bình luận task (US-10)
+- 7.5 [FE] Dựng màn hình My Tasks UI-08 và Task Detail kèm bình luận (US-10)
+- 7.6 [BE] Viết API check-in/check-out /attendances, chặn chấm công trùng trong ngày BR-08 (US-11)
+- 7.7 [FE] Dựng nút chấm công và bảng công tháng cho Intern, Mentor (US-11)
+- 7.8 [BE] Viết API /weekly-reports: nộp, hạn chót Chủ nhật 23:59 theo BR-10, Mentor phản hồi (US-12)
+- 7.9 [FE] Dựng màn hình Weekly Report UI-09 cho Intern và Mentor (US-12)
+- 7.10 [BA] Nghiệm thu nội bộ UI-07..UI-09 theo Acceptance Criteria US-09..US-12
+- 7.11 [TEST] Chạy TC-TASK-01..05, TC-ATT-01..03, TC-RPT-01..03 và lưu evidence
+- 7.12 [BA] Refine backlog Sprint 4: bổ sung Acceptance Criteria US-13..US-16 và cập nhật RTM
+
+THÔNG TIN
+- Vai trò chính: PM (Project Manager)
+- Kế hoạch: 12/10/2026 - 23/10/2026",High,,,,,12/10/2026,23/10/2026,WBS-7,,
+8,Epic,"8. Sprint 4 - Đánh giá, tiến độ, dashboard và xuất kết quả",,"PHẠM VI
+Sprint 4: đánh giá Intern, theo dõi tiến độ, dashboard, xuất kết quả cuối kỳ (US-13..US-16, 16 SP).
+
+TIÊU CHÍ HOÀN THÀNH EPIC
+- US-13..US-16 Done, đủ 30 FR (Feature Complete)
+- Test case EVA, PRG, DSH, EXP đạt; 8 kịch bản UAT sẵn sàng; mốc M5 ngày 06/11/2026
+
+CÔNG VIỆC CON (12)
+- 8.1 [BA] Chốt 5 tiêu chí đánh giá thang 10, công thức tính tiến độ và chỉ số dashboard
+- 8.2 [BE] Viết API /evaluations giữa kỳ và cuối kỳ, chỉ Mentor phụ trách được chấm BR-12 (US-13)
+- 8.3 [FE] Dựng form đánh giá UI-12 cho Mentor và trang xem đánh giá cho Intern (US-13)
+- 8.4 [BE] Viết service tính tiến độ: 50% task DONE + 25% báo cáo tuần + 25% chuyên cần (US-14)
+- 8.5 [FE] Hiển thị thanh tiến độ trên Intern Detail và Intern Dashboard (US-14)
+- 8.6 [BE] Viết API /dashboard/admin, /dashboard/mentor, /dashboard/intern tổng hợp số liệu (US-15)
+- 8.7 [FE] Dựng 3 dashboard bằng Recharts: số Intern, tiến độ, task quá hạn, điểm trung bình (US-15)
+- 8.8 [BE] Xuất kết quả cuối kỳ ra Excel (Apache POI) và PDF, chuyển trạng thái COMPLETED (US-16)
+- 8.9 [FE] Thêm nút xuất file và thao tác kết thúc kỳ thực tập trên giao diện Admin (US-16)
+- 8.10 [BA] Kiểm tra số liệu dashboard và file kết quả khớp BR-11..BR-15
+- 8.11 [TEST] Chạy TC-EVA-01..03, TC-PRG-01, TC-DSH-01..02, TC-EXP-01..02 và lưu evidence
+- 8.12 [BA] Viết 8 kịch bản UAT UAT-01..UAT-08 và chuẩn bị dữ liệu nghiệp vụ
+
+THÔNG TIN
+- Vai trò chính: PM (Project Manager)
+- Kế hoạch: 26/10/2026 - 06/11/2026",High,,,,,26/10/2026,06/11/2026,WBS-8,,
+9,Epic,9. Kiểm thử và đảm bảo chất lượng,,"PHẠM VI
+Đảm bảo chất lượng xuyên suốt: Test Plan, test case, kiểm thử tự động, quản lý bug, hồi quy.
+
+TIÊU CHÍ HOÀN THÀNH EPIC
+- 40 test case được viết và chạy
+- Postman/Newman và Selenium chạy được
+- Tiêu chí kết thúc: 100% test Critical/High đạt, 0 bug S1/S2 mở
+
+CÔNG VIỆC CON (7)
+- 9.1 [TEST] Viết Test Plan: phạm vi, môi trường, mức độ nghiêm trọng S1..S4, tiêu chí vào/ra
+- 9.2 [TEST] Viết 40 test case TC-AUTH..TC-EXP trên Excel và dựng bộ dữ liệu kiểm thử
+- 9.3 [TEST] Xây Postman collection và Newman để chạy hồi quy API tự động
+- 9.4 [TEST] Kiểm thử API và giao diện cho từng User Story khi chuyển sang IN TESTING
+- 9.5 [TEST] Ghi Bug lên Jira kèm severity, bước tái hiện, evidence và xác minh bản vá
+- 9.6 [TEST] Tự động hóa 5 luồng chính bằng Selenium WebDriver
+- 9.7 [TEST] Chạy hồi quy toàn bộ luồng Critical và High bằng Newman + Selenium + kiểm thử tay
+
+THÔNG TIN
+- Vai trò chính: TEST (Tester / QA)
+- Kế hoạch: 14/09/2026 - 13/11/2026",High,,,,,14/09/2026,13/11/2026,WBS-9,,
+10,Epic,"10. Sprint 5 - Ổn định, nghiệm thu và phát hành",,"PHẠM VI
+Sprint 5: ổn định, sửa bug, UAT, phát hành v1.0.0 và nghiệm thu.
+
+TIÊU CHÍ HOÀN THÀNH EPIC
+- 0 bug S1/S2, UAT Sign-off 8/8 kịch bản
+- Tag v1.0.0, đủ tài liệu bàn giao, demo nghiệm thu ngày 20/11/2026
+
+CÔNG VIỆC CON (12)
+- 10.1 [BE] Sửa dứt điểm bug S1, S2 phía backend và cập nhật trạng thái trên Jira
+- 10.2 [FE] Sửa dứt điểm bug S1, S2 phía frontend và cập nhật trạng thái trên Jira
+- 10.3 [BE] Tối ưu truy vấn chậm và rà soát bảo mật cơ bản theo OWASP Top 10
+- 10.4 [BE] Tạo nhánh release, gắn tag v1.0.0 và chạy thử migration Flyway trên bản backup
+- 10.5 [BE] Triển khai môi trường UAT bằng Docker Compose và nạp dữ liệu gần thực tế
+- 10.6 [BA] Điều phối UAT: chạy 8 kịch bản UAT-01..UAT-08 với người dùng đại diện
+- 10.7 [TEST] Ghi nhận kết quả UAT, phân loại lỗi S1..S4 và xác minh bản vá
+- 10.8 [BA] Tổng hợp phản hồi UAT, cập nhật RTM và lấy biên bản UAT Sign-off
+- 10.9 [BE] Viết Release Notes, Deployment Guide, cập nhật Swagger và README
+- 10.10 [BA] Viết User Manual cho 3 nhóm người dùng kèm ảnh màn hình UI-01..UI-12
+- 10.11 [BE] Sao lưu database, repository và đóng gói mã nguồn bàn giao
+- 10.12 [PM] Trình bày nghiệm thu: demo 15 phút, evidence Jira/GitHub, so sánh baseline và thực tế
+
+THÔNG TIN
+- Vai trò chính: PM (Project Manager)
+- Kế hoạch: 09/11/2026 - 20/11/2026",High,,,,,09/11/2026,20/11/2026,WBS-10,,
 101,Story,US-01 Đăng nhập / đăng xuất bằng JWT,5,"Là người dùng, tôi muốn đăng nhập bằng email và mật khẩu để truy cập chức năng theo vai trò của mình.
 
 Acceptance Criteria:
 AC1. Given tài khoản hợp lệ đang hoạt động, When nhập đúng email và mật khẩu, Then hệ thống cấp JWT và chuyển tới dashboard đúng role.
 AC2. Given mật khẩu sai, When đăng nhập, Then hiển thị 'Email hoặc mật khẩu không đúng' và không cấp token.
-AC3. Given tài khoản bị khóa, When đăng nhập, Then hiển thị 'Tài khoản đã bị khóa'.",Highest,,,5,,14/09/2026,18/09/2026,US-01,Sprint-1,
+AC3. Given tài khoản bị khóa, When đăng nhập, Then hiển thị 'Tài khoản đã bị khóa'.",Highest,,18,5,,14/09/2026,18/09/2026,US-01,Sprint-1,
 102,Story,"US-02 Phân quyền theo 3 role Admin, Mentor, Intern",5,"Là Admin, tôi muốn hệ thống phân quyền theo role để mỗi người chỉ thấy đúng chức năng của mình.
 
 Acceptance Criteria:
 AC1. Given Intern đã đăng nhập, When truy cập /admin, Then hệ thống trả trang 403 Access Denied.
 AC2. Given Mentor đã đăng nhập, When gọi API của Admin, Then API trả HTTP 403.
-AC3. Given người dùng đăng nhập, When mở menu, Then chỉ hiển thị mục thuộc role của họ.",Highest,,,3,,17/09/2026,22/09/2026,US-02,Sprint-1,
+AC3. Given người dùng đăng nhập, When mở menu, Then chỉ hiển thị mục thuộc role của họ.",Highest,,18,3,,17/09/2026,22/09/2026,US-02,Sprint-1,
 103,Story,US-03 Quản lý tài khoản người dùng,5,"Là Admin, tôi muốn quản lý tài khoản người dùng để kiểm soát ai được sử dụng hệ thống.
 
 Acceptance Criteria:
 AC1. Given Admin mở UI-10, When tạo tài khoản với email trùng, Then báo lỗi 'Email đã tồn tại'.
 AC2. Given tài khoản đang hoạt động, When Admin khóa, Then người đó không đăng nhập được nữa.
-AC3. Given người dùng đã đăng nhập, When đổi mật khẩu đúng quy tắc, Then lần đăng nhập sau dùng mật khẩu mới.",High,,,3,,21/09/2026,24/09/2026,US-03,Sprint-1,
+AC3. Given người dùng đã đăng nhập, When đổi mật khẩu đúng quy tắc, Then lần đăng nhập sau dùng mật khẩu mới.",High,,18,3,,21/09/2026,24/09/2026,US-03,Sprint-1,
 104,Story,US-04 Quản lý phòng ban,5,"Là Admin, tôi muốn quản lý phòng ban để phân Intern về đúng nơi làm việc.
 
 Acceptance Criteria:
 AC1. Given Admin mở UI-11, When thêm phòng ban với tên hợp lệ, Then phòng ban xuất hiện trong danh sách.
-AC2. Given phòng ban còn Intern đang thực tập, When Admin xóa, Then hệ thống từ chối và báo lý do.",High,,,2,,22/09/2026,23/09/2026,US-04,Sprint-1,
+AC2. Given phòng ban còn Intern đang thực tập, When Admin xóa, Then hệ thống từ chối và báo lý do.",High,,18,2,,22/09/2026,23/09/2026,US-04,Sprint-1,
 105,Story,US-05 Đăng ký thực tập trực tuyến kèm CV,6,"Là ứng viên, tôi muốn gửi đơn đăng ký thực tập trực tuyến kèm CV để công ty xem xét.
 
 Acceptance Criteria:
 AC1. Given form UI-02, When gửi đủ thông tin và CV PDF <= 5 MB, Then đơn được lưu trạng thái PENDING.
 AC2. Given CV không phải PDF hoặc > 5 MB, When gửi, Then báo lỗi và không lưu đơn.
-AC3. Given email đã có đơn PENDING, When gửi đơn mới, Then báo 'Bạn đã có đơn đang chờ duyệt'.",High,,,3,,28/09/2026,01/10/2026,US-05,Sprint-2,
+AC3. Given email đã có đơn PENDING, When gửi đơn mới, Then báo 'Bạn đã có đơn đang chờ duyệt'.",High,,19,3,,28/09/2026,01/10/2026,US-05,Sprint-2,
 106,Story,US-06 Duyệt / từ chối hồ sơ đăng ký,6,"Là Admin, tôi muốn duyệt hoặc từ chối đơn đăng ký để tiếp nhận Intern phù hợp.
 
 Acceptance Criteria:
 AC1. Given đơn PENDING, When Admin duyệt, Then tạo tài khoản Intern và gửi email thông tin đăng nhập.
 AC2. Given đơn PENDING, When Admin từ chối mà không nhập lý do, Then hệ thống không cho lưu.
-AC3. Given đơn đã xử lý, When mở lại, Then chỉ xem được, không duyệt lại.",High,,,3,,01/10/2026,05/10/2026,US-06,Sprint-2,
+AC3. Given đơn đã xử lý, When mở lại, Then chỉ xem được, không duyệt lại.",High,,19,3,,01/10/2026,05/10/2026,US-06,Sprint-2,
 107,Story,US-07 Quản lý hồ sơ thực tập sinh,6,"Là Admin, tôi muốn quản lý hồ sơ Intern để nắm thông tin và phân phòng ban.
 
 Acceptance Criteria:
 AC1. Given danh sách UI-04, When lọc theo phòng ban và trạng thái, Then chỉ hiển thị Intern khớp điều kiện.
 AC2. Given Intern Detail UI-05, When Admin cập nhật thời gian thực tập, Then dữ liệu được lưu và hiển thị ngay.
-AC3. Given Intern chưa có phòng ban, When Admin phân phòng ban, Then Intern xuất hiện trong danh sách của phòng ban đó.",Medium,,,3,,05/10/2026,07/10/2026,US-07,Sprint-2,
+AC3. Given Intern chưa có phòng ban, When Admin phân phòng ban, Then Intern xuất hiện trong danh sách của phòng ban đó.",Medium,,19,3,,05/10/2026,07/10/2026,US-07,Sprint-2,
 108,Story,US-08 Quản lý và phân công Mentor,6,"Là Admin, tôi muốn phân công Mentor cho Intern để mỗi Intern có người hướng dẫn.
 
 Acceptance Criteria:
 AC1. Given Mentor đang hướng dẫn 5 Intern, When phân thêm Intern, Then hệ thống từ chối theo BR-04.
 AC2. Given Mentor khác phòng ban với Intern, When phân công, Then hệ thống từ chối theo BR-05.
-AC3. Given phân công thành công, When Mentor đăng nhập, Then thấy Intern trong danh sách 'Intern của tôi'.",High,,,5,,06/10/2026,08/10/2026,US-08,Sprint-2,
+AC3. Given phân công thành công, When Mentor đăng nhập, Then thấy Intern trong danh sách 'Intern của tôi'.",High,,19,5,,06/10/2026,08/10/2026,US-08,Sprint-2,
 109,Story,US-09 Mentor giao task cho Intern,7,"Là Mentor, tôi muốn giao task cho Intern để phân công công việc thực tập.
 
 Acceptance Criteria:
 AC1. Given Mentor phụ trách Intern, When tạo task có tiêu đề và deadline tương lai, Then task ở trạng thái TODO và Intern nhận thông báo.
 AC2. Given deadline ở quá khứ, When lưu task, Then báo lỗi.
-AC3. Given Mentor không phụ trách Intern, When giao task, Then API trả HTTP 403.",High,,,5,,12/10/2026,15/10/2026,US-09,Sprint-3,
+AC3. Given Mentor không phụ trách Intern, When giao task, Then API trả HTTP 403.",High,,20,5,,12/10/2026,15/10/2026,US-09,Sprint-3,
 110,Story,US-10 Intern xem và cập nhật task,7,"Là Intern, tôi muốn xem task được giao và cập nhật tiến độ để Mentor theo dõi.
 
 Acceptance Criteria:
 AC1. Given Intern đã đăng nhập, When mở My Tasks, Then hiển thị các task Mentor giao cho Intern đó.
 AC2. Given task của Intern khác, When Intern sửa, Then API trả HTTP 403.
-AC3. Given task ở REVIEW, When Mentor duyệt, Then task chuyển DONE; khi trả lại thì về IN_PROGRESS kèm nhận xét.",High,,,3,,14/10/2026,19/10/2026,US-10,Sprint-3,
+AC3. Given task ở REVIEW, When Mentor duyệt, Then task chuyển DONE; khi trả lại thì về IN_PROGRESS kèm nhận xét.",High,,20,3,,14/10/2026,19/10/2026,US-10,Sprint-3,
 111,Story,US-11 Chấm công check-in / check-out,7,"Là Intern, tôi muốn chấm công hằng ngày để ghi nhận chuyên cần.
 
 Acceptance Criteria:
 AC1. Given chưa check-in hôm nay, When nhấn Check-in, Then lưu giờ vào; sau 8:30 gắn cờ đi muộn.
 AC2. Given đã check-in hôm nay, When nhấn Check-in lần nữa, Then hệ thống từ chối theo BR-08.
-AC3. Given Mentor mở bảng công, When chọn tháng, Then thấy số ngày công, đi muộn, vắng của từng Intern.",Medium,,,3,,16/10/2026,20/10/2026,US-11,Sprint-3,
+AC3. Given Mentor mở bảng công, When chọn tháng, Then thấy số ngày công, đi muộn, vắng của từng Intern.",Medium,,20,3,,16/10/2026,20/10/2026,US-11,Sprint-3,
 112,Story,US-12 Nộp và phản hồi báo cáo tuần,7,"Là Intern, tôi muốn nộp báo cáo tuần để Mentor nắm được công việc đã làm.
 
 Acceptance Criteria:
 AC1. Given tuần hiện tại chưa có báo cáo, When Intern nộp, Then báo cáo lưu trạng thái SUBMITTED.
 AC2. Given quá Chủ nhật 23:59, When Intern nộp, Then báo cáo được nhận và gắn cờ LATE.
-AC3. Given báo cáo đã nộp, When Mentor phản hồi, Then Intern thấy phản hồi trên UI-09.",High,,,5,,19/10/2026,22/10/2026,US-12,Sprint-3,
+AC3. Given báo cáo đã nộp, When Mentor phản hồi, Then Intern thấy phản hồi trên UI-09.",High,,20,5,,19/10/2026,22/10/2026,US-12,Sprint-3,
 113,Story,"US-13 Mentor đánh giá Intern giữa kỳ, cuối kỳ",8,"Là Mentor, tôi muốn đánh giá Intern giữa kỳ và cuối kỳ để ghi nhận kết quả thực tập.
 
 Acceptance Criteria:
 AC1. Given Mentor phụ trách, When chấm 5 tiêu chí thang 10 và nhận xét, Then đánh giá được lưu và Intern xem được.
 AC2. Given Intern đã có đánh giá cuối kỳ, When Mentor tạo thêm đánh giá cuối kỳ, Then hệ thống từ chối theo BR-12.
-AC3. Given điểm ngoài khoảng 0..10, When lưu, Then báo lỗi.",High,,,5,,26/10/2026,29/10/2026,US-13,Sprint-4,
+AC3. Given điểm ngoài khoảng 0..10, When lưu, Then báo lỗi.",High,,21,5,,26/10/2026,29/10/2026,US-13,Sprint-4,
 114,Story,US-14 Theo dõi tiến độ thực tập,8,"Là Admin/Mentor, tôi muốn xem % tiến độ thực tập để phát hiện Intern chậm tiến độ.
 
 Acceptance Criteria:
 AC1. Given Intern có task, báo cáo, chấm công, When mở Intern Detail, Then hiển thị % tiến độ tính theo BR-11.
-AC2. Given tiến độ dưới 50% khi đã qua nửa kỳ, When mở danh sách, Then Intern được đánh dấu cảnh báo.",Medium,,,3,,28/10/2026,02/11/2026,US-14,Sprint-4,
+AC2. Given tiến độ dưới 50% khi đã qua nửa kỳ, When mở danh sách, Then Intern được đánh dấu cảnh báo.",Medium,,21,3,,28/10/2026,02/11/2026,US-14,Sprint-4,
 115,Story,US-15 Dashboard thống kê theo role,8,"Là người dùng, tôi muốn xem dashboard thống kê để nắm nhanh tình hình thực tập.
 
 Acceptance Criteria:
 AC1. Given Admin đăng nhập, When mở dashboard, Then thấy tổng Intern theo trạng thái, theo phòng ban và số task quá hạn.
 AC2. Given Mentor đăng nhập, When mở dashboard, Then thấy Intern của mình, task chờ duyệt, báo cáo chưa phản hồi.
-AC3. Given Intern đăng nhập, When mở dashboard, Then thấy task sắp hết hạn và % tiến độ của bản thân.",Medium,,,5,,02/11/2026,04/11/2026,US-15,Sprint-4,
+AC3. Given Intern đăng nhập, When mở dashboard, Then thấy task sắp hết hạn và % tiến độ của bản thân.",Medium,,21,5,,02/11/2026,04/11/2026,US-15,Sprint-4,
 116,Story,US-16 Xuất kết quả cuối kỳ và kết thúc kỳ thực tập,8,"Là Admin, tôi muốn xuất kết quả cuối kỳ và kết thúc kỳ thực tập để lưu hồ sơ và cấp xác nhận.
 
 Acceptance Criteria:
 AC1. Given Intern đã có đánh giá cuối kỳ, When Admin xuất file, Then tải về Excel/PDF đúng điểm, xếp loại, nhận xét.
 AC2. Given Intern chưa có đánh giá cuối kỳ, When Admin kết thúc kỳ, Then hệ thống từ chối theo BR-14.
-AC3. Given Intern đã COMPLETED, When bất kỳ ai sửa dữ liệu, Then hệ thống từ chối theo BR-15.",Medium,,,3,,03/11/2026,05/11/2026,US-16,Sprint-4,
-1001,Task,"[PM] 1.1 Viết Project Charter: mục tiêu, phạm vi, stakeholder, tiêu chí thành công SC-01..SC-06",1,"WBS 1.1 - vai trò PM (Project Manager).
-Kế hoạch: 31/08/2026 - 01/09/2026, ước lượng 4 giờ.
-Nằm trên đường găng: trễ việc này là trễ cả dự án.",High,,,,14400,31/08/2026,01/09/2026,PM,Sprint-0,WBS-1.1
-1002,Task,[PM] 1.2 Lập Scope Statement: chốt in-scope FR-01..FR-30 và danh sách out-of-scope,1,"WBS 1.2 - vai trò PM (Project Manager).
-Kế hoạch: 01/09/2026 - 02/09/2026, ước lượng 3 giờ.",Medium,,,,10800,01/09/2026,02/09/2026,PM,Sprint-0,WBS-1.2
-1003,Task,"[PM] 1.3 Phân rã WBS 10 nhóm công việc, ước lượng Story Point (Planning Poker) và giờ công",1,"WBS 1.3 - vai trò PM (Project Manager).
-Kế hoạch: 03/09/2026 - 04/09/2026, ước lượng 4 giờ.",Medium,,,,14400,03/09/2026,04/09/2026,PM,Sprint-0,WBS-1.3
-1004,Task,"[PM] 1.4 Lập Gantt baseline, xác định đường găng và 6 mốc kiểm soát M1..M6",1,"WBS 1.4 - vai trò PM (Project Manager).
-Kế hoạch: 04/09/2026 - 07/09/2026, ước lượng 3 giờ.",Medium,,,,10800,04/09/2026,07/09/2026,PM,Sprint-0,WBS-1.4
-1005,Task,[PM] 1.5 Lập kế hoạch nguồn lực 1 người - 5 vai trò: lịch luân phiên vai trò và ma trận RACI,1,"WBS 1.5 - vai trò PM (Project Manager).
-Kế hoạch: 07/09/2026 - 08/09/2026, ước lượng 2 giờ.",Medium,,,,7200,07/09/2026,08/09/2026,PM,Sprint-0,WBS-1.5
-1006,Task,"[PM] 1.6 Tạo project Jira Scrum: 10 Epic, 6 Sprint, 16 User Story; import backlog bằng CSV",1,"WBS 1.6 - vai trò PM (Project Manager).
-Kế hoạch: 08/09/2026 - 09/09/2026, ước lượng 2 giờ.",Medium,,,,7200,08/09/2026,09/09/2026,PM,Sprint-0,WBS-1.6
-1007,Task,"[PM] 1.7 Lập Risk Register R-01..R-12, Communication Plan và biểu mẫu Change Request",1,"WBS 1.7 - vai trò PM (Project Manager).
-Kế hoạch: 09/09/2026 - 11/09/2026, ước lượng 2 giờ.",Medium,,,,7200,09/09/2026,11/09/2026,PM,Sprint-0,WBS-1.7
-1008,Task,"[PM] 1.8 Chủ trì Sprint Planning, Daily log, Sprint Review và Retrospective cho 5 Sprint",1,"WBS 1.8 - vai trò PM (Project Manager).
-Kế hoạch: 14/09/2026 - 20/11/2026, ước lượng 15 giờ.
-Việc lặp lại mỗi Sprint: cập nhật tiến độ trong comment, đóng khi kết thúc dự án.",Medium,,,,54000,14/09/2026,20/11/2026,PM,continuous,WBS-1.8
-1009,Task,"[PM] 1.9 Cập nhật Burndown, Weekly Status Report và chỉ số EVM (PV, EV, AC, SPI, CPI) hằng tuần",1,"WBS 1.9 - vai trò PM (Project Manager).
-Kế hoạch: 14/09/2026 - 20/11/2026, ước lượng 10 giờ.
-Việc lặp lại mỗi Sprint: cập nhật tiến độ trong comment, đóng khi kết thúc dự án.",Medium,,,,36000,14/09/2026,20/11/2026,PM,continuous,WBS-1.9
-1010,Task,"[PM] 1.10 Viết báo cáo tổng kết, lessons learned và bàn giao hồ sơ dự án",1,"WBS 1.10 - vai trò PM (Project Manager).
-Kế hoạch: 18/11/2026 - 20/11/2026, ước lượng 4 giờ.",Medium,,,,14400,18/11/2026,20/11/2026,PM,Sprint-5,WBS-1.10
-1011,Task,"[BA] 2.1 Khảo sát quy trình thực tập: phỏng vấn giả lập Admin (HR), Mentor, Intern",2,"WBS 2.1 - vai trò BA (Business Analyst).
-Kế hoạch: 31/08/2026 - 01/09/2026, ước lượng 4 giờ.",Medium,,,,14400,31/08/2026,01/09/2026,BA,Sprint-0,WBS-2.1
-1012,Task,[BA] 2.2 Viết đặc tả 30 yêu cầu chức năng FR-01..FR-30 vào tài liệu SRS,2,"WBS 2.2 - vai trò BA (Business Analyst).
-Kế hoạch: 01/09/2026 - 03/09/2026, ước lượng 6 giờ.
-Nằm trên đường găng: trễ việc này là trễ cả dự án.",High,,,,21600,01/09/2026,03/09/2026,BA,Sprint-0,WBS-2.2
-1013,Task,[BA] 2.3 Viết 10 yêu cầu phi chức năng NFR-01..NFR-10 kèm ngưỡng đo được,2,"WBS 2.3 - vai trò BA (Business Analyst).
-Kế hoạch: 03/09/2026 - 04/09/2026, ước lượng 2 giờ.",Medium,,,,7200,03/09/2026,04/09/2026,BA,Sprint-0,WBS-2.3
-1014,Task,"[BA] 2.4 Viết 15 Business Rule BR-01..BR-15 cho đăng ký, phân Mentor, chấm công, báo cáo, đánh giá",2,"WBS 2.4 - vai trò BA (Business Analyst).
-Kế hoạch: 04/09/2026 - 07/09/2026, ước lượng 3 giờ.",Medium,,,,10800,04/09/2026,07/09/2026,BA,Sprint-0,WBS-2.4
-1015,Task,[BA] 2.5 Vẽ Use Case Diagram 3 actor và đặc tả 12 Use Case UC-01..UC-12,2,"WBS 2.5 - vai trò BA (Business Analyst).
-Kế hoạch: 07/09/2026 - 08/09/2026, ước lượng 3 giờ.",Medium,,,,10800,07/09/2026,08/09/2026,BA,Sprint-0,WBS-2.5
-1016,Task,[BA] 2.6 Vẽ Activity Diagram luồng thực tập và State Diagram cho hồ sơ Intern và Task,2,"WBS 2.6 - vai trò BA (Business Analyst).
-Kế hoạch: 08/09/2026 - 09/09/2026, ước lượng 2 giờ.",Medium,,,,7200,08/09/2026,09/09/2026,BA,Sprint-0,WBS-2.6
-1017,Task,[BA] 2.7 Viết 16 User Story US-01..US-16 kèm Acceptance Criteria dạng Given - When - Then,2,"WBS 2.7 - vai trò BA (Business Analyst).
-Kế hoạch: 08/09/2026 - 10/09/2026, ước lượng 4 giờ.
-Nằm trên đường găng: trễ việc này là trễ cả dự án.",High,,,,14400,08/09/2026,10/09/2026,BA,Sprint-0,WBS-2.7
-1018,Task,[BA] 2.8 Lập ma trận truy vết RTM nối FR - User Story - API/UI - Test Case,2,"WBS 2.8 - vai trò BA (Business Analyst).
-Kế hoạch: 10/09/2026 - 11/09/2026, ước lượng 2 giờ.",Medium,,,,7200,10/09/2026,11/09/2026,BA,Sprint-0,WBS-2.8
-1019,Task,[BA] 2.9 Cập nhật RTM và Acceptance Criteria sau mỗi Change Request được duyệt,2,"WBS 2.9 - vai trò BA (Business Analyst).
-Kế hoạch: 14/09/2026 - 06/11/2026, ước lượng 4 giờ.
-Việc lặp lại mỗi Sprint: cập nhật tiến độ trong comment, đóng khi kết thúc dự án.",Medium,,,,14400,14/09/2026,06/11/2026,BA,continuous,WBS-2.9
-1020,Task,[FE] 3.1 Vẽ sitemap 3 role và luồng chuyển màn hình cho 12 giao diện UI-01..UI-12,3,"WBS 3.1 - vai trò FE (Frontend Developer).
-Kế hoạch: 03/09/2026 - 07/09/2026, ước lượng 3 giờ.",Medium,,,,10800,03/09/2026,07/09/2026,FE,Sprint-0,WBS-3.1
-1021,Task,"[FE] 3.2 Vẽ wireframe Figma: Login, Dashboard, Intern List/Detail, Task, Weekly Report, Evaluation",3,"WBS 3.2 - vai trò FE (Frontend Developer).
-Kế hoạch: 07/09/2026 - 09/09/2026, ước lượng 4 giờ.",Medium,,,,14400,07/09/2026,09/09/2026,FE,Sprint-0,WBS-3.2
-1022,Task,[BE] 3.3 Chốt kiến trúc: React SPA + Spring Boot REST 3 lớp Controller - Service - Repository,3,"WBS 3.3 - vai trò BE (Backend Developer).
-Kế hoạch: 07/09/2026 - 08/09/2026, ước lượng 2 giờ.",Medium,,,,7200,07/09/2026,08/09/2026,BE,Sprint-0,WBS-3.3
-1023,Task,"[BE] 3.4 Thiết kế ERD 12 bảng MySQL, khóa ngoại, ràng buộc UNIQUE và index",3,"WBS 3.4 - vai trò BE (Backend Developer).
-Kế hoạch: 08/09/2026 - 10/09/2026, ước lượng 3 giờ.",Medium,,,,10800,08/09/2026,10/09/2026,BE,Sprint-0,WBS-3.4
-1024,Task,[BE] 3.5 Đặc tả 36 endpoint /api/v1 bằng OpenAPI kèm DTO và bảng mã lỗi 400/401/403/404/409,3,"WBS 3.5 - vai trò BE (Backend Developer).
-Kế hoạch: 09/09/2026 - 11/09/2026, ước lượng 4 giờ.
-Nằm trên đường găng: trễ việc này là trễ cả dự án.",High,,,,14400,09/09/2026,11/09/2026,BE,Sprint-0,WBS-3.5
-1025,Task,"[BA] 3.6 Đối chiếu thiết kế UI-01..UI-12 và API với FR-01..FR-30, BR-01..BR-15",3,"WBS 3.6 - vai trò BA (Business Analyst).
-Kế hoạch: 10/09/2026 - 11/09/2026, ước lượng 2 giờ.",Medium,,,,7200,10/09/2026,11/09/2026,BA,Sprint-0,WBS-3.6
-1026,Task,[PM] 3.7 Rà soát chéo toàn bộ thiết kế và ký duyệt Design Baseline,3,"WBS 3.7 - vai trò PM (Project Manager).
-Kế hoạch: 11/09/2026 - 11/09/2026, ước lượng 1 giờ.",Medium,,,,3600,11/09/2026,11/09/2026,PM,Sprint-0,WBS-3.7
-1027,Task,"[BE] 4.1 Tạo GitHub repository, bảo vệ nhánh main/develop, quy ước Git Flow và Pull Request",4,"WBS 4.1 - vai trò BE (Backend Developer).
-Kế hoạch: 31/08/2026 - 01/09/2026, ước lượng 2 giờ.",Medium,,,,7200,31/08/2026,01/09/2026,BE,Sprint-0,WBS-4.1
-1028,Task,"[BE] 4.2 Kết nối Jira với GitHub (GitHub for Jira), quy ước commit/branch chứa mã IMS-xx",4,"WBS 4.2 - vai trò BE (Backend Developer).
-Kế hoạch: 01/09/2026 - 02/09/2026, ước lượng 1 giờ.",Medium,,,,3600,01/09/2026,02/09/2026,BE,Sprint-0,WBS-4.2
-1029,Task,"[BE] 4.3 Viết docker-compose.yml cho MySQL 8, backend, frontend và phpMyAdmin",4,"WBS 4.3 - vai trò BE (Backend Developer).
-Kế hoạch: 03/09/2026 - 04/09/2026, ước lượng 2 giờ.",Medium,,,,7200,03/09/2026,04/09/2026,BE,Sprint-0,WBS-4.3
-1030,Task,"[BE] 4.4 Khởi tạo Spring Boot 3: cấu trúc package, Spring Data JPA, migration Flyway V1",4,"WBS 4.4 - vai trò BE (Backend Developer).
-Kế hoạch: 09/09/2026 - 11/09/2026, ước lượng 2 giờ.",Medium,,,,7200,09/09/2026,11/09/2026,BE,Sprint-0,WBS-4.4
-1031,Task,"[FE] 4.5 Khởi tạo React + Vite + Tailwind: router, layout, axios interceptor, xử lý lỗi tập trung",4,"WBS 4.5 - vai trò FE (Frontend Developer).
-Kế hoạch: 14/09/2026 - 15/09/2026, ước lượng 2 giờ.",Medium,,,,7200,14/09/2026,15/09/2026,FE,Sprint-1,WBS-4.5
-1032,Task,"[BE] 4.6 Cấu hình GitHub Actions: build, unit test và lint cho mỗi Pull Request",4,"WBS 4.6 - vai trò BE (Backend Developer).
-Kế hoạch: 14/09/2026 - 16/09/2026, ước lượng 2 giờ.",Medium,,,,7200,14/09/2026,16/09/2026,BE,Sprint-1,WBS-4.6
-1033,Task,[BA] 5.1 Chốt Acceptance Criteria US-01..US-04 và ma trận quyền 3 role trước Sprint Planning,5,"WBS 5.1 - vai trò BA (Business Analyst).
-Kế hoạch: 14/09/2026 - 15/09/2026, ước lượng 2 giờ.",Medium,,,,7200,14/09/2026,15/09/2026,BA,Sprint-1,WBS-5.1
-1034,Task,"[BE] 5.9 Nạp seed data: 1 Admin, 3 phòng ban, 3 Mentor, 10 Intern kiểm thử",5,"WBS 5.9 - vai trò BE (Backend Developer).
-Kế hoạch: 23/09/2026 - 24/09/2026, ước lượng 1 giờ.",Medium,,,,3600,23/09/2026,24/09/2026,BE,Sprint-1,WBS-5.9
-1035,Task,"[BA] 5.10 Nghiệm thu nội bộ UI-01, UI-10, UI-11 theo Acceptance Criteria US-01..US-04",5,"WBS 5.10 - vai trò BA (Business Analyst).
-Kế hoạch: 24/09/2026 - 24/09/2026, ước lượng 1 giờ.",Medium,,,,3600,24/09/2026,24/09/2026,BA,Sprint-1,WBS-5.10
-1036,Task,"[TEST] 5.11 Chạy TC-AUTH-01..04, TC-RBAC-01..03, TC-USR-01..02, TC-DEP-01 và lưu evidence",5,"WBS 5.11 - vai trò TEST (Tester / QA).
-Kế hoạch: 24/09/2026 - 25/09/2026, ước lượng 3 giờ.",Medium,,,,10800,24/09/2026,25/09/2026,TEST,Sprint-1,WBS-5.11
-1037,Task,[BA] 5.12 Refine backlog Sprint 2: bổ sung Acceptance Criteria US-05..US-08 và cập nhật RTM,5,"WBS 5.12 - vai trò BA (Business Analyst).
-Kế hoạch: 25/09/2026 - 25/09/2026, ước lượng 1 giờ.",Medium,,,,3600,25/09/2026,25/09/2026,BA,Sprint-1,WBS-5.12
-1038,Task,[BA] 6.1 Chốt Acceptance Criteria US-05..US-08 và quy tắc BR-01..BR-05,6,"WBS 6.1 - vai trò BA (Business Analyst).
-Kế hoạch: 28/09/2026 - 29/09/2026, ước lượng 2 giờ.",Medium,,,,7200,28/09/2026,29/09/2026,BA,Sprint-2,WBS-6.1
-1039,Task,[BA] 6.10 Nghiệm thu nội bộ UI-02..UI-06 theo Acceptance Criteria US-05..US-08,6,"WBS 6.10 - vai trò BA (Business Analyst).
-Kế hoạch: 08/10/2026 - 08/10/2026, ước lượng 1 giờ.",Medium,,,,3600,08/10/2026,08/10/2026,BA,Sprint-2,WBS-6.10
-1040,Task,"[TEST] 6.11 Chạy TC-REG-01..03, TC-APR-01..02, TC-INT-01..03, TC-MEN-01..02 và lưu evidence",6,"WBS 6.11 - vai trò TEST (Tester / QA).
-Kế hoạch: 08/10/2026 - 09/10/2026, ước lượng 3 giờ.",Medium,,,,10800,08/10/2026,09/10/2026,TEST,Sprint-2,WBS-6.11
-1041,Task,[BA] 6.12 Refine backlog Sprint 3: bổ sung Acceptance Criteria US-09..US-12 và cập nhật RTM,6,"WBS 6.12 - vai trò BA (Business Analyst).
-Kế hoạch: 09/10/2026 - 09/10/2026, ước lượng 1 giờ.",Medium,,,,3600,09/10/2026,09/10/2026,BA,Sprint-2,WBS-6.12
-1042,Task,"[BA] 7.1 Chốt Acceptance Criteria US-09..US-12, vòng đời Task và quy tắc chấm công BR-06..BR-10",7,"WBS 7.1 - vai trò BA (Business Analyst).
-Kế hoạch: 12/10/2026 - 13/10/2026, ước lượng 2 giờ.",Medium,,,,7200,12/10/2026,13/10/2026,BA,Sprint-3,WBS-7.1
-1043,Task,[BA] 7.10 Nghiệm thu nội bộ UI-07..UI-09 theo Acceptance Criteria US-09..US-12,7,"WBS 7.10 - vai trò BA (Business Analyst).
-Kế hoạch: 22/10/2026 - 22/10/2026, ước lượng 1 giờ.",Medium,,,,3600,22/10/2026,22/10/2026,BA,Sprint-3,WBS-7.10
-1044,Task,"[TEST] 7.11 Chạy TC-TASK-01..05, TC-ATT-01..03, TC-RPT-01..03 và lưu evidence",7,"WBS 7.11 - vai trò TEST (Tester / QA).
-Kế hoạch: 22/10/2026 - 23/10/2026, ước lượng 3 giờ.",Medium,,,,10800,22/10/2026,23/10/2026,TEST,Sprint-3,WBS-7.11
-1045,Task,[BA] 7.12 Refine backlog Sprint 4: bổ sung Acceptance Criteria US-13..US-16 và cập nhật RTM,7,"WBS 7.12 - vai trò BA (Business Analyst).
-Kế hoạch: 23/10/2026 - 23/10/2026, ước lượng 1 giờ.",Medium,,,,3600,23/10/2026,23/10/2026,BA,Sprint-3,WBS-7.12
-1046,Task,"[BA] 8.1 Chốt 5 tiêu chí đánh giá thang 10, công thức tính tiến độ và chỉ số dashboard",8,"WBS 8.1 - vai trò BA (Business Analyst).
-Kế hoạch: 26/10/2026 - 27/10/2026, ước lượng 2 giờ.",Medium,,,,7200,26/10/2026,27/10/2026,BA,Sprint-4,WBS-8.1
-1047,Task,[BA] 8.10 Kiểm tra số liệu dashboard và file kết quả khớp BR-11..BR-15,8,"WBS 8.10 - vai trò BA (Business Analyst).
-Kế hoạch: 05/11/2026 - 05/11/2026, ước lượng 1 giờ.",Medium,,,,3600,05/11/2026,05/11/2026,BA,Sprint-4,WBS-8.10
-1048,Task,"[TEST] 8.11 Chạy TC-EVA-01..03, TC-PRG-01, TC-DSH-01..02, TC-EXP-01..02 và lưu evidence",8,"WBS 8.11 - vai trò TEST (Tester / QA).
-Kế hoạch: 05/11/2026 - 06/11/2026, ước lượng 3 giờ.",Medium,,,,10800,05/11/2026,06/11/2026,TEST,Sprint-4,WBS-8.11
-1049,Task,[BA] 8.12 Viết 8 kịch bản UAT UAT-01..UAT-08 và chuẩn bị dữ liệu nghiệp vụ,8,"WBS 8.12 - vai trò BA (Business Analyst).
-Kế hoạch: 06/11/2026 - 06/11/2026, ước lượng 2 giờ.",Medium,,,,7200,06/11/2026,06/11/2026,BA,Sprint-4,WBS-8.12
-1050,Task,"[TEST] 9.1 Viết Test Plan: phạm vi, môi trường, mức độ nghiêm trọng S1..S4, tiêu chí vào/ra",9,"WBS 9.1 - vai trò TEST (Tester / QA).
-Kế hoạch: 14/09/2026 - 16/09/2026, ước lượng 3 giờ.",Medium,,,,10800,14/09/2026,16/09/2026,TEST,Sprint-1,WBS-9.1
-1051,Task,[TEST] 9.2 Viết 40 test case TC-AUTH..TC-EXP trên Excel và dựng bộ dữ liệu kiểm thử,9,"WBS 9.2 - vai trò TEST (Tester / QA).
-Kế hoạch: 16/09/2026 - 25/09/2026, ước lượng 6 giờ.",Medium,,,,21600,16/09/2026,25/09/2026,TEST,Sprint-1,WBS-9.2
-1052,Task,[TEST] 9.3 Xây Postman collection và Newman để chạy hồi quy API tự động,9,"WBS 9.3 - vai trò TEST (Tester / QA).
-Kế hoạch: 21/09/2026 - 25/09/2026, ước lượng 3 giờ.",Medium,,,,10800,21/09/2026,25/09/2026,TEST,Sprint-1,WBS-9.3
-1053,Task,[TEST] 9.4 Kiểm thử API và giao diện cho từng User Story khi chuyển sang IN TESTING,9,"WBS 9.4 - vai trò TEST (Tester / QA).
-Kế hoạch: 28/09/2026 - 06/11/2026, ước lượng 8 giờ.
-Việc lặp lại mỗi Sprint: cập nhật tiến độ trong comment, đóng khi kết thúc dự án.",Medium,,,,28800,28/09/2026,06/11/2026,TEST,continuous,WBS-9.4
-1054,Task,"[TEST] 9.5 Ghi Bug lên Jira kèm severity, bước tái hiện, evidence và xác minh bản vá",9,"WBS 9.5 - vai trò TEST (Tester / QA).
-Kế hoạch: 28/09/2026 - 13/11/2026, ước lượng 5 giờ.
-Việc lặp lại mỗi Sprint: cập nhật tiến độ trong comment, đóng khi kết thúc dự án.",Medium,,,,18000,28/09/2026,13/11/2026,TEST,continuous,WBS-9.5
-1055,Task,[TEST] 9.6 Tự động hóa 5 luồng chính bằng Selenium WebDriver,9,"WBS 9.6 - vai trò TEST (Tester / QA).
-Kế hoạch: 26/10/2026 - 06/11/2026, ước lượng 5 giờ.",Medium,,,,18000,26/10/2026,06/11/2026,TEST,Sprint-4,WBS-9.6
-1056,Task,[TEST] 9.7 Chạy hồi quy toàn bộ luồng Critical và High bằng Newman + Selenium + kiểm thử tay,9,"WBS 9.7 - vai trò TEST (Tester / QA).
-Kế hoạch: 09/11/2026 - 11/11/2026, ước lượng 4 giờ.
-Nằm trên đường găng: trễ việc này là trễ cả dự án.",High,,,,14400,09/11/2026,11/11/2026,TEST,Sprint-5,WBS-9.7
-1057,Task,"[BE] 10.1 Sửa dứt điểm bug S1, S2 phía backend và cập nhật trạng thái trên Jira",10,"WBS 10.1 - vai trò BE (Backend Developer).
-Kế hoạch: 09/11/2026 - 12/11/2026, ước lượng 5 giờ.
-Nằm trên đường găng: trễ việc này là trễ cả dự án.",High,,,,18000,09/11/2026,12/11/2026,BE,Sprint-5,WBS-10.1
-1058,Task,"[FE] 10.2 Sửa dứt điểm bug S1, S2 phía frontend và cập nhật trạng thái trên Jira",10,"WBS 10.2 - vai trò FE (Frontend Developer).
-Kế hoạch: 09/11/2026 - 12/11/2026, ước lượng 4 giờ.",Medium,,,,14400,09/11/2026,12/11/2026,FE,Sprint-5,WBS-10.2
-1059,Task,[BE] 10.3 Tối ưu truy vấn chậm và rà soát bảo mật cơ bản theo OWASP Top 10,10,"WBS 10.3 - vai trò BE (Backend Developer).
-Kế hoạch: 10/11/2026 - 11/11/2026, ước lượng 2 giờ.",Medium,,,,7200,10/11/2026,11/11/2026,BE,Sprint-5,WBS-10.3
-1060,Task,"[BE] 10.4 Tạo nhánh release, gắn tag v1.0.0 và chạy thử migration Flyway trên bản backup",10,"WBS 10.4 - vai trò BE (Backend Developer).
-Kế hoạch: 11/11/2026 - 13/11/2026, ước lượng 2 giờ.
-Nằm trên đường găng: trễ việc này là trễ cả dự án.",High,,,,7200,11/11/2026,13/11/2026,BE,Sprint-5,WBS-10.4
-1061,Task,[BE] 10.5 Triển khai môi trường UAT bằng Docker Compose và nạp dữ liệu gần thực tế,10,"WBS 10.5 - vai trò BE (Backend Developer).
-Kế hoạch: 12/11/2026 - 13/11/2026, ước lượng 2 giờ.",Medium,,,,7200,12/11/2026,13/11/2026,BE,Sprint-5,WBS-10.5
-1062,Task,[BA] 10.6 Điều phối UAT: chạy 8 kịch bản UAT-01..UAT-08 với người dùng đại diện,10,"WBS 10.6 - vai trò BA (Business Analyst).
-Kế hoạch: 16/11/2026 - 17/11/2026, ước lượng 3 giờ.
-Nằm trên đường găng: trễ việc này là trễ cả dự án.",High,,,,10800,16/11/2026,17/11/2026,BA,Sprint-5,WBS-10.6
-1063,Task,"[TEST] 10.7 Ghi nhận kết quả UAT, phân loại lỗi S1..S4 và xác minh bản vá",10,"WBS 10.7 - vai trò TEST (Tester / QA).
-Kế hoạch: 16/11/2026 - 17/11/2026, ước lượng 3 giờ.",Medium,,,,10800,16/11/2026,17/11/2026,TEST,Sprint-5,WBS-10.7
-1064,Task,"[BA] 10.8 Tổng hợp phản hồi UAT, cập nhật RTM và lấy biên bản UAT Sign-off",10,"WBS 10.8 - vai trò BA (Business Analyst).
-Kế hoạch: 17/11/2026 - 18/11/2026, ước lượng 2 giờ.",Medium,,,,7200,17/11/2026,18/11/2026,BA,Sprint-5,WBS-10.8
-1065,Task,"[BE] 10.9 Viết Release Notes, Deployment Guide, cập nhật Swagger và README",10,"WBS 10.9 - vai trò BE (Backend Developer).
-Kế hoạch: 18/11/2026 - 19/11/2026, ước lượng 3 giờ.",Medium,,,,10800,18/11/2026,19/11/2026,BE,Sprint-5,WBS-10.9
-1066,Task,[BA] 10.10 Viết User Manual cho 3 nhóm người dùng kèm ảnh màn hình UI-01..UI-12,10,"WBS 10.10 - vai trò BA (Business Analyst).
-Kế hoạch: 18/11/2026 - 19/11/2026, ước lượng 3 giờ.",Medium,,,,10800,18/11/2026,19/11/2026,BA,Sprint-5,WBS-10.10
-1067,Task,"[BE] 10.11 Sao lưu database, repository và đóng gói mã nguồn bàn giao",10,"WBS 10.11 - vai trò BE (Backend Developer).
-Kế hoạch: 19/11/2026 - 19/11/2026, ước lượng 1 giờ.",Medium,,,,3600,19/11/2026,19/11/2026,BE,Sprint-5,WBS-10.11
-1068,Task,"[PM] 10.12 Trình bày nghiệm thu: demo 15 phút, evidence Jira/GitHub, so sánh baseline và thực tế",10,"WBS 10.12 - vai trò PM (Project Manager).
-Kế hoạch: 20/11/2026 - 20/11/2026, ước lượng 3 giờ.
-Nằm trên đường găng: trễ việc này là trễ cả dự án.",High,,,,10800,20/11/2026,20/11/2026,PM,Sprint-5,WBS-10.12
-1069,Task,"[PM] 11.1 M1 - Chốt baseline phạm vi, yêu cầu và thiết kế",1,"WBS 11.1 - vai trò PM (Project Manager).
-Kế hoạch: 11/09/2026 - 11/09/2026, ước lượng 0 giờ.",High,,,,,11/09/2026,11/09/2026,PM,milestone,WBS-11.1
-1070,Task,"[PM] 11.2 M2 - Hoàn thành đăng nhập, phân quyền và quản trị",1,"WBS 11.2 - vai trò PM (Project Manager).
-Kế hoạch: 25/09/2026 - 25/09/2026, ước lượng 0 giờ.",High,,,,,25/09/2026,25/09/2026,PM,milestone,WBS-11.2
-1071,Task,"[PM] 11.3 M3 - Hoàn thành hồ sơ Intern, Mentor và phân công",1,"WBS 11.3 - vai trò PM (Project Manager).
-Kế hoạch: 09/10/2026 - 09/10/2026, ước lượng 0 giờ.",High,,,,,09/10/2026,09/10/2026,PM,milestone,WBS-11.3
-1072,Task,"[PM] 11.4 M4 - Hoàn thành giao việc, chấm công và báo cáo tuần",1,"WBS 11.4 - vai trò PM (Project Manager).
-Kế hoạch: 23/10/2026 - 23/10/2026, ước lượng 0 giờ.",High,,,,,23/10/2026,23/10/2026,PM,milestone,WBS-11.4
-1073,Task,"[PM] 11.5 M5 - Feature Complete: đánh giá, tiến độ, dashboard, xuất kết quả",1,"WBS 11.5 - vai trò PM (Project Manager).
-Kế hoạch: 06/11/2026 - 06/11/2026, ước lượng 0 giờ.",High,,,,,06/11/2026,06/11/2026,PM,milestone,WBS-11.5
-1074,Task,[PM] 11.6 M6 - Nghiệm thu và phát hành IMS v1.0.0,1,"WBS 11.6 - vai trò PM (Project Manager).
-Kế hoạch: 20/11/2026 - 20/11/2026, ước lượng 0 giờ.",High,,,,,20/11/2026,20/11/2026,PM,milestone,WBS-11.6
-1075,Sub-task,"[BE] 5.2 Viết API POST /auth/login, /auth/logout, GET /auth/me phát hành JWT (US-01)",101,"WBS 5.2 - vai trò BE (Backend Developer).
-Kế hoạch: 14/09/2026 - 16/09/2026, ước lượng 5 giờ.
-Nằm trên đường găng: trễ việc này là trễ cả dự án.",High,,,,18000,14/09/2026,16/09/2026,BE,Sprint-1,WBS-5.2
-1076,Sub-task,"[FE] 5.3 Dựng màn hình đăng nhập UI-01, lưu token và điều hướng theo role (US-01)",101,"WBS 5.3 - vai trò FE (Frontend Developer).
-Kế hoạch: 16/09/2026 - 18/09/2026, ước lượng 4 giờ.",Medium,,,,14400,16/09/2026,18/09/2026,FE,Sprint-1,WBS-5.3
-1077,Sub-task,[BE] 5.4 Cấu hình Spring Security: filter JWT và @PreAuthorize theo 3 role (US-02),102,"WBS 5.4 - vai trò BE (Backend Developer).
-Kế hoạch: 17/09/2026 - 21/09/2026, ước lượng 4 giờ.
-Nằm trên đường găng: trễ việc này là trễ cả dự án.",High,,,,14400,17/09/2026,21/09/2026,BE,Sprint-1,WBS-5.4
-1078,Sub-task,"[FE] 5.5 Chặn route, ẩn menu theo role trên frontend và trang lỗi 403 (US-02)",102,"WBS 5.5 - vai trò FE (Frontend Developer).
-Kế hoạch: 21/09/2026 - 22/09/2026, ước lượng 3 giờ.",Medium,,,,10800,21/09/2026,22/09/2026,FE,Sprint-1,WBS-5.5
-1079,Sub-task,[BE] 5.6 Viết API CRUD /users kèm khóa/mở tài khoản và đổi mật khẩu (US-03),103,"WBS 5.6 - vai trò BE (Backend Developer).
-Kế hoạch: 21/09/2026 - 23/09/2026, ước lượng 4 giờ.",Medium,,,,14400,21/09/2026,23/09/2026,BE,Sprint-1,WBS-5.6
-1080,Sub-task,"[BE] 5.7 Viết API CRUD /departments, chặn xóa phòng ban còn Intern (US-04)",104,"WBS 5.7 - vai trò BE (Backend Developer).
-Kế hoạch: 22/09/2026 - 23/09/2026, ước lượng 2 giờ.",Medium,,,,7200,22/09/2026,23/09/2026,BE,Sprint-1,WBS-5.7
-1081,Sub-task,"[FE] 5.8 Dựng màn hình quản lý tài khoản UI-10 và phòng ban UI-11 (US-03, US-04)",103,"WBS 5.8 - vai trò FE (Frontend Developer).
-Kế hoạch: 22/09/2026 - 24/09/2026, ước lượng 4 giờ.",Medium,,,,14400,22/09/2026,24/09/2026,FE,Sprint-1,WBS-5.8
-1082,Sub-task,[BE] 6.2 Viết API POST /applications nhận đơn đăng ký và CV PDF tối đa 5 MB (US-05),105,"WBS 6.2 - vai trò BE (Backend Developer).
-Kế hoạch: 28/09/2026 - 30/09/2026, ước lượng 4 giờ.
-Nằm trên đường găng: trễ việc này là trễ cả dự án.",High,,,,14400,28/09/2026,30/09/2026,BE,Sprint-2,WBS-6.2
-1083,Sub-task,[FE] 6.3 Dựng form đăng ký thực tập UI-02 có kiểm tra dữ liệu đầu vào (US-05),105,"WBS 6.3 - vai trò FE (Frontend Developer).
-Kế hoạch: 30/09/2026 - 01/10/2026, ước lượng 3 giờ.",Medium,,,,10800,30/09/2026,01/10/2026,FE,Sprint-2,WBS-6.3
-1084,Sub-task,"[BE] 6.4 Viết API duyệt/từ chối hồ sơ, tự tạo tài khoản Intern và gửi email thông báo (US-06)",106,"WBS 6.4 - vai trò BE (Backend Developer).
-Kế hoạch: 01/10/2026 - 05/10/2026, ước lượng 5 giờ.
-Nằm trên đường găng: trễ việc này là trễ cả dự án.",High,,,,18000,01/10/2026,05/10/2026,BE,Sprint-2,WBS-6.4
-1085,Sub-task,[FE] 6.5 Dựng màn hình danh sách và duyệt hồ sơ đăng ký UI-03 (US-06),106,"WBS 6.5 - vai trò FE (Frontend Developer).
-Kế hoạch: 02/10/2026 - 05/10/2026, ước lượng 3 giờ.",Medium,,,,10800,02/10/2026,05/10/2026,FE,Sprint-2,WBS-6.5
-1086,Sub-task,"[BE] 6.6 Viết API /interns: tìm kiếm, lọc, phân trang, cập nhật hồ sơ, phân phòng ban (US-07)",107,"WBS 6.6 - vai trò BE (Backend Developer).
-Kế hoạch: 05/10/2026 - 06/10/2026, ước lượng 4 giờ.",Medium,,,,14400,05/10/2026,06/10/2026,BE,Sprint-2,WBS-6.6
-1087,Sub-task,[FE] 6.7 Dựng màn hình Intern List UI-04 và Intern Detail UI-05 (US-07),107,"WBS 6.7 - vai trò FE (Frontend Developer).
-Kế hoạch: 05/10/2026 - 07/10/2026, ước lượng 4 giờ.",Medium,,,,14400,05/10/2026,07/10/2026,FE,Sprint-2,WBS-6.7
-1088,Sub-task,"[BE] 6.8 Viết API /mentors và phân Mentor cho Intern, tối đa 5 Intern/Mentor theo BR-04 (US-08)",108,"WBS 6.8 - vai trò BE (Backend Developer).
-Kế hoạch: 06/10/2026 - 07/10/2026, ước lượng 4 giờ.
-Nằm trên đường găng: trễ việc này là trễ cả dự án.",High,,,,14400,06/10/2026,07/10/2026,BE,Sprint-2,WBS-6.8
-1089,Sub-task,[FE] 6.9 Dựng màn hình Mentor List UI-06 và hộp thoại phân công Mentor (US-08),108,"WBS 6.9 - vai trò FE (Frontend Developer).
-Kế hoạch: 07/10/2026 - 08/10/2026, ước lượng 3 giờ.",Medium,,,,10800,07/10/2026,08/10/2026,FE,Sprint-2,WBS-6.9
-1090,Sub-task,[BE] 7.2 Viết API POST /tasks và danh sách task theo Intern cho Mentor (US-09),109,"WBS 7.2 - vai trò BE (Backend Developer).
-Kế hoạch: 12/10/2026 - 14/10/2026, ước lượng 4 giờ.
-Nằm trên đường găng: trễ việc này là trễ cả dự án.",High,,,,14400,12/10/2026,14/10/2026,BE,Sprint-3,WBS-7.2
-1091,Sub-task,[FE] 7.3 Dựng Task Board của Mentor UI-07 và form giao task có deadline (US-09),109,"WBS 7.3 - vai trò FE (Frontend Developer).
-Kế hoạch: 14/10/2026 - 15/10/2026, ước lượng 4 giờ.",Medium,,,,14400,14/10/2026,15/10/2026,FE,Sprint-3,WBS-7.3
-1092,Sub-task,"[BE] 7.4 Viết API GET /tasks/my-tasks, PUT /tasks/{id}/status và bình luận task (US-10)",110,"WBS 7.4 - vai trò BE (Backend Developer).
-Kế hoạch: 14/10/2026 - 15/10/2026, ước lượng 4 giờ.
-Nằm trên đường găng: trễ việc này là trễ cả dự án.",High,,,,14400,14/10/2026,15/10/2026,BE,Sprint-3,WBS-7.4
-1093,Sub-task,[FE] 7.5 Dựng màn hình My Tasks UI-08 và Task Detail kèm bình luận (US-10),110,"WBS 7.5 - vai trò FE (Frontend Developer).
-Kế hoạch: 15/10/2026 - 19/10/2026, ước lượng 4 giờ.",Medium,,,,14400,15/10/2026,19/10/2026,FE,Sprint-3,WBS-7.5
-1094,Sub-task,"[BE] 7.6 Viết API check-in/check-out /attendances, chặn chấm công trùng trong ngày BR-08 (US-11)",111,"WBS 7.6 - vai trò BE (Backend Developer).
-Kế hoạch: 16/10/2026 - 19/10/2026, ước lượng 3 giờ.",Medium,,,,10800,16/10/2026,19/10/2026,BE,Sprint-3,WBS-7.6
-1095,Sub-task,"[FE] 7.7 Dựng nút chấm công và bảng công tháng cho Intern, Mentor (US-11)",111,"WBS 7.7 - vai trò FE (Frontend Developer).
-Kế hoạch: 19/10/2026 - 20/10/2026, ước lượng 3 giờ.",Medium,,,,10800,19/10/2026,20/10/2026,FE,Sprint-3,WBS-7.7
-1096,Sub-task,"[BE] 7.8 Viết API /weekly-reports: nộp, hạn chót Chủ nhật 23:59 theo BR-10, Mentor phản hồi (US-12)",112,"WBS 7.8 - vai trò BE (Backend Developer).
-Kế hoạch: 19/10/2026 - 21/10/2026, ước lượng 4 giờ.
-Nằm trên đường găng: trễ việc này là trễ cả dự án.",High,,,,14400,19/10/2026,21/10/2026,BE,Sprint-3,WBS-7.8
-1097,Sub-task,[FE] 7.9 Dựng màn hình Weekly Report UI-09 cho Intern và Mentor (US-12),112,"WBS 7.9 - vai trò FE (Frontend Developer).
-Kế hoạch: 20/10/2026 - 22/10/2026, ước lượng 4 giờ.",Medium,,,,14400,20/10/2026,22/10/2026,FE,Sprint-3,WBS-7.9
-1098,Sub-task,"[BE] 8.2 Viết API /evaluations giữa kỳ và cuối kỳ, chỉ Mentor phụ trách được chấm BR-12 (US-13)",113,"WBS 8.2 - vai trò BE (Backend Developer).
-Kế hoạch: 26/10/2026 - 28/10/2026, ước lượng 4 giờ.",Medium,,,,14400,26/10/2026,28/10/2026,BE,Sprint-4,WBS-8.2
-1099,Sub-task,[FE] 8.3 Dựng form đánh giá UI-12 cho Mentor và trang xem đánh giá cho Intern (US-13),113,"WBS 8.3 - vai trò FE (Frontend Developer).
-Kế hoạch: 28/10/2026 - 29/10/2026, ước lượng 3 giờ.",Medium,,,,10800,28/10/2026,29/10/2026,FE,Sprint-4,WBS-8.3
-1100,Sub-task,[BE] 8.4 Viết service tính tiến độ: 50% task DONE + 25% báo cáo tuần + 25% chuyên cần (US-14),114,"WBS 8.4 - vai trò BE (Backend Developer).
-Kế hoạch: 28/10/2026 - 30/10/2026, ước lượng 3 giờ.
-Nằm trên đường găng: trễ việc này là trễ cả dự án.",High,,,,10800,28/10/2026,30/10/2026,BE,Sprint-4,WBS-8.4
-1101,Sub-task,[FE] 8.5 Hiển thị thanh tiến độ trên Intern Detail và Intern Dashboard (US-14),114,"WBS 8.5 - vai trò FE (Frontend Developer).
-Kế hoạch: 30/10/2026 - 02/11/2026, ước lượng 2 giờ.",Medium,,,,7200,30/10/2026,02/11/2026,FE,Sprint-4,WBS-8.5
-1102,Sub-task,"[BE] 8.6 Viết API /dashboard/admin, /dashboard/mentor, /dashboard/intern tổng hợp số liệu (US-15)",115,"WBS 8.6 - vai trò BE (Backend Developer).
-Kế hoạch: 02/11/2026 - 03/11/2026, ước lượng 4 giờ.
-Nằm trên đường găng: trễ việc này là trễ cả dự án.",High,,,,14400,02/11/2026,03/11/2026,BE,Sprint-4,WBS-8.6
-1103,Sub-task,"[FE] 8.7 Dựng 3 dashboard bằng Recharts: số Intern, tiến độ, task quá hạn, điểm trung bình (US-15)",115,"WBS 8.7 - vai trò FE (Frontend Developer).
-Kế hoạch: 02/11/2026 - 04/11/2026, ước lượng 5 giờ.",Medium,,,,18000,02/11/2026,04/11/2026,FE,Sprint-4,WBS-8.7
-1104,Sub-task,"[BE] 8.8 Xuất kết quả cuối kỳ ra Excel (Apache POI) và PDF, chuyển trạng thái COMPLETED (US-16)",116,"WBS 8.8 - vai trò BE (Backend Developer).
-Kế hoạch: 03/11/2026 - 05/11/2026, ước lượng 4 giờ.
-Nằm trên đường găng: trễ việc này là trễ cả dự án.",High,,,,14400,03/11/2026,05/11/2026,BE,Sprint-4,WBS-8.8
-1105,Sub-task,[FE] 8.9 Thêm nút xuất file và thao tác kết thúc kỳ thực tập trên giao diện Admin (US-16),116,"WBS 8.9 - vai trò FE (Frontend Developer).
-Kế hoạch: 04/11/2026 - 05/11/2026, ước lượng 2 giờ.",Medium,,,,7200,04/11/2026,05/11/2026,FE,Sprint-4,WBS-8.9
+AC3. Given Intern đã COMPLETED, When bất kỳ ai sửa dữ liệu, Then hệ thống từ chối theo BR-15.",Medium,,21,3,,03/11/2026,05/11/2026,US-16,Sprint-4,
+1001,Task,"[PM] 1.1 Viết Project Charter: mục tiêu, phạm vi, stakeholder, tiêu chí thành công SC-01..SC-06",1,"MỤC TIÊU
+Chính thức khởi động dự án và thống nhất mục tiêu với giảng viên.
+
+VIỆC CẦN LÀM
+- Viết mục đích, mục tiêu SMART, phạm vi tổng quát
+- Lập danh sách stakeholder và mức ảnh hưởng
+- Định nghĩa 6 tiêu chí thành công SC-01..SC-06
+- Ghi giả định, ràng buộc, rủi ro chính, ngân sách quy đổi
+
+ĐẦU RA
+- Project Charter (Word/PDF) trong docs/pm/
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- Có đủ 12 mục của Charter
+- Giảng viên xác nhận qua email
+
+THAM CHIẾU
+- Chương 2 báo cáo
+
+THÔNG TIN
+- Vai trò: PM (Project Manager) | WBS 1.1
+- Kế hoạch: 31/08/2026 - 01/09/2026, ước lượng 4 giờ
+- ĐƯỜNG GĂNG: trễ việc này là trễ cả dự án",High,,17,,14400,31/08/2026,01/09/2026,PM,Sprint-0,WBS-1.1
+1002,Task,[PM] 1.2 Lập Scope Statement: chốt in-scope FR-01..FR-30 và danh sách out-of-scope,1,"MỤC TIÊU
+Chốt ranh giới phạm vi để làm căn cứ kiểm soát thay đổi.
+
+VIỆC CẦN LÀM
+- Liệt kê in-scope theo FR-01..FR-30
+- Liệt kê out-of-scope (lương, HRM, mobile, SSO...)
+- Ghi tiêu chí chấp nhận sản phẩm
+
+ĐẦU RA
+- Scope Statement
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- Mọi FR được xếp in-scope hoặc out-of-scope
+- Được duyệt cùng Charter
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 1.1 Viết Project Charter: mục tiêu, phạm vi, stakeholder, tiêu chí thành công SC-01..SC-06
+
+THAM CHIẾU
+- Mục 1.3 báo cáo
+
+THÔNG TIN
+- Vai trò: PM (Project Manager) | WBS 1.2
+- Kế hoạch: 01/09/2026 - 02/09/2026, ước lượng 3 giờ",Medium,,17,,10800,01/09/2026,02/09/2026,PM,Sprint-0,WBS-1.2
+1003,Task,"[PM] 1.3 Phân rã WBS 10 nhóm công việc, ước lượng Story Point (Planning Poker) và giờ công",1,"MỤC TIÊU
+Phân rã toàn bộ công việc thành gói nhỏ có thể ước lượng và giao việc.
+
+VIỆC CẦN LÀM
+- Chia 11 nhóm WBS theo nguyên tắc 100%
+- Tách mỗi gói thành việc 1-3 ngày, 1 vai trò chịu trách nhiệm
+- Ước lượng Story Point bằng Planning Poker và giờ công từ dưới lên
+
+ĐẦU RA
+- Bảng WBS + ước lượng (Excel)
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- Không việc nào > 3 ngày trừ việc lặp theo Sprint
+- Tổng giờ và SP khớp báo cáo
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 1.2 Lập Scope Statement: chốt in-scope FR-01..FR-30 và danh sách out-of-scope
+
+THAM CHIẾU
+- Mục 6.3, 6.4 báo cáo
+
+THÔNG TIN
+- Vai trò: PM (Project Manager) | WBS 1.3
+- Kế hoạch: 03/09/2026 - 04/09/2026, ước lượng 4 giờ",Medium,,17,,14400,03/09/2026,04/09/2026,PM,Sprint-0,WBS-1.3
+1004,Task,"[PM] 1.4 Lập Gantt baseline, xác định đường găng và 6 mốc kiểm soát M1..M6",1,"MỤC TIÊU
+Lập lịch baseline và xác định đường găng.
+
+VIỆC CẦN LÀM
+- Nhập WBS vào Gantt, xác định quan hệ phụ thuộc
+- Tìm đường găng, đặt 6 mốc M1..M6
+- Kiểm tra tải tuần, san tải nếu vượt năng lực
+
+ĐẦU RA
+- IMS_Gantt_Chart.xlsx (baseline)
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- Không tuần nào vượt năng lực
+- Đường găng và mốc được đánh dấu
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 1.3 Phân rã WBS 10 nhóm công việc, ước lượng Story Point (Planning Poker) và giờ công
+
+THAM CHIẾU
+- IMS_Gantt_Chart.xlsx, mục 6.5
+
+THÔNG TIN
+- Vai trò: PM (Project Manager) | WBS 1.4
+- Kế hoạch: 04/09/2026 - 07/09/2026, ước lượng 3 giờ",Medium,,17,,10800,04/09/2026,07/09/2026,PM,Sprint-0,WBS-1.4
+1005,Task,[PM] 1.5 Lập kế hoạch nguồn lực 1 người - 5 vai trò: lịch luân phiên vai trò và ma trận RACI,1,"MỤC TIÊU
+Lập kế hoạch nguồn lực cho mô hình 1 người kiêm 5 vai trò.
+
+VIỆC CẦN LÀM
+- Xây lịch luân phiên vai trò theo khung giờ
+- Lập ma trận RACI
+- Tính năng lực giờ/tuần theo lịch học
+
+ĐẦU RA
+- Lịch đội mũ + RACI
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- Mỗi hoạt động có đúng 1 vai trò A
+- Năng lực tuần được ghi rõ
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 1.3 Phân rã WBS 10 nhóm công việc, ước lượng Story Point (Planning Poker) và giờ công
+
+THAM CHIẾU
+- Chương 3 báo cáo
+
+THÔNG TIN
+- Vai trò: PM (Project Manager) | WBS 1.5
+- Kế hoạch: 07/09/2026 - 08/09/2026, ước lượng 2 giờ",Medium,,17,,7200,07/09/2026,08/09/2026,PM,Sprint-0,WBS-1.5
+1006,Task,"[PM] 1.6 Tạo project Jira Scrum: 10 Epic, 6 Sprint, 16 User Story; import backlog bằng CSV",1,"MỤC TIÊU
+Dựng công cụ quản lý dự án trên Jira khớp với WBS.
+
+VIỆC CẦN LÀM
+- Tạo space Scrum company-managed key IMS
+- Tạo 6 Sprint, bật Story Point, Time tracking
+- Import backlog CSV, cấu hình board, quick filter theo vai trò
+
+ĐẦU RA
+- Jira space IMS có đủ Epic/Story/Task/Subtask
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- 131 work item, Sprint 1-4 có 13/14/16/16 SP
+- Board có cột In Testing, WIP limit 2
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 1.3 Phân rã WBS 10 nhóm công việc, ước lượng Story Point (Planning Poker) và giờ công
+- WBS 1.4 Lập Gantt baseline, xác định đường găng và 6 mốc kiểm soát M1..M6
+
+THAM CHIẾU
+- Huong_dan_Jira_IMS.docx
+
+THÔNG TIN
+- Vai trò: PM (Project Manager) | WBS 1.6
+- Kế hoạch: 08/09/2026 - 09/09/2026, ước lượng 2 giờ",Medium,,17,,7200,08/09/2026,09/09/2026,PM,Sprint-0,WBS-1.6
+1007,Task,"[PM] 1.7 Lập Risk Register R-01..R-12, Communication Plan và biểu mẫu Change Request",1,"MỤC TIÊU
+Chuẩn bị các công cụ quản lý rủi ro, truyền thông và thay đổi.
+
+VIỆC CẦN LÀM
+- Lập Risk Register R-01..R-12 có điểm xác suất x tác động
+- Lập Communication Plan
+- Soạn biểu mẫu Change Request
+
+ĐẦU RA
+- Risk Register, Communication Plan, mẫu CR
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- Mỗi rủi ro có biện pháp và chủ sở hữu
+- Mẫu CR có mục đánh giá tác động
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 1.1 Viết Project Charter: mục tiêu, phạm vi, stakeholder, tiêu chí thành công SC-01..SC-06
+
+THAM CHIẾU
+- Chương 7, mục 6.7, 6.10
+
+THÔNG TIN
+- Vai trò: PM (Project Manager) | WBS 1.7
+- Kế hoạch: 09/09/2026 - 11/09/2026, ước lượng 2 giờ",Medium,,17,,7200,09/09/2026,11/09/2026,PM,Sprint-0,WBS-1.7
+1008,Task,"[PM] 1.8 Chủ trì Sprint Planning, Daily log, Sprint Review và Retrospective cho 5 Sprint",1,"MỤC TIÊU
+Vận hành nhịp Scrum cho 5 Sprint.
+
+VIỆC CẦN LÀM
+- Đầu Sprint: Sprint Planning, đặt Sprint Goal, Start sprint trên Jira
+- Hằng ngày: ghi nhật ký 3 câu hỏi vào comment
+- Cuối Sprint: Review (demo), Retrospective, Complete sprint
+
+ĐẦU RA
+- Biên bản Planning/Review/Retro mỗi Sprint
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- 5 Sprint đều có đủ 3 biên bản
+- Mỗi Retro có ít nhất 1 hành động cải tiến
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 1.6 Tạo project Jira Scrum: 10 Epic, 6 Sprint, 16 User Story; import backlog bằng CSV
+
+THAM CHIẾU
+- Mục 6.1 báo cáo
+
+THÔNG TIN
+- Vai trò: PM (Project Manager) | WBS 1.8
+- Kế hoạch: 14/09/2026 - 20/11/2026, ước lượng 15 giờ
+- Việc lặp lại mỗi Sprint: cập nhật tiến độ trong comment, đóng khi kết thúc dự án",Medium,,,,54000,14/09/2026,20/11/2026,PM,continuous,WBS-1.8
+1009,Task,"[PM] 1.9 Cập nhật Burndown, Weekly Status Report và chỉ số EVM (PV, EV, AC, SPI, CPI) hằng tuần",1,"MỤC TIÊU
+Đo và báo cáo tiến độ, chi phí mỗi tuần.
+
+VIỆC CẦN LÀM
+- Log work giờ thực tế trên Jira
+- Chụp Burndown/Velocity
+- Tính PV, EV, AC, SPI, CPI
+- Viết Weekly Status Report
+
+ĐẦU RA
+- 12 Weekly Status Report
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- Báo cáo nộp trước Chủ nhật 23:59
+- SPI/CPI < 0,95 có hành động khắc phục
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 1.6 Tạo project Jira Scrum: 10 Epic, 6 Sprint, 16 User Story; import backlog bằng CSV
+
+THAM CHIẾU
+- Chương 9 báo cáo
+
+THÔNG TIN
+- Vai trò: PM (Project Manager) | WBS 1.9
+- Kế hoạch: 14/09/2026 - 20/11/2026, ước lượng 10 giờ
+- Việc lặp lại mỗi Sprint: cập nhật tiến độ trong comment, đóng khi kết thúc dự án",Medium,,,,36000,14/09/2026,20/11/2026,PM,continuous,WBS-1.9
+1010,Task,"[PM] 1.10 Viết báo cáo tổng kết, lessons learned và bàn giao hồ sơ dự án",1,"MỤC TIÊU
+Đóng dự án và bàn giao hồ sơ.
+
+VIỆC CẦN LÀM
+- Tổng hợp baseline và thực tế (lịch, chi phí, phạm vi)
+- Viết lessons learned
+- Đóng gói hồ sơ bàn giao
+
+ĐẦU RA
+- Báo cáo tổng kết
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- Đủ danh mục bàn giao ở chương 10
+- Có so sánh baseline và thực tế
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 10.8 Tổng hợp phản hồi UAT, cập nhật RTM và lấy biên bản UAT Sign-off
+
+THAM CHIẾU
+- Chương 10 báo cáo
+
+THÔNG TIN
+- Vai trò: PM (Project Manager) | WBS 1.10
+- Kế hoạch: 18/11/2026 - 20/11/2026, ước lượng 4 giờ",Medium,,22,,14400,18/11/2026,20/11/2026,PM,Sprint-5,WBS-1.10
+1011,Task,"[BA] 2.1 Khảo sát quy trình thực tập: phỏng vấn giả lập Admin (HR), Mentor, Intern",2,"MỤC TIÊU
+Hiểu quy trình quản lý thực tập hiện tại và nhu cầu 3 nhóm người dùng.
+
+VIỆC CẦN LÀM
+- Soạn bộ câu hỏi phỏng vấn cho Admin, Mentor, Intern
+- Phỏng vấn giả lập hoặc hỏi bạn đã đi thực tập
+- Tổng hợp vấn đề hiện tại và mong muốn
+
+ĐẦU RA
+- Biên bản khảo sát
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- Có ít nhất 5 vấn đề và 10 nhu cầu được ghi nhận
+
+THAM CHIẾU
+- Mục 1.1 báo cáo
+
+THÔNG TIN
+- Vai trò: BA (Business Analyst) | WBS 2.1
+- Kế hoạch: 31/08/2026 - 01/09/2026, ước lượng 4 giờ",Medium,,17,,14400,31/08/2026,01/09/2026,BA,Sprint-0,WBS-2.1
+1012,Task,[BA] 2.2 Viết đặc tả 30 yêu cầu chức năng FR-01..FR-30 vào tài liệu SRS,2,"MỤC TIÊU
+Đặc tả đầy đủ yêu cầu chức năng.
+
+VIỆC CẦN LÀM
+- Viết FR-01..FR-30 kèm actor
+- Gắn mỗi FR với User Story dự kiến
+- Rà soát trùng lặp, mâu thuẫn
+
+ĐẦU RA
+- SRS phần yêu cầu chức năng
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- 30 FR có mã, mô tả, actor
+- Mỗi FR kiểm thử được
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 2.1 Khảo sát quy trình thực tập: phỏng vấn giả lập Admin (HR), Mentor, Intern
+
+THAM CHIẾU
+- Bảng 4.2 báo cáo
+
+THÔNG TIN
+- Vai trò: BA (Business Analyst) | WBS 2.2
+- Kế hoạch: 01/09/2026 - 03/09/2026, ước lượng 6 giờ
+- ĐƯỜNG GĂNG: trễ việc này là trễ cả dự án",High,,17,,21600,01/09/2026,03/09/2026,BA,Sprint-0,WBS-2.2
+1013,Task,[BA] 2.3 Viết 10 yêu cầu phi chức năng NFR-01..NFR-10 kèm ngưỡng đo được,2,"MỤC TIÊU
+Đặc tả yêu cầu chất lượng có thể đo được.
+
+VIỆC CẦN LÀM
+- Viết NFR-01..NFR-10 về hiệu năng, bảo mật, khả dụng...
+- Gắn ngưỡng đo cụ thể cho từng NFR
+
+ĐẦU RA
+- SRS phần phi chức năng
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- Mỗi NFR có con số hoặc tiêu chí kiểm tra
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 2.2 Viết đặc tả 30 yêu cầu chức năng FR-01..FR-30 vào tài liệu SRS
+
+THAM CHIẾU
+- Bảng 4.3 báo cáo
+
+THÔNG TIN
+- Vai trò: BA (Business Analyst) | WBS 2.3
+- Kế hoạch: 03/09/2026 - 04/09/2026, ước lượng 2 giờ",Medium,,17,,7200,03/09/2026,04/09/2026,BA,Sprint-0,WBS-2.3
+1014,Task,"[BA] 2.4 Viết 15 Business Rule BR-01..BR-15 cho đăng ký, phân Mentor, chấm công, báo cáo, đánh giá",2,"MỤC TIÊU
+Ghi nhận các quy tắc nghiệp vụ ràng buộc hệ thống.
+
+VIỆC CẦN LÀM
+- Viết BR-01..BR-15 cho đăng ký, phân Mentor, chấm công, báo cáo, đánh giá
+- Kèm ví dụ minh họa cho BR có công thức (BR-11, BR-13)
+
+ĐẦU RA
+- Danh sách Business Rules
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- Mỗi BR được tham chiếu bởi ít nhất 1 AC hoặc test case
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 2.2 Viết đặc tả 30 yêu cầu chức năng FR-01..FR-30 vào tài liệu SRS
+
+THAM CHIẾU
+- Bảng 4.4 báo cáo
+
+THÔNG TIN
+- Vai trò: BA (Business Analyst) | WBS 2.4
+- Kế hoạch: 04/09/2026 - 07/09/2026, ước lượng 3 giờ",Medium,,17,,10800,04/09/2026,07/09/2026,BA,Sprint-0,WBS-2.4
+1015,Task,[BA] 2.5 Vẽ Use Case Diagram 3 actor và đặc tả 12 Use Case UC-01..UC-12,2,"MỤC TIÊU
+Mô hình hóa tương tác người dùng với hệ thống.
+
+VIỆC CẦN LÀM
+- Vẽ Use Case Diagram 4 actor, 12 UC bằng draw.io
+- Đặc tả luồng chính, luồng thay thế cho UC-04/05, UC-08, UC-11
+
+ĐẦU RA
+- Use Case Diagram + đặc tả
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- 12 UC có trên sơ đồ
+- 3 UC chính có đặc tả đầy đủ
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 2.2 Viết đặc tả 30 yêu cầu chức năng FR-01..FR-30 vào tài liệu SRS
+
+THAM CHIẾU
+- Mục 4.5 báo cáo
+
+THÔNG TIN
+- Vai trò: BA (Business Analyst) | WBS 2.5
+- Kế hoạch: 07/09/2026 - 08/09/2026, ước lượng 3 giờ",Medium,,17,,10800,07/09/2026,08/09/2026,BA,Sprint-0,WBS-2.5
+1016,Task,[BA] 2.6 Vẽ Activity Diagram luồng thực tập và State Diagram cho hồ sơ Intern và Task,2,"MỤC TIÊU
+Mô tả luồng nghiệp vụ và vòng đời đối tượng.
+
+VIỆC CẦN LÀM
+- Vẽ Activity Diagram luồng thực tập từ đăng ký tới hoàn thành
+- Vẽ State Diagram hồ sơ Intern và Task
+
+ĐẦU RA
+- Activity Diagram, 2 State Diagram
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- Trạng thái khớp enum trong ERD
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 2.5 Vẽ Use Case Diagram 3 actor và đặc tả 12 Use Case UC-01..UC-12
+
+THAM CHIẾU
+- Mục 4.6 báo cáo
+
+THÔNG TIN
+- Vai trò: BA (Business Analyst) | WBS 2.6
+- Kế hoạch: 08/09/2026 - 09/09/2026, ước lượng 2 giờ",Medium,,17,,7200,08/09/2026,09/09/2026,BA,Sprint-0,WBS-2.6
+1017,Task,[BA] 2.7 Viết 16 User Story US-01..US-16 kèm Acceptance Criteria dạng Given - When - Then,2,"MỤC TIÊU
+Chuyển yêu cầu thành Product Backlog cho Scrum.
+
+VIỆC CẦN LÀM
+- Viết 16 User Story theo mẫu Là... tôi muốn... để...
+- Viết 2-3 AC Given-When-Then mỗi Story
+- Ước lượng SP, gán Sprint và độ ưu tiên
+
+ĐẦU RA
+- Product Backlog 16 Story
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- Mỗi Story đạt Definition of Ready
+- Tổng 59 SP
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 2.2 Viết đặc tả 30 yêu cầu chức năng FR-01..FR-30 vào tài liệu SRS
+- WBS 2.4 Viết 15 Business Rule BR-01..BR-15 cho đăng ký, phân Mentor, chấm công, báo cáo, đánh giá
+
+THAM CHIẾU
+- Bảng 4.x Product Backlog
+
+THÔNG TIN
+- Vai trò: BA (Business Analyst) | WBS 2.7
+- Kế hoạch: 08/09/2026 - 10/09/2026, ước lượng 4 giờ
+- ĐƯỜNG GĂNG: trễ việc này là trễ cả dự án",High,,17,,14400,08/09/2026,10/09/2026,BA,Sprint-0,WBS-2.7
+1018,Task,[BA] 2.8 Lập ma trận truy vết RTM nối FR - User Story - API/UI - Test Case,2,"MỤC TIÊU
+Đảm bảo truy vết yêu cầu tới thiết kế và kiểm thử.
+
+VIỆC CẦN LÀM
+- Lập ma trận FR - User Story - API/UI - Test Case
+- Đánh dấu FR chưa được phủ
+
+ĐẦU RA
+- RTM (Excel)
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- 100% FR có Story và ít nhất 1 test case
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 2.7 Viết 16 User Story US-01..US-16 kèm Acceptance Criteria dạng Given - When - Then
+
+THAM CHIẾU
+- Bảng RTM chương 8
+
+THÔNG TIN
+- Vai trò: BA (Business Analyst) | WBS 2.8
+- Kế hoạch: 10/09/2026 - 11/09/2026, ước lượng 2 giờ",Medium,,17,,7200,10/09/2026,11/09/2026,BA,Sprint-0,WBS-2.8
+1019,Task,[BA] 2.9 Cập nhật RTM và Acceptance Criteria sau mỗi Change Request được duyệt,2,"MỤC TIÊU
+Giữ yêu cầu đồng bộ khi có thay đổi.
+
+VIỆC CẦN LÀM
+- Mỗi khi CR được duyệt: cập nhật FR/BR/AC liên quan
+- Cập nhật RTM và thông báo cho vai trò bị ảnh hưởng
+
+ĐẦU RA
+- RTM và AC phiên bản mới
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- Không có CR đã duyệt nào chưa cập nhật RTM
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 2.8 Lập ma trận truy vết RTM nối FR - User Story - API/UI - Test Case
+
+THAM CHIẾU
+- Mục 6.10 báo cáo
+
+THÔNG TIN
+- Vai trò: BA (Business Analyst) | WBS 2.9
+- Kế hoạch: 14/09/2026 - 06/11/2026, ước lượng 4 giờ
+- Việc lặp lại mỗi Sprint: cập nhật tiến độ trong comment, đóng khi kết thúc dự án",Medium,,,,14400,14/09/2026,06/11/2026,BA,continuous,WBS-2.9
+1020,Task,[FE] 3.1 Vẽ sitemap 3 role và luồng chuyển màn hình cho 12 giao diện UI-01..UI-12,3,"MỤC TIÊU
+Xác định cấu trúc điều hướng cho 3 role.
+
+VIỆC CẦN LÀM
+- Liệt kê màn hình UI-01..UI-14 theo role
+- Vẽ sitemap và luồng chuyển màn hình
+
+ĐẦU RA
+- Sitemap (draw.io)
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- Mỗi FR có màn hình thực hiện
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 2.2 Viết đặc tả 30 yêu cầu chức năng FR-01..FR-30 vào tài liệu SRS
+
+THAM CHIẾU
+- Bảng màn hình mục 5.4
+
+THÔNG TIN
+- Vai trò: FE (Frontend Developer) | WBS 3.1
+- Kế hoạch: 03/09/2026 - 07/09/2026, ước lượng 3 giờ",Medium,,17,,10800,03/09/2026,07/09/2026,FE,Sprint-0,WBS-3.1
+1021,Task,"[FE] 3.2 Vẽ wireframe Figma: Login, Dashboard, Intern List/Detail, Task, Weekly Report, Evaluation",3,"MỤC TIÊU
+Thiết kế bố cục các màn hình chính trước khi code.
+
+VIỆC CẦN LÀM
+- Wireframe Login, Dashboard, Intern List/Detail, Task, Weekly Report, Evaluation trên Figma
+- Thống nhất màu, font, component dùng chung
+
+ĐẦU RA
+- Link Figma wireframe
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- 7 màn hình chính có wireframe
+- BA xác nhận khớp AC
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 3.1 Vẽ sitemap 3 role và luồng chuyển màn hình cho 12 giao diện UI-01..UI-12
+
+THAM CHIẾU
+- UI-01..UI-14
+
+THÔNG TIN
+- Vai trò: FE (Frontend Developer) | WBS 3.2
+- Kế hoạch: 07/09/2026 - 09/09/2026, ước lượng 4 giờ",Medium,,17,,14400,07/09/2026,09/09/2026,FE,Sprint-0,WBS-3.2
+1022,Task,[BE] 3.3 Chốt kiến trúc: React SPA + Spring Boot REST 3 lớp Controller - Service - Repository,3,"MỤC TIÊU
+Chốt kiến trúc kỹ thuật.
+
+VIỆC CẦN LÀM
+- Chọn React SPA + Spring Boot REST, 3 lớp Controller-Service-Repository
+- Quy định cấu trúc package, xử lý lỗi, bảo mật JWT
+
+ĐẦU RA
+- Tài liệu kiến trúc 1-2 trang
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- Có sơ đồ kiến trúc và bảng công nghệ
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 2.3 Viết 10 yêu cầu phi chức năng NFR-01..NFR-10 kèm ngưỡng đo được
+
+THAM CHIẾU
+- Mục 5.1 báo cáo
+
+THÔNG TIN
+- Vai trò: BE (Backend Developer) | WBS 3.3
+- Kế hoạch: 07/09/2026 - 08/09/2026, ước lượng 2 giờ",Medium,,17,,7200,07/09/2026,08/09/2026,BE,Sprint-0,WBS-3.3
+1023,Task,"[BE] 3.4 Thiết kế ERD 12 bảng MySQL, khóa ngoại, ràng buộc UNIQUE và index",3,"MỤC TIÊU
+Thiết kế cơ sở dữ liệu.
+
+VIỆC CẦN LÀM
+- Vẽ ERD 12 bảng, khóa chính/ngoại
+- Đặt UNIQUE (email, intern+ngày chấm công, intern+loại đánh giá)
+- Thêm index cho cột lọc (status, department_id, mentor_id)
+
+ĐẦU RA
+- ERD + script V1__init.sql
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- ERD phủ mọi FR
+- Ràng buộc thể hiện BR-01, BR-08, BR-12
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 2.4 Viết 15 Business Rule BR-01..BR-15 cho đăng ký, phân Mentor, chấm công, báo cáo, đánh giá
+- WBS 3.3 Chốt kiến trúc: React SPA + Spring Boot REST 3 lớp Controller - Service - Repository
+
+THAM CHIẾU
+- Bảng danh sách bảng mục 5.2
+
+THÔNG TIN
+- Vai trò: BE (Backend Developer) | WBS 3.4
+- Kế hoạch: 08/09/2026 - 10/09/2026, ước lượng 3 giờ",Medium,,17,,10800,08/09/2026,10/09/2026,BE,Sprint-0,WBS-3.4
+1024,Task,[BE] 3.5 Đặc tả 36 endpoint /api/v1 bằng OpenAPI kèm DTO và bảng mã lỗi 400/401/403/404/409,3,"MỤC TIÊU
+Đặc tả hợp đồng API giữa FE và BE.
+
+VIỆC CẦN LÀM
+- Viết OpenAPI cho 36 endpoint /api/v1
+- Định nghĩa DTO request/response
+- Chuẩn hóa mã lỗi 400/401/403/404/409 và format lỗi
+
+ĐẦU RA
+- openapi.yaml
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- Mỗi FR có endpoint tương ứng
+- Swagger UI hiển thị được
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 3.4 Thiết kế ERD 12 bảng MySQL, khóa ngoại, ràng buộc UNIQUE và index
+
+THAM CHIẾU
+- Bảng API mục 5.3
+
+THÔNG TIN
+- Vai trò: BE (Backend Developer) | WBS 3.5
+- Kế hoạch: 09/09/2026 - 11/09/2026, ước lượng 4 giờ
+- ĐƯỜNG GĂNG: trễ việc này là trễ cả dự án",High,,17,,14400,09/09/2026,11/09/2026,BE,Sprint-0,WBS-3.5
+1025,Task,"[BA] 3.6 Đối chiếu thiết kế UI-01..UI-12 và API với FR-01..FR-30, BR-01..BR-15",3,"MỤC TIÊU
+Kiểm tra thiết kế đáp ứng đủ yêu cầu.
+
+VIỆC CẦN LÀM
+- Đối chiếu từng FR/BR với màn hình và API
+- Ghi thiếu sót và yêu cầu sửa
+
+ĐẦU RA
+- Biên bản rà soát thiết kế
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- 0 FR bị thiếu thiết kế
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 3.2 Vẽ wireframe Figma: Login, Dashboard, Intern List/Detail, Task, Weekly Report, Evaluation
+- WBS 3.5 Đặc tả 36 endpoint /api/v1 bằng OpenAPI kèm DTO và bảng mã lỗi 400/401/403/404/409
+
+THAM CHIẾU
+- RTM
+
+THÔNG TIN
+- Vai trò: BA (Business Analyst) | WBS 3.6
+- Kế hoạch: 10/09/2026 - 11/09/2026, ước lượng 2 giờ",Medium,,17,,7200,10/09/2026,11/09/2026,BA,Sprint-0,WBS-3.6
+1026,Task,[PM] 3.7 Rà soát chéo toàn bộ thiết kế và ký duyệt Design Baseline,3,"MỤC TIÊU
+Đóng băng baseline thiết kế.
+
+VIỆC CẦN LÀM
+- Rà soát chéo UI, ERD, API
+- Ký duyệt Design Baseline, gắn tag docs v0.1
+
+ĐẦU RA
+- Design Baseline được duyệt
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- Mọi thay đổi sau đó phải qua CR
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 3.6 Đối chiếu thiết kế UI-01..UI-12 và API với FR-01..FR-30, BR-01..BR-15
+
+THAM CHIẾU
+- Mốc M1
+
+THÔNG TIN
+- Vai trò: PM (Project Manager) | WBS 3.7
+- Kế hoạch: 11/09/2026 - 11/09/2026, ước lượng 1 giờ",Medium,,17,,3600,11/09/2026,11/09/2026,PM,Sprint-0,WBS-3.7
+1027,Task,"[BE] 4.1 Tạo GitHub repository, bảo vệ nhánh main/develop, quy ước Git Flow và Pull Request",4,"MỤC TIÊU
+Chuẩn bị quản lý mã nguồn.
+
+VIỆC CẦN LÀM
+- Tạo repo GitHub, nhánh main và develop
+- Bật branch protection: bắt buộc PR, CI xanh
+- Viết CONTRIBUTING: Git Flow, quy ước tên nhánh feature/IMS-xx
+
+ĐẦU RA
+- Repo GitHub
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- Không push thẳng được vào main
+
+THAM CHIẾU
+- Mục 6.9 báo cáo
+
+THÔNG TIN
+- Vai trò: BE (Backend Developer) | WBS 4.1
+- Kế hoạch: 31/08/2026 - 01/09/2026, ước lượng 2 giờ",Medium,,17,,7200,31/08/2026,01/09/2026,BE,Sprint-0,WBS-4.1
+1028,Task,"[BE] 4.2 Kết nối Jira với GitHub (GitHub for Jira), quy ước commit/branch chứa mã IMS-xx",4,"MỤC TIÊU
+Liên kết code với work item Jira.
+
+VIỆC CẦN LÀM
+- Cài app GitHub for Jira, kết nối repo
+- Quy ước commit ""IMS-12: ...""
+
+ĐẦU RA
+- Jira hiển thị commit/PR trong work item
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- Commit thử có mã IMS-xx hiện trong Jira
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 4.1 Tạo GitHub repository, bảo vệ nhánh main/develop, quy ước Git Flow và Pull Request
+
+THAM CHIẾU
+- Mục 6.9
+
+THÔNG TIN
+- Vai trò: BE (Backend Developer) | WBS 4.2
+- Kế hoạch: 01/09/2026 - 02/09/2026, ước lượng 1 giờ",Medium,,17,,3600,01/09/2026,02/09/2026,BE,Sprint-0,WBS-4.2
+1029,Task,"[BE] 4.3 Viết docker-compose.yml cho MySQL 8, backend, frontend và phpMyAdmin",4,"MỤC TIÊU
+Đóng gói môi trường chạy.
+
+VIỆC CẦN LÀM
+- Viết docker-compose.yml: mysql:8, backend, frontend, phpmyadmin
+- Dùng named volume cho MySQL, file .env.example
+
+ĐẦU RA
+- docker-compose.yml
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- docker compose up khởi động đủ 4 service
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 4.1 Tạo GitHub repository, bảo vệ nhánh main/develop, quy ước Git Flow và Pull Request
+
+THAM CHIẾU
+- NFR-10
+
+THÔNG TIN
+- Vai trò: BE (Backend Developer) | WBS 4.3
+- Kế hoạch: 03/09/2026 - 04/09/2026, ước lượng 2 giờ",Medium,,17,,7200,03/09/2026,04/09/2026,BE,Sprint-0,WBS-4.3
+1030,Task,"[BE] 4.4 Khởi tạo Spring Boot 3: cấu trúc package, Spring Data JPA, migration Flyway V1",4,"MỤC TIÊU
+Khởi tạo dự án backend.
+
+VIỆC CẦN LÀM
+- Tạo Spring Boot 3 (Web, Security, JPA, Validation, Flyway, MySQL)
+- Tạo package theo module
+- Viết Flyway V1 tạo 12 bảng
+
+ĐẦU RA
+- Backend skeleton chạy được
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- App start, Flyway tạo đủ bảng
+- Endpoint /actuator/health trả UP
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 3.4 Thiết kế ERD 12 bảng MySQL, khóa ngoại, ràng buộc UNIQUE và index
+- WBS 4.3 Viết docker-compose.yml cho MySQL 8, backend, frontend và phpMyAdmin
+
+THAM CHIẾU
+- Mục 5.5 báo cáo
+
+THÔNG TIN
+- Vai trò: BE (Backend Developer) | WBS 4.4
+- Kế hoạch: 09/09/2026 - 11/09/2026, ước lượng 2 giờ",Medium,,17,,7200,09/09/2026,11/09/2026,BE,Sprint-0,WBS-4.4
+1031,Task,"[FE] 4.5 Khởi tạo React + Vite + Tailwind: router, layout, axios interceptor, xử lý lỗi tập trung",4,"MỤC TIÊU
+Khởi tạo dự án frontend.
+
+VIỆC CẦN LÀM
+- Tạo React + Vite + Tailwind
+- Cấu hình React Router, layout theo role
+- Axios interceptor gắn JWT, xử lý 401/403 tập trung
+
+ĐẦU RA
+- Frontend skeleton chạy được
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- npm run dev chạy, có layout và trang 404/403
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 3.2 Vẽ wireframe Figma: Login, Dashboard, Intern List/Detail, Task, Weekly Report, Evaluation
+
+THAM CHIẾU
+- Mục 5.5
+
+THÔNG TIN
+- Vai trò: FE (Frontend Developer) | WBS 4.5
+- Kế hoạch: 14/09/2026 - 15/09/2026, ước lượng 2 giờ",Medium,,18,,7200,14/09/2026,15/09/2026,FE,Sprint-1,WBS-4.5
+1032,Task,"[BE] 4.6 Cấu hình GitHub Actions: build, unit test và lint cho mỗi Pull Request",4,"MỤC TIÊU
+Tự động kiểm tra mỗi Pull Request.
+
+VIỆC CẦN LÀM
+- Viết .github/workflows/ci.yml: build + test backend, build + lint frontend
+- Bắt buộc CI xanh trước khi merge
+
+ĐẦU RA
+- Workflow CI
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- PR thử chạy CI xanh
+- PR lỗi test bị chặn merge
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 4.4 Khởi tạo Spring Boot 3: cấu trúc package, Spring Data JPA, migration Flyway V1
+- WBS 4.5 Khởi tạo React + Vite + Tailwind: router, layout, axios interceptor, xử lý lỗi tập trung
+
+THAM CHIẾU
+- NFR-09
+
+THÔNG TIN
+- Vai trò: BE (Backend Developer) | WBS 4.6
+- Kế hoạch: 14/09/2026 - 16/09/2026, ước lượng 2 giờ",Medium,,18,,7200,14/09/2026,16/09/2026,BE,Sprint-1,WBS-4.6
+1033,Task,[BA] 5.1 Chốt Acceptance Criteria US-01..US-04 và ma trận quyền 3 role trước Sprint Planning,5,"MỤC TIÊU
+Đảm bảo Story Sprint 1 sẵn sàng phát triển.
+
+VIỆC CẦN LÀM
+- Rà AC US-01..US-04
+- Lập ma trận quyền 3 role x chức năng
+
+ĐẦU RA
+- AC chốt + ma trận quyền
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- 4 Story đạt Definition of Ready
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 2.7 Viết 16 User Story US-01..US-16 kèm Acceptance Criteria dạng Given - When - Then
+
+THAM CHIẾU
+- US-01..US-04, FR-01..FR-06
+
+THÔNG TIN
+- Vai trò: BA (Business Analyst) | WBS 5.1
+- Kế hoạch: 14/09/2026 - 15/09/2026, ước lượng 2 giờ",Medium,,18,,7200,14/09/2026,15/09/2026,BA,Sprint-1,WBS-5.1
+1034,Task,"[BE] 5.9 Nạp seed data: 1 Admin, 3 phòng ban, 3 Mentor, 10 Intern kiểm thử",5,"MỤC TIÊU
+Dữ liệu mẫu phục vụ phát triển và kiểm thử.
+
+VIỆC CẦN LÀM
+- Flyway migration seed: 1 Admin, 3 phòng ban, 3 Mentor, 10 Intern
+- Ghi tài khoản test vào README
+
+ĐẦU RA
+- Migration seed
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- Đăng nhập được bằng tài khoản seed của 3 role
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 5.6 Viết API CRUD /users kèm khóa/mở tài khoản và đổi mật khẩu (US-03)
+- WBS 5.7 Viết API CRUD /departments, chặn xóa phòng ban còn Intern (US-04)
+
+THAM CHIẾU
+- Test data
+
+THÔNG TIN
+- Vai trò: BE (Backend Developer) | WBS 5.9
+- Kế hoạch: 23/09/2026 - 24/09/2026, ước lượng 1 giờ",Medium,,18,,3600,23/09/2026,24/09/2026,BE,Sprint-1,WBS-5.9
+1035,Task,"[BA] 5.10 Nghiệm thu nội bộ UI-01, UI-10, UI-11 theo Acceptance Criteria US-01..US-04",5,"MỤC TIÊU
+Nghiệm thu nội bộ trước khi chuyển kiểm thử.
+
+VIỆC CẦN LÀM
+- Chạy từng AC của US-01..US-04 trên giao diện
+- Ghi Story đạt/không đạt
+
+ĐẦU RA
+- Biên bản nghiệm thu Sprint 1
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- Story không đạt được trả lại kèm lý do
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 5.8 Dựng màn hình quản lý tài khoản UI-10 và phòng ban UI-11 (US-03, US-04)
+- WBS 5.5 Chặn route, ẩn menu theo role trên frontend và trang lỗi 403 (US-02)
+
+THAM CHIẾU
+- US-01..US-04
+
+THÔNG TIN
+- Vai trò: BA (Business Analyst) | WBS 5.10
+- Kế hoạch: 24/09/2026 - 24/09/2026, ước lượng 1 giờ",Medium,,18,,3600,24/09/2026,24/09/2026,BA,Sprint-1,WBS-5.10
+1036,Task,"[TEST] 5.11 Chạy TC-AUTH-01..04, TC-RBAC-01..03, TC-USR-01..02, TC-DEP-01 và lưu evidence",5,"MỤC TIÊU
+Kiểm thử chức năng Sprint 1.
+
+VIỆC CẦN LÀM
+- Chạy 10 test case AUTH/RBAC/USR/DEP
+- Ghi Bug trên Jira nếu lỗi
+- Lưu ảnh evidence
+
+ĐẦU RA
+- Kết quả test Sprint 1
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- 100% Critical/High đạt hoặc có bug đã ghi
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 5.10 Nghiệm thu nội bộ UI-01, UI-10, UI-11 theo Acceptance Criteria US-01..US-04
+- WBS 9.2 Viết 40 test case TC-AUTH..TC-EXP trên Excel và dựng bộ dữ liệu kiểm thử
+
+THAM CHIẾU
+- TC-AUTH-01..04, TC-RBAC-01..03, TC-USR-01..02, TC-DEP-01
+
+THÔNG TIN
+- Vai trò: TEST (Tester / QA) | WBS 5.11
+- Kế hoạch: 24/09/2026 - 25/09/2026, ước lượng 3 giờ",Medium,,18,,10800,24/09/2026,25/09/2026,TEST,Sprint-1,WBS-5.11
+1037,Task,[BA] 5.12 Refine backlog Sprint 2: bổ sung Acceptance Criteria US-05..US-08 và cập nhật RTM,5,"MỤC TIÊU
+Chuẩn bị backlog cho Sprint 2.
+
+VIỆC CẦN LÀM
+- Làm rõ AC US-05..US-08
+- Cập nhật RTM, ước lượng lại nếu cần
+
+ĐẦU RA
+- Backlog Sprint 2 sẵn sàng
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- US-05..US-08 đạt Definition of Ready
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 5.10 Nghiệm thu nội bộ UI-01, UI-10, UI-11 theo Acceptance Criteria US-01..US-04
+
+THAM CHIẾU
+- US-05..US-08
+
+THÔNG TIN
+- Vai trò: BA (Business Analyst) | WBS 5.12
+- Kế hoạch: 25/09/2026 - 25/09/2026, ước lượng 1 giờ",Medium,,18,,3600,25/09/2026,25/09/2026,BA,Sprint-1,WBS-5.12
+1038,Task,[BA] 6.1 Chốt Acceptance Criteria US-05..US-08 và quy tắc BR-01..BR-05,6,"MỤC TIÊU
+Đảm bảo Story Sprint 2 sẵn sàng.
+
+VIỆC CẦN LÀM
+- Rà AC US-05..US-08
+- Chốt BR-01..BR-05 kèm ví dụ
+
+ĐẦU RA
+- AC + BR chốt
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- 4 Story đạt DoR
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 5.12 Refine backlog Sprint 2: bổ sung Acceptance Criteria US-05..US-08 và cập nhật RTM
+
+THAM CHIẾU
+- US-05..US-08, BR-01..BR-05
+
+THÔNG TIN
+- Vai trò: BA (Business Analyst) | WBS 6.1
+- Kế hoạch: 28/09/2026 - 29/09/2026, ước lượng 2 giờ",Medium,,19,,7200,28/09/2026,29/09/2026,BA,Sprint-2,WBS-6.1
+1039,Task,[BA] 6.10 Nghiệm thu nội bộ UI-02..UI-06 theo Acceptance Criteria US-05..US-08,6,"MỤC TIÊU
+Nghiệm thu nội bộ Sprint 2.
+
+VIỆC CẦN LÀM
+- Chạy từng AC US-05..US-08
+
+ĐẦU RA
+- Biên bản nghiệm thu Sprint 2
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- Story không đạt được trả lại kèm lý do
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 6.9 Dựng màn hình Mentor List UI-06 và hộp thoại phân công Mentor (US-08)
+- WBS 6.5 Dựng màn hình danh sách và duyệt hồ sơ đăng ký UI-03 (US-06)
+
+THAM CHIẾU
+- US-05..US-08
+
+THÔNG TIN
+- Vai trò: BA (Business Analyst) | WBS 6.10
+- Kế hoạch: 08/10/2026 - 08/10/2026, ước lượng 1 giờ",Medium,,19,,3600,08/10/2026,08/10/2026,BA,Sprint-2,WBS-6.10
+1040,Task,"[TEST] 6.11 Chạy TC-REG-01..03, TC-APR-01..02, TC-INT-01..03, TC-MEN-01..02 và lưu evidence",6,"MỤC TIÊU
+Kiểm thử chức năng Sprint 2.
+
+VIỆC CẦN LÀM
+- Chạy 10 test case REG/APR/INT/MEN
+- Ghi Bug, lưu evidence
+- Chạy lại Newman hồi quy Sprint 1
+
+ĐẦU RA
+- Kết quả test Sprint 2
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- 100% Critical/High đạt hoặc có bug đã ghi
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 6.10 Nghiệm thu nội bộ UI-02..UI-06 theo Acceptance Criteria US-05..US-08
+
+THAM CHIẾU
+- TC-REG, TC-APR, TC-INT, TC-MEN
+
+THÔNG TIN
+- Vai trò: TEST (Tester / QA) | WBS 6.11
+- Kế hoạch: 08/10/2026 - 09/10/2026, ước lượng 3 giờ",Medium,,19,,10800,08/10/2026,09/10/2026,TEST,Sprint-2,WBS-6.11
+1041,Task,[BA] 6.12 Refine backlog Sprint 3: bổ sung Acceptance Criteria US-09..US-12 và cập nhật RTM,6,"MỤC TIÊU
+Chuẩn bị backlog Sprint 3.
+
+VIỆC CẦN LÀM
+- Làm rõ AC US-09..US-12
+- Cập nhật RTM
+
+ĐẦU RA
+- Backlog Sprint 3 sẵn sàng
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- US-09..US-12 đạt DoR
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 6.10 Nghiệm thu nội bộ UI-02..UI-06 theo Acceptance Criteria US-05..US-08
+
+THAM CHIẾU
+- US-09..US-12
+
+THÔNG TIN
+- Vai trò: BA (Business Analyst) | WBS 6.12
+- Kế hoạch: 09/10/2026 - 09/10/2026, ước lượng 1 giờ",Medium,,19,,3600,09/10/2026,09/10/2026,BA,Sprint-2,WBS-6.12
+1042,Task,"[BA] 7.1 Chốt Acceptance Criteria US-09..US-12, vòng đời Task và quy tắc chấm công BR-06..BR-10",7,"MỤC TIÊU
+Đảm bảo Story Sprint 3 sẵn sàng.
+
+VIỆC CẦN LÀM
+- Rà AC US-09..US-12
+- Chốt vòng đời Task và BR-06..BR-10 (giờ đi muộn 8:30, hạn báo cáo)
+
+ĐẦU RA
+- AC + State Diagram Task
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- 4 Story đạt DoR
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 6.12 Refine backlog Sprint 3: bổ sung Acceptance Criteria US-09..US-12 và cập nhật RTM
+
+THAM CHIẾU
+- US-09..US-12, BR-06..BR-10
+
+THÔNG TIN
+- Vai trò: BA (Business Analyst) | WBS 7.1
+- Kế hoạch: 12/10/2026 - 13/10/2026, ước lượng 2 giờ",Medium,,20,,7200,12/10/2026,13/10/2026,BA,Sprint-3,WBS-7.1
+1043,Task,[BA] 7.10 Nghiệm thu nội bộ UI-07..UI-09 theo Acceptance Criteria US-09..US-12,7,"MỤC TIÊU
+Nghiệm thu nội bộ Sprint 3.
+
+VIỆC CẦN LÀM
+- Chạy từng AC US-09..US-12
+
+ĐẦU RA
+- Biên bản nghiệm thu Sprint 3
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- Story không đạt được trả lại kèm lý do
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 7.9 Dựng màn hình Weekly Report UI-09 cho Intern và Mentor (US-12)
+- WBS 7.7 Dựng nút chấm công và bảng công tháng cho Intern, Mentor (US-11)
+- WBS 7.5 Dựng màn hình My Tasks UI-08 và Task Detail kèm bình luận (US-10)
+
+THAM CHIẾU
+- US-09..US-12
+
+THÔNG TIN
+- Vai trò: BA (Business Analyst) | WBS 7.10
+- Kế hoạch: 22/10/2026 - 22/10/2026, ước lượng 1 giờ",Medium,,20,,3600,22/10/2026,22/10/2026,BA,Sprint-3,WBS-7.10
+1044,Task,"[TEST] 7.11 Chạy TC-TASK-01..05, TC-ATT-01..03, TC-RPT-01..03 và lưu evidence",7,"MỤC TIÊU
+Kiểm thử chức năng Sprint 3.
+
+VIỆC CẦN LÀM
+- Chạy 11 test case TASK/ATT/RPT
+- Ghi Bug, lưu evidence
+- Hồi quy Newman Sprint 1-2
+
+ĐẦU RA
+- Kết quả test Sprint 3
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- 100% Critical/High đạt hoặc có bug đã ghi
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 7.10 Nghiệm thu nội bộ UI-07..UI-09 theo Acceptance Criteria US-09..US-12
+
+THAM CHIẾU
+- TC-TASK, TC-ATT, TC-RPT
+
+THÔNG TIN
+- Vai trò: TEST (Tester / QA) | WBS 7.11
+- Kế hoạch: 22/10/2026 - 23/10/2026, ước lượng 3 giờ",Medium,,20,,10800,22/10/2026,23/10/2026,TEST,Sprint-3,WBS-7.11
+1045,Task,[BA] 7.12 Refine backlog Sprint 4: bổ sung Acceptance Criteria US-13..US-16 và cập nhật RTM,7,"MỤC TIÊU
+Chuẩn bị backlog Sprint 4.
+
+VIỆC CẦN LÀM
+- Làm rõ AC US-13..US-16
+- Cập nhật RTM
+
+ĐẦU RA
+- Backlog Sprint 4 sẵn sàng
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- US-13..US-16 đạt DoR
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 7.10 Nghiệm thu nội bộ UI-07..UI-09 theo Acceptance Criteria US-09..US-12
+
+THAM CHIẾU
+- US-13..US-16
+
+THÔNG TIN
+- Vai trò: BA (Business Analyst) | WBS 7.12
+- Kế hoạch: 23/10/2026 - 23/10/2026, ước lượng 1 giờ",Medium,,20,,3600,23/10/2026,23/10/2026,BA,Sprint-3,WBS-7.12
+1046,Task,"[BA] 8.1 Chốt 5 tiêu chí đánh giá thang 10, công thức tính tiến độ và chỉ số dashboard",8,"MỤC TIÊU
+Chốt tiêu chí đánh giá và công thức số liệu.
+
+VIỆC CẦN LÀM
+- 5 tiêu chí thang 10, cách xếp loại BR-13
+- Công thức tiến độ BR-11 kèm ví dụ tính tay
+- Danh sách chỉ số từng dashboard
+
+ĐẦU RA
+- Tài liệu tiêu chí + công thức
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- Có 2 ví dụ tính tay để làm test oracle
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 7.12 Refine backlog Sprint 4: bổ sung Acceptance Criteria US-13..US-16 và cập nhật RTM
+
+THAM CHIẾU
+- BR-11..BR-15
+
+THÔNG TIN
+- Vai trò: BA (Business Analyst) | WBS 8.1
+- Kế hoạch: 26/10/2026 - 27/10/2026, ước lượng 2 giờ",Medium,,21,,7200,26/10/2026,27/10/2026,BA,Sprint-4,WBS-8.1
+1047,Task,[BA] 8.10 Kiểm tra số liệu dashboard và file kết quả khớp BR-11..BR-15,8,"MỤC TIÊU
+Kiểm tra độ đúng số liệu.
+
+VIỆC CẦN LÀM
+- Đối chiếu dashboard với truy vấn SQL tay
+- Đối chiếu file Excel/PDF với dữ liệu
+
+ĐẦU RA
+- Biên bản đối chiếu số liệu
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- Sai lệch = 0
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 8.7 Dựng 3 dashboard bằng Recharts: số Intern, tiến độ, task quá hạn, điểm trung bình (US-15)
+- WBS 8.9 Thêm nút xuất file và thao tác kết thúc kỳ thực tập trên giao diện Admin (US-16)
+
+THAM CHIẾU
+- BR-11..BR-15
+
+THÔNG TIN
+- Vai trò: BA (Business Analyst) | WBS 8.10
+- Kế hoạch: 05/11/2026 - 05/11/2026, ước lượng 1 giờ",Medium,,21,,3600,05/11/2026,05/11/2026,BA,Sprint-4,WBS-8.10
+1048,Task,"[TEST] 8.11 Chạy TC-EVA-01..03, TC-PRG-01, TC-DSH-01..02, TC-EXP-01..02 và lưu evidence",8,"MỤC TIÊU
+Kiểm thử chức năng Sprint 4.
+
+VIỆC CẦN LÀM
+- Chạy 8 test case EVA/PRG/DSH/EXP
+- Ghi Bug, lưu evidence
+- Hồi quy Newman Sprint 1-3
+
+ĐẦU RA
+- Kết quả test Sprint 4
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- 100% Critical/High đạt hoặc có bug đã ghi
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 8.10 Kiểm tra số liệu dashboard và file kết quả khớp BR-11..BR-15
+
+THAM CHIẾU
+- TC-EVA, TC-PRG, TC-DSH, TC-EXP
+
+THÔNG TIN
+- Vai trò: TEST (Tester / QA) | WBS 8.11
+- Kế hoạch: 05/11/2026 - 06/11/2026, ước lượng 3 giờ",Medium,,21,,10800,05/11/2026,06/11/2026,TEST,Sprint-4,WBS-8.11
+1049,Task,[BA] 8.12 Viết 8 kịch bản UAT UAT-01..UAT-08 và chuẩn bị dữ liệu nghiệp vụ,8,"MỤC TIÊU
+Chuẩn bị UAT.
+
+VIỆC CẦN LÀM
+- Viết 8 kịch bản UAT-01..UAT-08 theo luồng nghiệp vụ
+- Chuẩn bị dữ liệu và tài khoản UAT
+
+ĐẦU RA
+- Bộ kịch bản UAT
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- Mỗi kịch bản có bước, dữ liệu, kết quả mong đợi
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 8.10 Kiểm tra số liệu dashboard và file kết quả khớp BR-11..BR-15
+
+THAM CHIẾU
+- Bảng UAT chương 8
+
+THÔNG TIN
+- Vai trò: BA (Business Analyst) | WBS 8.12
+- Kế hoạch: 06/11/2026 - 06/11/2026, ước lượng 2 giờ",Medium,,21,,7200,06/11/2026,06/11/2026,BA,Sprint-4,WBS-8.12
+1050,Task,"[TEST] 9.1 Viết Test Plan: phạm vi, môi trường, mức độ nghiêm trọng S1..S4, tiêu chí vào/ra",9,"MỤC TIÊU
+Lập kế hoạch kiểm thử.
+
+VIỆC CẦN LÀM
+- Xác định phạm vi, cấp độ, công cụ, môi trường
+- Định nghĩa severity S1..S4, tiêu chí vào/ra
+
+ĐẦU RA
+- Test Plan
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- Được PM duyệt trước Sprint 1 kết thúc
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 2.7 Viết 16 User Story US-01..US-16 kèm Acceptance Criteria dạng Given - When - Then
+
+THAM CHIẾU
+- Chương 8 báo cáo
+
+THÔNG TIN
+- Vai trò: TEST (Tester / QA) | WBS 9.1
+- Kế hoạch: 14/09/2026 - 16/09/2026, ước lượng 3 giờ",Medium,,18,,10800,14/09/2026,16/09/2026,TEST,Sprint-1,WBS-9.1
+1051,Task,[TEST] 9.2 Viết 40 test case TC-AUTH..TC-EXP trên Excel và dựng bộ dữ liệu kiểm thử,9,"MỤC TIÊU
+Viết test case từ AC trước khi code xong.
+
+VIỆC CẦN LÀM
+- Viết 40 test case: bước, dữ liệu, kết quả mong đợi
+- Gắn mỗi test case với Story trong RTM
+- Chuẩn bị dataset
+
+ĐẦU RA
+- Bộ test case (Excel)
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- Mỗi AC có ít nhất 1 test case
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 9.1 Viết Test Plan: phạm vi, môi trường, mức độ nghiêm trọng S1..S4, tiêu chí vào/ra
+
+THAM CHIẾU
+- TEST_CASES, RTM
+
+THÔNG TIN
+- Vai trò: TEST (Tester / QA) | WBS 9.2
+- Kế hoạch: 16/09/2026 - 25/09/2026, ước lượng 6 giờ",Medium,,18,,21600,16/09/2026,25/09/2026,TEST,Sprint-1,WBS-9.2
+1052,Task,[TEST] 9.3 Xây Postman collection và Newman để chạy hồi quy API tự động,9,"MỤC TIÊU
+Tự động hóa kiểm thử API.
+
+VIỆC CẦN LÀM
+- Tạo Postman collection theo module, dùng biến môi trường và token
+- Chạy bằng Newman từ dòng lệnh
+
+ĐẦU RA
+- Postman collection + lệnh Newman
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- newman run chạy hết không lỗi cấu hình
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 9.2 Viết 40 test case TC-AUTH..TC-EXP trên Excel và dựng bộ dữ liệu kiểm thử
+- WBS 5.2 Viết API POST /auth/login, /auth/logout, GET /auth/me phát hành JWT (US-01)
+
+THAM CHIẾU
+- tests/postman
+
+THÔNG TIN
+- Vai trò: TEST (Tester / QA) | WBS 9.3
+- Kế hoạch: 21/09/2026 - 25/09/2026, ước lượng 3 giờ",Medium,,18,,10800,21/09/2026,25/09/2026,TEST,Sprint-1,WBS-9.3
+1053,Task,[TEST] 9.4 Kiểm thử API và giao diện cho từng User Story khi chuyển sang IN TESTING,9,"MỤC TIÊU
+Kiểm thử liên tục theo Story.
+
+VIỆC CẦN LÀM
+- Khi Story vào cột In Testing: chạy test case liên quan
+- Đạt: chuyển Done; lỗi: tạo Bug, trả về In Progress
+
+ĐẦU RA
+- Kết quả test cập nhật trên Jira
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- Không Story nào Done khi chưa chạy test
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 9.2 Viết 40 test case TC-AUTH..TC-EXP trên Excel và dựng bộ dữ liệu kiểm thử
+
+THAM CHIẾU
+- Mọi TC
+
+THÔNG TIN
+- Vai trò: TEST (Tester / QA) | WBS 9.4
+- Kế hoạch: 28/09/2026 - 06/11/2026, ước lượng 8 giờ
+- Việc lặp lại mỗi Sprint: cập nhật tiến độ trong comment, đóng khi kết thúc dự án",Medium,,,,28800,28/09/2026,06/11/2026,TEST,continuous,WBS-9.4
+1054,Task,"[TEST] 9.5 Ghi Bug lên Jira kèm severity, bước tái hiện, evidence và xác minh bản vá",9,"MỤC TIÊU
+Quản lý bug.
+
+VIỆC CẦN LÀM
+- Ghi Bug: môi trường, bước tái hiện, kết quả mong đợi/thực tế, ảnh
+- Gán Priority theo severity, link tới Story
+- Verify bản sửa, đóng hoặc Reopen
+
+ĐẦU RA
+- Bug trên Jira
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- Mỗi bug có đủ thông tin tái hiện
+- Bug S1 sửa trong ngày
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 9.1 Viết Test Plan: phạm vi, môi trường, mức độ nghiêm trọng S1..S4, tiêu chí vào/ra
+
+THAM CHIẾU
+- Mục severity chương 8
+
+THÔNG TIN
+- Vai trò: TEST (Tester / QA) | WBS 9.5
+- Kế hoạch: 28/09/2026 - 13/11/2026, ước lượng 5 giờ
+- Việc lặp lại mỗi Sprint: cập nhật tiến độ trong comment, đóng khi kết thúc dự án",Medium,,,,18000,28/09/2026,13/11/2026,TEST,continuous,WBS-9.5
+1055,Task,[TEST] 9.6 Tự động hóa 5 luồng chính bằng Selenium WebDriver,9,"MỤC TIÊU
+Tự động hóa kiểm thử giao diện.
+
+VIỆC CẦN LÀM
+- Selenium WebDriver cho 5 luồng: đăng nhập, duyệt hồ sơ, giao task, nộp báo cáo, đánh giá
+- Page Object Model, chạy headless
+
+ĐẦU RA
+- Bộ test Selenium
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- 5 kịch bản chạy xanh trên môi trường TEST
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 8.7 Dựng 3 dashboard bằng Recharts: số Intern, tiến độ, task quá hạn, điểm trung bình (US-15)
+
+THAM CHIẾU
+- tests/selenium
+
+THÔNG TIN
+- Vai trò: TEST (Tester / QA) | WBS 9.6
+- Kế hoạch: 26/10/2026 - 06/11/2026, ước lượng 5 giờ",Medium,,21,,18000,26/10/2026,06/11/2026,TEST,Sprint-4,WBS-9.6
+1056,Task,[TEST] 9.7 Chạy hồi quy toàn bộ luồng Critical và High bằng Newman + Selenium + kiểm thử tay,9,"MỤC TIÊU
+Hồi quy toàn hệ thống trước phát hành.
+
+VIỆC CẦN LÀM
+- Chạy Newman toàn bộ + Selenium 5 luồng
+- Chạy tay test case Critical/High còn lại
+- Lập Test Report
+
+ĐẦU RA
+- Test Report hồi quy
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- 100% Critical/High đạt, 0 bug S1/S2 mở
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 9.6 Tự động hóa 5 luồng chính bằng Selenium WebDriver
+- WBS 10.1 Sửa dứt điểm bug S1, S2 phía backend và cập nhật trạng thái trên Jira
+- WBS 10.2 Sửa dứt điểm bug S1, S2 phía frontend và cập nhật trạng thái trên Jira
+
+THAM CHIẾU
+- Tiêu chí kết thúc
+
+THÔNG TIN
+- Vai trò: TEST (Tester / QA) | WBS 9.7
+- Kế hoạch: 09/11/2026 - 11/11/2026, ước lượng 4 giờ
+- ĐƯỜNG GĂNG: trễ việc này là trễ cả dự án",High,,22,,14400,09/11/2026,11/11/2026,TEST,Sprint-5,WBS-9.7
+1057,Task,"[BE] 10.1 Sửa dứt điểm bug S1, S2 phía backend và cập nhật trạng thái trên Jira",10,"MỤC TIÊU
+Sửa dứt điểm bug backend nghiêm trọng.
+
+VIỆC CẦN LÀM
+- Lọc Bug S1/S2 phần backend trên Jira
+- Sửa kèm unit test tái hiện lỗi
+- Chuyển In Testing để TEST verify
+
+ĐẦU RA
+- Bản sửa backend
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- 0 bug S1/S2 backend mở
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 9.5 Ghi Bug lên Jira kèm severity, bước tái hiện, evidence và xác minh bản vá
+
+THAM CHIẾU
+- Bug trên Jira
+
+THÔNG TIN
+- Vai trò: BE (Backend Developer) | WBS 10.1
+- Kế hoạch: 09/11/2026 - 12/11/2026, ước lượng 5 giờ
+- ĐƯỜNG GĂNG: trễ việc này là trễ cả dự án",High,,22,,18000,09/11/2026,12/11/2026,BE,Sprint-5,WBS-10.1
+1058,Task,"[FE] 10.2 Sửa dứt điểm bug S1, S2 phía frontend và cập nhật trạng thái trên Jira",10,"MỤC TIÊU
+Sửa dứt điểm bug frontend nghiêm trọng.
+
+VIỆC CẦN LÀM
+- Lọc Bug S1/S2 phần frontend
+- Sửa và kiểm tra trên 3 trình duyệt (NFR-05)
+
+ĐẦU RA
+- Bản sửa frontend
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- 0 bug S1/S2 frontend mở
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 9.5 Ghi Bug lên Jira kèm severity, bước tái hiện, evidence và xác minh bản vá
+
+THAM CHIẾU
+- NFR-05
+
+THÔNG TIN
+- Vai trò: FE (Frontend Developer) | WBS 10.2
+- Kế hoạch: 09/11/2026 - 12/11/2026, ước lượng 4 giờ",Medium,,22,,14400,09/11/2026,12/11/2026,FE,Sprint-5,WBS-10.2
+1059,Task,[BE] 10.3 Tối ưu truy vấn chậm và rà soát bảo mật cơ bản theo OWASP Top 10,10,"MỤC TIÊU
+Tối ưu hiệu năng và bảo mật cơ bản.
+
+VIỆC CẦN LÀM
+- Bật log truy vấn chậm, thêm index/sửa N+1
+- Rà OWASP Top 10: injection, broken access control, lộ dữ liệu
+
+ĐẦU RA
+- Danh sách vấn đề đã xử lý
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- API chính < 1 giây (NFR-01)
+- Không còn lỗi truy cập dữ liệu người khác
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 10.1 Sửa dứt điểm bug S1, S2 phía backend và cập nhật trạng thái trên Jira
+
+THAM CHIẾU
+- NFR-01, NFR-02, NFR-03
+
+THÔNG TIN
+- Vai trò: BE (Backend Developer) | WBS 10.3
+- Kế hoạch: 10/11/2026 - 11/11/2026, ước lượng 2 giờ",Medium,,22,,7200,10/11/2026,11/11/2026,BE,Sprint-5,WBS-10.3
+1060,Task,"[BE] 10.4 Tạo nhánh release, gắn tag v1.0.0 và chạy thử migration Flyway trên bản backup",10,"MỤC TIÊU
+Chuẩn bị bản phát hành.
+
+VIỆC CẦN LÀM
+- Tạo nhánh release/1.0.0 từ develop
+- Chạy Flyway trên bản sao DB
+- Merge vào main, gắn tag v1.0.0
+
+ĐẦU RA
+- Tag v1.0.0
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- Build từ tag chạy được sạch
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 10.3 Tối ưu truy vấn chậm và rà soát bảo mật cơ bản theo OWASP Top 10
+- WBS 9.7 Chạy hồi quy toàn bộ luồng Critical và High bằng Newman + Selenium + kiểm thử tay
+
+THAM CHIẾU
+- Mục 6.9 báo cáo
+
+THÔNG TIN
+- Vai trò: BE (Backend Developer) | WBS 10.4
+- Kế hoạch: 11/11/2026 - 13/11/2026, ước lượng 2 giờ
+- ĐƯỜNG GĂNG: trễ việc này là trễ cả dự án",High,,22,,7200,11/11/2026,13/11/2026,BE,Sprint-5,WBS-10.4
+1061,Task,[BE] 10.5 Triển khai môi trường UAT bằng Docker Compose và nạp dữ liệu gần thực tế,10,"MỤC TIÊU
+Dựng môi trường UAT.
+
+VIỆC CẦN LÀM
+- Deploy bằng Docker Compose trên máy UAT
+- Nạp dữ liệu gần thực tế, tạo tài khoản UAT
+
+ĐẦU RA
+- Môi trường UAT
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- Người dùng UAT đăng nhập được
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 10.4 Tạo nhánh release, gắn tag v1.0.0 và chạy thử migration Flyway trên bản backup
+
+THAM CHIẾU
+- NFR-04
+
+THÔNG TIN
+- Vai trò: BE (Backend Developer) | WBS 10.5
+- Kế hoạch: 12/11/2026 - 13/11/2026, ước lượng 2 giờ",Medium,,22,,7200,12/11/2026,13/11/2026,BE,Sprint-5,WBS-10.5
+1062,Task,[BA] 10.6 Điều phối UAT: chạy 8 kịch bản UAT-01..UAT-08 với người dùng đại diện,10,"MỤC TIÊU
+Tổ chức kiểm thử chấp nhận.
+
+VIỆC CẦN LÀM
+- Hướng dẫn người dùng đại diện (bạn cùng lớp)
+- Chạy 8 kịch bản UAT-01..UAT-08
+
+ĐẦU RA
+- Kết quả UAT
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- 8/8 kịch bản được chạy
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 10.5 Triển khai môi trường UAT bằng Docker Compose và nạp dữ liệu gần thực tế
+- WBS 8.12 Viết 8 kịch bản UAT UAT-01..UAT-08 và chuẩn bị dữ liệu nghiệp vụ
+
+THAM CHIẾU
+- UAT-01..UAT-08
+
+THÔNG TIN
+- Vai trò: BA (Business Analyst) | WBS 10.6
+- Kế hoạch: 16/11/2026 - 17/11/2026, ước lượng 3 giờ
+- ĐƯỜNG GĂNG: trễ việc này là trễ cả dự án",High,,22,,10800,16/11/2026,17/11/2026,BA,Sprint-5,WBS-10.6
+1063,Task,"[TEST] 10.7 Ghi nhận kết quả UAT, phân loại lỗi S1..S4 và xác minh bản vá",10,"MỤC TIÊU
+Ghi nhận lỗi UAT.
+
+VIỆC CẦN LÀM
+- Ghi lỗi UAT lên Jira theo severity
+- Verify bản sửa trong tuần 12
+
+ĐẦU RA
+- Danh sách lỗi UAT
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- Không còn lỗi S1/S2 từ UAT
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 10.6 Điều phối UAT: chạy 8 kịch bản UAT-01..UAT-08 với người dùng đại diện
+
+THAM CHIẾU
+- Bug trên Jira
+
+THÔNG TIN
+- Vai trò: TEST (Tester / QA) | WBS 10.7
+- Kế hoạch: 16/11/2026 - 17/11/2026, ước lượng 3 giờ",Medium,,22,,10800,16/11/2026,17/11/2026,TEST,Sprint-5,WBS-10.7
+1064,Task,"[BA] 10.8 Tổng hợp phản hồi UAT, cập nhật RTM và lấy biên bản UAT Sign-off",10,"MỤC TIÊU
+Chấp nhận sản phẩm.
+
+VIỆC CẦN LÀM
+- Tổng hợp phản hồi UAT, cập nhật RTM
+- Lập và ký biên bản UAT Sign-off
+
+ĐẦU RA
+- Biên bản UAT Sign-off
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- Có xác nhận của người dùng đại diện
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 10.7 Ghi nhận kết quả UAT, phân loại lỗi S1..S4 và xác minh bản vá
+
+THAM CHIẾU
+- SC-05
+
+THÔNG TIN
+- Vai trò: BA (Business Analyst) | WBS 10.8
+- Kế hoạch: 17/11/2026 - 18/11/2026, ước lượng 2 giờ",Medium,,22,,7200,17/11/2026,18/11/2026,BA,Sprint-5,WBS-10.8
+1065,Task,"[BE] 10.9 Viết Release Notes, Deployment Guide, cập nhật Swagger và README",10,"MỤC TIÊU
+Tài liệu kỹ thuật phát hành.
+
+VIỆC CẦN LÀM
+- Release Notes v1.0.0
+- Deployment Guide từng bước
+- Cập nhật Swagger, README
+
+ĐẦU RA
+- Bộ tài liệu kỹ thuật
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- Người khác cài được theo Deployment Guide
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 10.4 Tạo nhánh release, gắn tag v1.0.0 và chạy thử migration Flyway trên bản backup
+
+THAM CHIẾU
+- SC-06
+
+THÔNG TIN
+- Vai trò: BE (Backend Developer) | WBS 10.9
+- Kế hoạch: 18/11/2026 - 19/11/2026, ước lượng 3 giờ",Medium,,22,,10800,18/11/2026,19/11/2026,BE,Sprint-5,WBS-10.9
+1066,Task,[BA] 10.10 Viết User Manual cho 3 nhóm người dùng kèm ảnh màn hình UI-01..UI-12,10,"MỤC TIÊU
+Tài liệu người dùng.
+
+VIỆC CẦN LÀM
+- User Manual cho Admin, Mentor, Intern kèm ảnh màn hình
+- Mục câu hỏi thường gặp
+
+ĐẦU RA
+- User Manual
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- Mỗi FR có hướng dẫn thao tác
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 10.4 Tạo nhánh release, gắn tag v1.0.0 và chạy thử migration Flyway trên bản backup
+
+THAM CHIẾU
+- SC-06
+
+THÔNG TIN
+- Vai trò: BA (Business Analyst) | WBS 10.10
+- Kế hoạch: 18/11/2026 - 19/11/2026, ước lượng 3 giờ",Medium,,22,,10800,18/11/2026,19/11/2026,BA,Sprint-5,WBS-10.10
+1067,Task,"[BE] 10.11 Sao lưu database, repository và đóng gói mã nguồn bàn giao",10,"MỤC TIÊU
+Sao lưu và đóng gói bàn giao.
+
+VIỆC CẦN LÀM
+- mysqldump database
+- Đóng gói mã nguồn từ tag v1.0.0
+- Kiểm tra khôi phục trong 30 phút
+
+ĐẦU RA
+- File backup + gói mã nguồn
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- Khôi phục thử thành công (NFR-10)
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 10.4 Tạo nhánh release, gắn tag v1.0.0 và chạy thử migration Flyway trên bản backup
+
+THAM CHIẾU
+- NFR-10
+
+THÔNG TIN
+- Vai trò: BE (Backend Developer) | WBS 10.11
+- Kế hoạch: 19/11/2026 - 19/11/2026, ước lượng 1 giờ",Medium,,22,,3600,19/11/2026,19/11/2026,BE,Sprint-5,WBS-10.11
+1068,Task,"[PM] 10.12 Trình bày nghiệm thu: demo 15 phút, evidence Jira/GitHub, so sánh baseline và thực tế",10,"MỤC TIÊU
+Nghiệm thu với giảng viên.
+
+VIỆC CẦN LÀM
+- Chuẩn bị slide và kịch bản demo 15 phút
+- Demo luồng chính, trình bày evidence Jira/GitHub
+- So sánh baseline và thực tế (lịch, chi phí, phạm vi)
+
+ĐẦU RA
+- Buổi nghiệm thu
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- Demo chạy trọn luồng không lỗi
+- Nộp đủ hồ sơ
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 10.8 Tổng hợp phản hồi UAT, cập nhật RTM và lấy biên bản UAT Sign-off
+- WBS 10.9 Viết Release Notes, Deployment Guide, cập nhật Swagger và README
+- WBS 10.10 Viết User Manual cho 3 nhóm người dùng kèm ảnh màn hình UI-01..UI-12
+- WBS 1.10 Viết báo cáo tổng kết, lessons learned và bàn giao hồ sơ dự án
+
+THAM CHIẾU
+- Mốc M6
+
+THÔNG TIN
+- Vai trò: PM (Project Manager) | WBS 10.12
+- Kế hoạch: 20/11/2026 - 20/11/2026, ước lượng 3 giờ
+- ĐƯỜNG GĂNG: trễ việc này là trễ cả dự án",High,,22,,10800,20/11/2026,20/11/2026,PM,Sprint-5,WBS-10.12
+1069,Task,"[PM] 11.1 M1 - Chốt baseline phạm vi, yêu cầu và thiết kế",1,"MỐC KIỂM SOÁT 11.1 - ngày 11/09/2026
+
+TIÊU CHÍ ĐẠT
+- Scope, SRS, Use Case, User Story, UI/ERD/API đã duyệt; Design Baseline ký.
+
+CÁCH XỬ LÝ
+- PM kiểm tra tiêu chí vào ngày mốc, ghi kết quả go/no-go vào comment và Weekly Status Report",High,,17,,,11/09/2026,11/09/2026,PM,milestone,WBS-11.1
+1070,Task,"[PM] 11.2 M2 - Hoàn thành đăng nhập, phân quyền và quản trị",1,"MỐC KIỂM SOÁT 11.2 - ngày 25/09/2026
+
+TIÊU CHÍ ĐẠT
+- US-01..US-04 Done (13 SP), test Sprint 1 đạt.
+
+CÁCH XỬ LÝ
+- PM kiểm tra tiêu chí vào ngày mốc, ghi kết quả go/no-go vào comment và Weekly Status Report",High,,18,,,25/09/2026,25/09/2026,PM,milestone,WBS-11.2
+1071,Task,"[PM] 11.3 M3 - Hoàn thành hồ sơ Intern, Mentor và phân công",1,"MỐC KIỂM SOÁT 11.3 - ngày 09/10/2026
+
+TIÊU CHÍ ĐẠT
+- US-05..US-08 Done (14 SP), test Sprint 2 đạt.
+
+CÁCH XỬ LÝ
+- PM kiểm tra tiêu chí vào ngày mốc, ghi kết quả go/no-go vào comment và Weekly Status Report",High,,19,,,09/10/2026,09/10/2026,PM,milestone,WBS-11.3
+1072,Task,"[PM] 11.4 M4 - Hoàn thành giao việc, chấm công và báo cáo tuần",1,"MỐC KIỂM SOÁT 11.4 - ngày 23/10/2026
+
+TIÊU CHÍ ĐẠT
+- US-09..US-12 Done (16 SP), test Sprint 3 đạt.
+
+CÁCH XỬ LÝ
+- PM kiểm tra tiêu chí vào ngày mốc, ghi kết quả go/no-go vào comment và Weekly Status Report",High,,20,,,23/10/2026,23/10/2026,PM,milestone,WBS-11.4
+1073,Task,"[PM] 11.5 M5 - Feature Complete: đánh giá, tiến độ, dashboard, xuất kết quả",1,"MỐC KIỂM SOÁT 11.5 - ngày 06/11/2026
+
+TIÊU CHÍ ĐẠT
+- US-13..US-16 Done (16 SP), đủ 30 FR, kịch bản UAT sẵn sàng.
+
+CÁCH XỬ LÝ
+- PM kiểm tra tiêu chí vào ngày mốc, ghi kết quả go/no-go vào comment và Weekly Status Report",High,,21,,,06/11/2026,06/11/2026,PM,milestone,WBS-11.5
+1074,Task,[PM] 11.6 M6 - Nghiệm thu và phát hành IMS v1.0.0,1,"MỐC KIỂM SOÁT 11.6 - ngày 20/11/2026
+
+TIÊU CHÍ ĐẠT
+- UAT Sign-off, tag v1.0.0, nghiệm thu thành công.
+
+CÁCH XỬ LÝ
+- PM kiểm tra tiêu chí vào ngày mốc, ghi kết quả go/no-go vào comment và Weekly Status Report",High,,22,,,20/11/2026,20/11/2026,PM,milestone,WBS-11.6
+1075,Sub-task,"[BE] 5.2 Viết API POST /auth/login, /auth/logout, GET /auth/me phát hành JWT (US-01)",101,"MỤC TIÊU
+Cho phép người dùng đăng nhập và nhận JWT.
+
+VIỆC CẦN LÀM
+- Tạo AuthController: POST /auth/login, /auth/logout, GET /auth/me
+- Mật khẩu băm BCrypt, JWT hạn 8 giờ
+- Sai mật khẩu trả 401, tài khoản khóa trả 403 kèm thông điệp
+- Unit test AuthService
+
+ĐẦU RA
+- API xác thực + unit test
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- TC-AUTH-01..04 đạt trên Postman
+- Swagger cập nhật
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 4.4 Khởi tạo Spring Boot 3: cấu trúc package, Spring Data JPA, migration Flyway V1
+- WBS 3.5 Đặc tả 36 endpoint /api/v1 bằng OpenAPI kèm DTO và bảng mã lỗi 400/401/403/404/409
+
+THAM CHIẾU
+- FR-01, FR-02, NFR-02, BR tài khoản khóa; User Story US-01
+
+THÔNG TIN
+- Vai trò: BE (Backend Developer) | WBS 5.2
+- Kế hoạch: 14/09/2026 - 16/09/2026, ước lượng 5 giờ
+- ĐƯỜNG GĂNG: trễ việc này là trễ cả dự án",High,,,,18000,14/09/2026,16/09/2026,BE,Sprint-1,WBS-5.2
+1076,Sub-task,"[FE] 5.3 Dựng màn hình đăng nhập UI-01, lưu token và điều hướng theo role (US-01)",101,"MỤC TIÊU
+Giao diện đăng nhập.
+
+VIỆC CẦN LÀM
+- Dựng UI-01 theo wireframe, validate email/mật khẩu
+- Lưu token, redirect dashboard theo role
+- Hiển thị lỗi từ API
+
+ĐẦU RA
+- Màn hình Login
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- Đăng nhập đủ 3 role chuyển đúng dashboard
+- AC1-AC3 của US-01 đạt
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 5.2 Viết API POST /auth/login, /auth/logout, GET /auth/me phát hành JWT (US-01)
+- WBS 4.5 Khởi tạo React + Vite + Tailwind: router, layout, axios interceptor, xử lý lỗi tập trung
+
+THAM CHIẾU
+- UI-01, FR-01; User Story US-01
+
+THÔNG TIN
+- Vai trò: FE (Frontend Developer) | WBS 5.3
+- Kế hoạch: 16/09/2026 - 18/09/2026, ước lượng 4 giờ",Medium,,,,14400,16/09/2026,18/09/2026,FE,Sprint-1,WBS-5.3
+1077,Sub-task,[BE] 5.4 Cấu hình Spring Security: filter JWT và @PreAuthorize theo 3 role (US-02),102,"MỤC TIÊU
+Bảo vệ API theo role.
+
+VIỆC CẦN LÀM
+- JwtAuthenticationFilter đọc token
+- @PreAuthorize trên từng endpoint theo ma trận quyền
+- Trả JSON lỗi 401/403 thống nhất
+
+ĐẦU RA
+- Cấu hình Spring Security
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- TC-RBAC-02 đạt: Mentor gọi /users bị 403
+- Endpoint public chỉ còn login và applications
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 5.2 Viết API POST /auth/login, /auth/logout, GET /auth/me phát hành JWT (US-01)
+- WBS 5.1 Chốt Acceptance Criteria US-01..US-04 và ma trận quyền 3 role trước Sprint Planning
+
+THAM CHIẾU
+- FR-04, NFR-02, NFR-03; User Story US-02
+
+THÔNG TIN
+- Vai trò: BE (Backend Developer) | WBS 5.4
+- Kế hoạch: 17/09/2026 - 21/09/2026, ước lượng 4 giờ
+- ĐƯỜNG GĂNG: trễ việc này là trễ cả dự án",High,,,,14400,17/09/2026,21/09/2026,BE,Sprint-1,WBS-5.4
+1078,Sub-task,"[FE] 5.5 Chặn route, ẩn menu theo role trên frontend và trang lỗi 403 (US-02)",102,"MỤC TIÊU
+Phân quyền phía giao diện.
+
+VIỆC CẦN LÀM
+- ProtectedRoute theo role
+- Ẩn menu không thuộc role
+- Trang 403 Access Denied
+
+ĐẦU RA
+- Route guard + menu theo role
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- TC-RBAC-01, TC-RBAC-03, TC-SEC-01 đạt
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 5.4 Cấu hình Spring Security: filter JWT và @PreAuthorize theo 3 role (US-02)
+- WBS 5.3 Dựng màn hình đăng nhập UI-01, lưu token và điều hướng theo role (US-01)
+
+THAM CHIẾU
+- FR-04; User Story US-02
+
+THÔNG TIN
+- Vai trò: FE (Frontend Developer) | WBS 5.5
+- Kế hoạch: 21/09/2026 - 22/09/2026, ước lượng 3 giờ",Medium,,,,10800,21/09/2026,22/09/2026,FE,Sprint-1,WBS-5.5
+1079,Sub-task,[BE] 5.6 Viết API CRUD /users kèm khóa/mở tài khoản và đổi mật khẩu (US-03),103,"MỤC TIÊU
+Quản lý tài khoản.
+
+VIỆC CẦN LÀM
+- API CRUD /users có phân trang
+- PATCH /users/{id}/lock khóa/mở
+- PUT /auth/password kiểm tra mật khẩu cũ và quy tắc
+
+ĐẦU RA
+- API quản lý tài khoản
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- TC-USR-01, TC-USR-02 đạt
+- Email trùng trả 409
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 5.4 Cấu hình Spring Security: filter JWT và @PreAuthorize theo 3 role (US-02)
+
+THAM CHIẾU
+- FR-03, FR-05; User Story US-03
+
+THÔNG TIN
+- Vai trò: BE (Backend Developer) | WBS 5.6
+- Kế hoạch: 21/09/2026 - 23/09/2026, ước lượng 4 giờ",Medium,,,,14400,21/09/2026,23/09/2026,BE,Sprint-1,WBS-5.6
+1080,Sub-task,"[BE] 5.7 Viết API CRUD /departments, chặn xóa phòng ban còn Intern (US-04)",104,"MỤC TIÊU
+Quản lý phòng ban.
+
+VIỆC CẦN LÀM
+- API CRUD /departments
+- Chặn xóa phòng ban còn Intern ACTIVE (trả 409 kèm lý do)
+
+ĐẦU RA
+- API phòng ban
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- TC-DEP-01 đạt
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 5.4 Cấu hình Spring Security: filter JWT và @PreAuthorize theo 3 role (US-02)
+
+THAM CHIẾU
+- FR-06; User Story US-04
+
+THÔNG TIN
+- Vai trò: BE (Backend Developer) | WBS 5.7
+- Kế hoạch: 22/09/2026 - 23/09/2026, ước lượng 2 giờ",Medium,,,,7200,22/09/2026,23/09/2026,BE,Sprint-1,WBS-5.7
+1081,Sub-task,"[FE] 5.8 Dựng màn hình quản lý tài khoản UI-10 và phòng ban UI-11 (US-03, US-04)",103,"MỤC TIÊU
+Giao diện quản trị.
+
+VIỆC CẦN LÀM
+- UI-10 danh sách/tạo/sửa/khóa tài khoản
+- UI-11 danh sách/thêm/sửa/xóa phòng ban
+- Hộp thoại xác nhận khi khóa/xóa
+
+ĐẦU RA
+- Màn hình UI-10, UI-11
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- AC US-03, US-04 đạt trên giao diện
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 5.6 Viết API CRUD /users kèm khóa/mở tài khoản và đổi mật khẩu (US-03)
+- WBS 5.7 Viết API CRUD /departments, chặn xóa phòng ban còn Intern (US-04)
+
+THAM CHIẾU
+- FR-05, FR-06; User Story US-03
+
+THÔNG TIN
+- Vai trò: FE (Frontend Developer) | WBS 5.8
+- Kế hoạch: 22/09/2026 - 24/09/2026, ước lượng 4 giờ",Medium,,,,14400,22/09/2026,24/09/2026,FE,Sprint-1,WBS-5.8
+1082,Sub-task,[BE] 6.2 Viết API POST /applications nhận đơn đăng ký và CV PDF tối đa 5 MB (US-05),105,"MỤC TIÊU
+Nhận đơn đăng ký thực tập.
+
+VIỆC CẦN LÀM
+- POST /applications (public) nhận multipart: thông tin + CV
+- Chỉ nhận PDF <= 5 MB, lưu file ngoài web root
+- Chặn email đã có đơn PENDING
+
+ĐẦU RA
+- API đăng ký
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- TC-REG-01..03 đạt
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 5.4 Cấu hình Spring Security: filter JWT và @PreAuthorize theo 3 role (US-02)
+
+THAM CHIẾU
+- FR-07, BR-01, BR-02; User Story US-05
+
+THÔNG TIN
+- Vai trò: BE (Backend Developer) | WBS 6.2
+- Kế hoạch: 28/09/2026 - 30/09/2026, ước lượng 4 giờ
+- ĐƯỜNG GĂNG: trễ việc này là trễ cả dự án",High,,,,14400,28/09/2026,30/09/2026,BE,Sprint-2,WBS-6.2
+1083,Sub-task,[FE] 6.3 Dựng form đăng ký thực tập UI-02 có kiểm tra dữ liệu đầu vào (US-05),105,"MỤC TIÊU
+Form đăng ký thực tập.
+
+VIỆC CẦN LÀM
+- Dựng UI-02 (không cần đăng nhập)
+- Validate phía client, upload CV có thanh tiến trình
+- Thông báo gửi thành công
+
+ĐẦU RA
+- Màn hình UI-02
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- AC US-05 đạt
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 6.2 Viết API POST /applications nhận đơn đăng ký và CV PDF tối đa 5 MB (US-05)
+
+THAM CHIẾU
+- UI-02, FR-07; User Story US-05
+
+THÔNG TIN
+- Vai trò: FE (Frontend Developer) | WBS 6.3
+- Kế hoạch: 30/09/2026 - 01/10/2026, ước lượng 3 giờ",Medium,,,,10800,30/09/2026,01/10/2026,FE,Sprint-2,WBS-6.3
+1084,Sub-task,"[BE] 6.4 Viết API duyệt/từ chối hồ sơ, tự tạo tài khoản Intern và gửi email thông báo (US-06)",106,"MỤC TIÊU
+Duyệt hồ sơ và tạo tài khoản Intern.
+
+VIỆC CẦN LÀM
+- POST /applications/{id}/approve: tạo users + interns trong 1 transaction
+- Gửi email tài khoản (Spring Mail)
+- POST /reject bắt buộc lý do
+
+ĐẦU RA
+- API duyệt/từ chối
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- TC-APR-01, TC-APR-02 đạt
+- Đơn đã xử lý không duyệt lại được
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 6.2 Viết API POST /applications nhận đơn đăng ký và CV PDF tối đa 5 MB (US-05)
+
+THAM CHIẾU
+- FR-08, FR-09, BR-03; User Story US-06
+
+THÔNG TIN
+- Vai trò: BE (Backend Developer) | WBS 6.4
+- Kế hoạch: 01/10/2026 - 05/10/2026, ước lượng 5 giờ
+- ĐƯỜNG GĂNG: trễ việc này là trễ cả dự án",High,,,,18000,01/10/2026,05/10/2026,BE,Sprint-2,WBS-6.4
+1085,Sub-task,[FE] 6.5 Dựng màn hình danh sách và duyệt hồ sơ đăng ký UI-03 (US-06),106,"MỤC TIÊU
+Giao diện duyệt hồ sơ.
+
+VIỆC CẦN LÀM
+- UI-03 danh sách đơn lọc theo trạng thái
+- Xem CV, nút Duyệt/Từ chối có hộp thoại nhập lý do
+
+ĐẦU RA
+- Màn hình UI-03
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- AC US-06 đạt
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 6.4 Viết API duyệt/từ chối hồ sơ, tự tạo tài khoản Intern và gửi email thông báo (US-06)
+- WBS 6.3 Dựng form đăng ký thực tập UI-02 có kiểm tra dữ liệu đầu vào (US-05)
+
+THAM CHIẾU
+- UI-03, FR-08; User Story US-06
+
+THÔNG TIN
+- Vai trò: FE (Frontend Developer) | WBS 6.5
+- Kế hoạch: 02/10/2026 - 05/10/2026, ước lượng 3 giờ",Medium,,,,10800,02/10/2026,05/10/2026,FE,Sprint-2,WBS-6.5
+1086,Sub-task,"[BE] 6.6 Viết API /interns: tìm kiếm, lọc, phân trang, cập nhật hồ sơ, phân phòng ban (US-07)",107,"MỤC TIÊU
+Quản lý hồ sơ Intern.
+
+VIỆC CẦN LÀM
+- GET /interns có tìm kiếm, lọc phòng ban/trạng thái, phân trang
+- GET/PUT /interns/{id}
+- PATCH /interns/{id}/department
+
+ĐẦU RA
+- API Intern
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- TC-INT-01..03 đạt
+- Mentor chỉ thấy Intern của mình
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 6.4 Viết API duyệt/từ chối hồ sơ, tự tạo tài khoản Intern và gửi email thông báo (US-06)
+
+THAM CHIẾU
+- FR-10..FR-12; User Story US-07
+
+THÔNG TIN
+- Vai trò: BE (Backend Developer) | WBS 6.6
+- Kế hoạch: 05/10/2026 - 06/10/2026, ước lượng 4 giờ",Medium,,,,14400,05/10/2026,06/10/2026,BE,Sprint-2,WBS-6.6
+1087,Sub-task,[FE] 6.7 Dựng màn hình Intern List UI-04 và Intern Detail UI-05 (US-07),107,"MỤC TIÊU
+Giao diện Intern.
+
+VIỆC CẦN LÀM
+- UI-04 bảng danh sách + bộ lọc
+- UI-05 chi tiết hồ sơ, sửa thông tin, phân phòng ban
+
+ĐẦU RA
+- Màn hình UI-04, UI-05
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- AC US-07 đạt
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 6.6 Viết API /interns: tìm kiếm, lọc, phân trang, cập nhật hồ sơ, phân phòng ban (US-07)
+
+THAM CHIẾU
+- UI-04, UI-05; User Story US-07
+
+THÔNG TIN
+- Vai trò: FE (Frontend Developer) | WBS 6.7
+- Kế hoạch: 05/10/2026 - 07/10/2026, ước lượng 4 giờ",Medium,,,,14400,05/10/2026,07/10/2026,FE,Sprint-2,WBS-6.7
+1088,Sub-task,"[BE] 6.8 Viết API /mentors và phân Mentor cho Intern, tối đa 5 Intern/Mentor theo BR-04 (US-08)",108,"MỤC TIÊU
+Phân công Mentor.
+
+VIỆC CẦN LÀM
+- GET /mentors, GET /mentors/me/interns
+- PATCH /interns/{id}/mentor kiểm tra BR-04 (tối đa 5) và BR-05 (cùng phòng ban)
+
+ĐẦU RA
+- API Mentor
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- TC-MEN-01, TC-MEN-02 đạt
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 6.6 Viết API /interns: tìm kiếm, lọc, phân trang, cập nhật hồ sơ, phân phòng ban (US-07)
+
+THAM CHIẾU
+- FR-13..FR-15, BR-04, BR-05; User Story US-08
+
+THÔNG TIN
+- Vai trò: BE (Backend Developer) | WBS 6.8
+- Kế hoạch: 06/10/2026 - 07/10/2026, ước lượng 4 giờ
+- ĐƯỜNG GĂNG: trễ việc này là trễ cả dự án",High,,,,14400,06/10/2026,07/10/2026,BE,Sprint-2,WBS-6.8
+1089,Sub-task,[FE] 6.9 Dựng màn hình Mentor List UI-06 và hộp thoại phân công Mentor (US-08),108,"MỤC TIÊU
+Giao diện Mentor.
+
+VIỆC CẦN LÀM
+- UI-06 danh sách Mentor kèm số Intern đang hướng dẫn
+- Hộp thoại phân công, hiển thị lỗi BR-04/BR-05
+
+ĐẦU RA
+- Màn hình UI-06
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- AC US-08 đạt
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 6.8 Viết API /mentors và phân Mentor cho Intern, tối đa 5 Intern/Mentor theo BR-04 (US-08)
+- WBS 6.7 Dựng màn hình Intern List UI-04 và Intern Detail UI-05 (US-07)
+
+THAM CHIẾU
+- UI-06; User Story US-08
+
+THÔNG TIN
+- Vai trò: FE (Frontend Developer) | WBS 6.9
+- Kế hoạch: 07/10/2026 - 08/10/2026, ước lượng 3 giờ",Medium,,,,10800,07/10/2026,08/10/2026,FE,Sprint-2,WBS-6.9
+1090,Sub-task,[BE] 7.2 Viết API POST /tasks và danh sách task theo Intern cho Mentor (US-09),109,"MỤC TIÊU
+Mentor giao task.
+
+VIỆC CẦN LÀM
+- POST /tasks kiểm tra Mentor phụ trách (BR-06), deadline tương lai
+- GET /tasks?internId=
+- Tạo notification cho Intern
+
+ĐẦU RA
+- API giao task
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- TC-TASK-01..03 đạt
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 6.8 Viết API /mentors và phân Mentor cho Intern, tối đa 5 Intern/Mentor theo BR-04 (US-08)
+
+THAM CHIẾU
+- FR-16, FR-30, BR-06; User Story US-09
+
+THÔNG TIN
+- Vai trò: BE (Backend Developer) | WBS 7.2
+- Kế hoạch: 12/10/2026 - 14/10/2026, ước lượng 4 giờ
+- ĐƯỜNG GĂNG: trễ việc này là trễ cả dự án",High,,,,14400,12/10/2026,14/10/2026,BE,Sprint-3,WBS-7.2
+1091,Sub-task,[FE] 7.3 Dựng Task Board của Mentor UI-07 và form giao task có deadline (US-09),109,"MỤC TIÊU
+Giao diện giao task.
+
+VIỆC CẦN LÀM
+- UI-07 Task Board theo Intern, cột theo trạng thái
+- Form tạo task: tiêu đề, mô tả, ưu tiên, deadline
+
+ĐẦU RA
+- Màn hình UI-07
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- AC US-09 đạt
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 7.2 Viết API POST /tasks và danh sách task theo Intern cho Mentor (US-09)
+
+THAM CHIẾU
+- UI-07; User Story US-09
+
+THÔNG TIN
+- Vai trò: FE (Frontend Developer) | WBS 7.3
+- Kế hoạch: 14/10/2026 - 15/10/2026, ước lượng 4 giờ",Medium,,,,14400,14/10/2026,15/10/2026,FE,Sprint-3,WBS-7.3
+1092,Sub-task,"[BE] 7.4 Viết API GET /tasks/my-tasks, PUT /tasks/{id}/status và bình luận task (US-10)",110,"MỤC TIÊU
+Intern cập nhật task.
+
+VIỆC CẦN LÀM
+- GET /tasks/my-tasks
+- PUT /tasks/{id}/status theo vòng đời, chỉ Mentor chuyển DONE (BR-07)
+- GET/POST /tasks/{id}/comments
+
+ĐẦU RA
+- API cập nhật task + bình luận
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- TC-TASK-04, TC-TASK-05 đạt
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 7.2 Viết API POST /tasks và danh sách task theo Intern cho Mentor (US-09)
+
+THAM CHIẾU
+- FR-17..FR-19, BR-07; User Story US-10
+
+THÔNG TIN
+- Vai trò: BE (Backend Developer) | WBS 7.4
+- Kế hoạch: 14/10/2026 - 15/10/2026, ước lượng 4 giờ
+- ĐƯỜNG GĂNG: trễ việc này là trễ cả dự án",High,,,,14400,14/10/2026,15/10/2026,BE,Sprint-3,WBS-7.4
+1093,Sub-task,[FE] 7.5 Dựng màn hình My Tasks UI-08 và Task Detail kèm bình luận (US-10),110,"MỤC TIÊU
+Giao diện task của Intern.
+
+VIỆC CẦN LÀM
+- UI-08 danh sách task, sắp theo deadline
+- Task Detail: đổi trạng thái, khung bình luận
+
+ĐẦU RA
+- Màn hình UI-08
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- AC US-10 đạt
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 7.4 Viết API GET /tasks/my-tasks, PUT /tasks/{id}/status và bình luận task (US-10)
+- WBS 7.3 Dựng Task Board của Mentor UI-07 và form giao task có deadline (US-09)
+
+THAM CHIẾU
+- UI-08; User Story US-10
+
+THÔNG TIN
+- Vai trò: FE (Frontend Developer) | WBS 7.5
+- Kế hoạch: 15/10/2026 - 19/10/2026, ước lượng 4 giờ",Medium,,,,14400,15/10/2026,19/10/2026,FE,Sprint-3,WBS-7.5
+1094,Sub-task,"[BE] 7.6 Viết API check-in/check-out /attendances, chặn chấm công trùng trong ngày BR-08 (US-11)",111,"MỤC TIÊU
+Chấm công.
+
+VIỆC CẦN LÀM
+- POST /attendances/check-in, /check-out
+- UNIQUE(intern, ngày) chặn chấm 2 lần (BR-08), đánh dấu muộn sau 8:30
+- GET /attendances?month= tổng hợp công
+
+ĐẦU RA
+- API chấm công
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- TC-ATT-01..03 đạt
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 6.6 Viết API /interns: tìm kiếm, lọc, phân trang, cập nhật hồ sơ, phân phòng ban (US-07)
+
+THAM CHIẾU
+- FR-20, FR-21, BR-08, BR-09; User Story US-11
+
+THÔNG TIN
+- Vai trò: BE (Backend Developer) | WBS 7.6
+- Kế hoạch: 16/10/2026 - 19/10/2026, ước lượng 3 giờ",Medium,,,,10800,16/10/2026,19/10/2026,BE,Sprint-3,WBS-7.6
+1095,Sub-task,"[FE] 7.7 Dựng nút chấm công và bảng công tháng cho Intern, Mentor (US-11)",111,"MỤC TIÊU
+Giao diện chấm công.
+
+VIỆC CẦN LÀM
+- Nút Check-in/Check-out trên dashboard Intern
+- Bảng công tháng cho Mentor, Admin
+
+ĐẦU RA
+- Chức năng chấm công trên UI
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- AC US-11 đạt
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 7.6 Viết API check-in/check-out /attendances, chặn chấm công trùng trong ngày BR-08 (US-11)
+
+THAM CHIẾU
+- FR-20, FR-21; User Story US-11
+
+THÔNG TIN
+- Vai trò: FE (Frontend Developer) | WBS 7.7
+- Kế hoạch: 19/10/2026 - 20/10/2026, ước lượng 3 giờ",Medium,,,,10800,19/10/2026,20/10/2026,FE,Sprint-3,WBS-7.7
+1096,Sub-task,"[BE] 7.8 Viết API /weekly-reports: nộp, hạn chót Chủ nhật 23:59 theo BR-10, Mentor phản hồi (US-12)",112,"MỤC TIÊU
+Báo cáo tuần.
+
+VIỆC CẦN LÀM
+- POST /reports, gắn cờ LATE sau Chủ nhật 23:59 (BR-10)
+- GET /reports?internId=
+- POST /reports/{id}/feedback cho Mentor
+
+ĐẦU RA
+- API báo cáo tuần
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- TC-RPT-01..03 đạt
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 7.4 Viết API GET /tasks/my-tasks, PUT /tasks/{id}/status và bình luận task (US-10)
+
+THAM CHIẾU
+- FR-22, FR-23, BR-10; User Story US-12
+
+THÔNG TIN
+- Vai trò: BE (Backend Developer) | WBS 7.8
+- Kế hoạch: 19/10/2026 - 21/10/2026, ước lượng 4 giờ
+- ĐƯỜNG GĂNG: trễ việc này là trễ cả dự án",High,,,,14400,19/10/2026,21/10/2026,BE,Sprint-3,WBS-7.8
+1097,Sub-task,[FE] 7.9 Dựng màn hình Weekly Report UI-09 cho Intern và Mentor (US-12),112,"MỤC TIÊU
+Giao diện báo cáo tuần.
+
+VIỆC CẦN LÀM
+- UI-09 form nộp báo cáo: việc đã làm, kế hoạch tuần sau
+- Danh sách báo cáo + phản hồi cho Mentor
+
+ĐẦU RA
+- Màn hình UI-09
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- AC US-12 đạt
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 7.8 Viết API /weekly-reports: nộp, hạn chót Chủ nhật 23:59 theo BR-10, Mentor phản hồi (US-12)
+
+THAM CHIẾU
+- UI-09; User Story US-12
+
+THÔNG TIN
+- Vai trò: FE (Frontend Developer) | WBS 7.9
+- Kế hoạch: 20/10/2026 - 22/10/2026, ước lượng 4 giờ",Medium,,,,14400,20/10/2026,22/10/2026,FE,Sprint-3,WBS-7.9
+1098,Sub-task,"[BE] 8.2 Viết API /evaluations giữa kỳ và cuối kỳ, chỉ Mentor phụ trách được chấm BR-12 (US-13)",113,"MỤC TIÊU
+Mentor đánh giá Intern.
+
+VIỆC CẦN LÀM
+- POST /evaluations: MIDTERM/FINAL, điểm 0..10, tính tổng và xếp loại
+- UNIQUE(intern, type) theo BR-12
+- GET /evaluations?internId=
+
+ĐẦU RA
+- API đánh giá
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- TC-EVA-01..03 đạt
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 6.8 Viết API /mentors và phân Mentor cho Intern, tối đa 5 Intern/Mentor theo BR-04 (US-08)
+
+THAM CHIẾU
+- FR-24, FR-25, BR-12, BR-13; User Story US-13
+
+THÔNG TIN
+- Vai trò: BE (Backend Developer) | WBS 8.2
+- Kế hoạch: 26/10/2026 - 28/10/2026, ước lượng 4 giờ",Medium,,,,14400,26/10/2026,28/10/2026,BE,Sprint-4,WBS-8.2
+1099,Sub-task,[FE] 8.3 Dựng form đánh giá UI-12 cho Mentor và trang xem đánh giá cho Intern (US-13),113,"MỤC TIÊU
+Giao diện đánh giá.
+
+VIỆC CẦN LÀM
+- UI-12 form 5 tiêu chí + nhận xét cho Mentor
+- Trang xem kết quả cho Intern
+
+ĐẦU RA
+- Màn hình UI-12
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- AC US-13 đạt
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 8.2 Viết API /evaluations giữa kỳ và cuối kỳ, chỉ Mentor phụ trách được chấm BR-12 (US-13)
+
+THAM CHIẾU
+- UI-12; User Story US-13
+
+THÔNG TIN
+- Vai trò: FE (Frontend Developer) | WBS 8.3
+- Kế hoạch: 28/10/2026 - 29/10/2026, ước lượng 3 giờ",Medium,,,,10800,28/10/2026,29/10/2026,FE,Sprint-4,WBS-8.3
+1100,Sub-task,[BE] 8.4 Viết service tính tiến độ: 50% task DONE + 25% báo cáo tuần + 25% chuyên cần (US-14),114,"MỤC TIÊU
+Tính tiến độ thực tập.
+
+VIỆC CẦN LÀM
+- ProgressService: 50% task DONE + 25% báo cáo đúng hạn + 25% chuyên cần
+- GET /interns/{id}/progress
+- Unit test với 2 ví dụ tính tay
+
+ĐẦU RA
+- API tiến độ
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- TC-PRG-01 đạt, kết quả khớp ví dụ tính tay
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 7.4 Viết API GET /tasks/my-tasks, PUT /tasks/{id}/status và bình luận task (US-10)
+- WBS 7.6 Viết API check-in/check-out /attendances, chặn chấm công trùng trong ngày BR-08 (US-11)
+- WBS 7.8 Viết API /weekly-reports: nộp, hạn chót Chủ nhật 23:59 theo BR-10, Mentor phản hồi (US-12)
+
+THAM CHIẾU
+- FR-26, BR-11; User Story US-14
+
+THÔNG TIN
+- Vai trò: BE (Backend Developer) | WBS 8.4
+- Kế hoạch: 28/10/2026 - 30/10/2026, ước lượng 3 giờ
+- ĐƯỜNG GĂNG: trễ việc này là trễ cả dự án",High,,,,10800,28/10/2026,30/10/2026,BE,Sprint-4,WBS-8.4
+1101,Sub-task,[FE] 8.5 Hiển thị thanh tiến độ trên Intern Detail và Intern Dashboard (US-14),114,"MỤC TIÊU
+Hiển thị tiến độ.
+
+VIỆC CẦN LÀM
+- Thanh tiến độ trên UI-05 và dashboard Intern
+- Đánh dấu cảnh báo khi < 50% sau nửa kỳ
+
+ĐẦU RA
+- Component thanh tiến độ
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- AC US-14 đạt
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 8.4 Viết service tính tiến độ: 50% task DONE + 25% báo cáo tuần + 25% chuyên cần (US-14)
+
+THAM CHIẾU
+- FR-26; User Story US-14
+
+THÔNG TIN
+- Vai trò: FE (Frontend Developer) | WBS 8.5
+- Kế hoạch: 30/10/2026 - 02/11/2026, ước lượng 2 giờ",Medium,,,,7200,30/10/2026,02/11/2026,FE,Sprint-4,WBS-8.5
+1102,Sub-task,"[BE] 8.6 Viết API /dashboard/admin, /dashboard/mentor, /dashboard/intern tổng hợp số liệu (US-15)",115,"MỤC TIÊU
+Số liệu dashboard.
+
+VIỆC CẦN LÀM
+- GET /dashboard/admin: Intern theo trạng thái/phòng ban, task quá hạn
+- GET /dashboard/mentor, /dashboard/intern
+- Truy vấn tổng hợp có index, < 1 giây
+
+ĐẦU RA
+- API dashboard
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- TC-DSH-01, TC-DSH-02 đạt
+- Đáp ứng NFR-01
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 8.4 Viết service tính tiến độ: 50% task DONE + 25% báo cáo tuần + 25% chuyên cần (US-14)
+
+THAM CHIẾU
+- FR-27, NFR-01; User Story US-15
+
+THÔNG TIN
+- Vai trò: BE (Backend Developer) | WBS 8.6
+- Kế hoạch: 02/11/2026 - 03/11/2026, ước lượng 4 giờ
+- ĐƯỜNG GĂNG: trễ việc này là trễ cả dự án",High,,,,14400,02/11/2026,03/11/2026,BE,Sprint-4,WBS-8.6
+1103,Sub-task,"[FE] 8.7 Dựng 3 dashboard bằng Recharts: số Intern, tiến độ, task quá hạn, điểm trung bình (US-15)",115,"MỤC TIÊU
+Giao diện dashboard.
+
+VIỆC CẦN LÀM
+- 3 biến thể dashboard theo role
+- Biểu đồ Recharts: cột, tròn, thẻ KPI
+
+ĐẦU RA
+- Màn hình UI-13
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- AC US-15 đạt
+- Số liệu khớp API
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 8.6 Viết API /dashboard/admin, /dashboard/mentor, /dashboard/intern tổng hợp số liệu (US-15)
+
+THAM CHIẾU
+- UI-13; User Story US-15
+
+THÔNG TIN
+- Vai trò: FE (Frontend Developer) | WBS 8.7
+- Kế hoạch: 02/11/2026 - 04/11/2026, ước lượng 5 giờ",Medium,,,,18000,02/11/2026,04/11/2026,FE,Sprint-4,WBS-8.7
+1104,Sub-task,"[BE] 8.8 Xuất kết quả cuối kỳ ra Excel (Apache POI) và PDF, chuyển trạng thái COMPLETED (US-16)",116,"MỤC TIÊU
+Xuất kết quả và kết thúc kỳ.
+
+VIỆC CẦN LÀM
+- GET /results/export?format=xlsx|pdf (Apache POI, OpenPDF)
+- POST /interns/{id}/complete kiểm tra BR-14
+- Khóa sửa dữ liệu Intern COMPLETED (BR-15)
+
+ĐẦU RA
+- API xuất file + kết thúc kỳ
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- TC-EXP-01, TC-EXP-02 đạt
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 8.2 Viết API /evaluations giữa kỳ và cuối kỳ, chỉ Mentor phụ trách được chấm BR-12 (US-13)
+
+THAM CHIẾU
+- FR-28, FR-29, BR-14, BR-15; User Story US-16
+
+THÔNG TIN
+- Vai trò: BE (Backend Developer) | WBS 8.8
+- Kế hoạch: 03/11/2026 - 05/11/2026, ước lượng 4 giờ
+- ĐƯỜNG GĂNG: trễ việc này là trễ cả dự án",High,,,,14400,03/11/2026,05/11/2026,BE,Sprint-4,WBS-8.8
+1105,Sub-task,[FE] 8.9 Thêm nút xuất file và thao tác kết thúc kỳ thực tập trên giao diện Admin (US-16),116,"MỤC TIÊU
+Giao diện xuất file và kết thúc kỳ.
+
+VIỆC CẦN LÀM
+- Nút xuất Excel/PDF trên UI-04
+- Nút Kết thúc kỳ có hộp thoại xác nhận
+
+ĐẦU RA
+- Chức năng trên UI Admin
+
+TIÊU CHÍ HOÀN THÀNH (DoD)
+- AC US-16 đạt
+
+PHỤ THUỘC (chỉ bắt đầu khi xong)
+- WBS 8.8 Xuất kết quả cuối kỳ ra Excel (Apache POI) và PDF, chuyển trạng thái COMPLETED (US-16)
+
+THAM CHIẾU
+- FR-28, FR-29; User Story US-16
+
+THÔNG TIN
+- Vai trò: FE (Frontend Developer) | WBS 8.9
+- Kế hoạch: 04/11/2026 - 05/11/2026, ước lượng 2 giờ",Medium,,,,7200,04/11/2026,05/11/2026,FE,Sprint-4,WBS-8.9
