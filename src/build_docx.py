@@ -614,8 +614,8 @@ def ch6_plan(r):
         "mức độ, bug tái mở, độ phủ unit test tầng Service tối thiểu 60% (NFR-09).")
     r.h("6.9. Quản lý cấu hình", 2)
     r.bullets([
-        ("Nhánh", "main (bản phát hành), develop (tích hợp), feature/IMS-xx-mo-ta (mỗi Story/Sub-task), hotfix/IMS-xx."),
-        ("Commit", "\"IMS-12: them API check-in\" để Jira tự liên kết commit với work item."),
+        ("Nhánh", "main (bản phát hành), develop (tích hợp), feature/IM-xx-mo-ta (mỗi Story/Sub-task), hotfix/IM-xx."),
+        ("Commit", "\"IM-12: them API check-in\" để Jira tự liên kết commit với work item."),
         ("Pull Request", "Tự review theo checklist: đúng AC, có test, không lộ mật khẩu/khóa, không còn code thừa, CI xanh."),
         ("Phiên bản", "Tag cuối mỗi Sprint v0.1..v0.4, bản phát hành v1.0.0; migration CSDL đánh số Flyway."),
         ("Tài liệu", "SRS, thiết kế, test report lưu trong thư mục docs/ cùng repo để quản lý phiên bản."),
@@ -737,7 +737,7 @@ def ch9_control(r):
     r.table("Mẫu Weekly Status Report", ["Mục", "Nội dung cần ghi"], [
         ("Tuần / Sprint", "Tuần x, Sprint y, ngày báo cáo"),
         ("Tình trạng chung", "Xanh / Vàng / Đỏ kèm lý do"),
-        ("Đã hoàn thành", "Danh sách work item Done (mã IMS-xx), SP đạt"),
+        ("Đã hoàn thành", "Danh sách work item Done (mã IM-xx), SP đạt"),
         ("Kế hoạch tuần tới", "Work item dự kiến, mốc sắp tới"),
         ("Chỉ số", "SP hoàn thành/cam kết, SPI, CPI, số bug mở theo mức"),
         ("Rủi ro và vấn đề", "Rủi ro mới hoặc thay đổi điểm, vấn đề cần hỗ trợ"),

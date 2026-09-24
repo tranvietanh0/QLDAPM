@@ -86,7 +86,7 @@ WBS = [
 
     ("4", "Thiết lập hạ tầng và môi trường", "BE", d(8, 31), d(9, 16), None, None),
     ("4.1", "Tạo GitHub repository, bảo vệ nhánh main/develop, quy ước Git Flow và Pull Request", "BE", d(8, 31), d(9, 1), 2, None),
-    ("4.2", "Kết nối Jira với GitHub (GitHub for Jira), quy ước commit/branch chứa mã IMS-xx", "BE", d(9, 1), d(9, 2), 1, None),
+    ("4.2", "Kết nối Jira với GitHub (GitHub for Jira), quy ước commit/branch chứa mã IM-xx", "BE", d(9, 1), d(9, 2), 1, None),
     ("4.3", "Viết docker-compose.yml cho MySQL 8, backend, frontend và phpMyAdmin", "BE", d(9, 3), d(9, 4), 2, None),
     ("4.4", "Khởi tạo Spring Boot 3: cấu trúc package, Spring Data JPA, migration Flyway V1", "BE", d(9, 9), d(9, 11), 2, None),
     ("4.5", "Khởi tạo React + Vite + Tailwind: router, layout, axios interceptor, xử lý lỗi tập trung", "FE", d(9, 14), d(9, 15), 2, None),

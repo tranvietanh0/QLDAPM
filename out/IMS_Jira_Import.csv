@@ -73,7 +73,7 @@ TIÊU CHÍ HOÀN THÀNH EPIC
 
 CÔNG VIỆC CON (6)
 - 4.1 [BE] Tạo GitHub repository, bảo vệ nhánh main/develop, quy ước Git Flow và Pull Request
-- 4.2 [BE] Kết nối Jira với GitHub (GitHub for Jira), quy ước commit/branch chứa mã IMS-xx
+- 4.2 [BE] Kết nối Jira với GitHub (GitHub for Jira), quy ước commit/branch chứa mã IM-xx
 - 4.3 [BE] Viết docker-compose.yml cho MySQL 8, backend, frontend và phpMyAdmin
 - 4.4 [BE] Khởi tạo Spring Boot 3: cấu trúc package, Spring Data JPA, migration Flyway V1
 - 4.5 [FE] Khởi tạo React + Vite + Tailwind: router, layout, axios interceptor, xử lý lỗi tập trung
@@ -439,7 +439,7 @@ THÔNG TIN
 Dựng công cụ quản lý dự án trên Jira khớp với WBS.
 
 VIỆC CẦN LÀM
-- Tạo space Scrum company-managed key IMS
+- Tạo space Scrum company-managed key IM
 - Tạo 6 Sprint, bật Story Point, Time tracking
 - Import backlog CSV, cấu hình board, quick filter theo vai trò
 
@@ -932,7 +932,7 @@ Chuẩn bị quản lý mã nguồn.
 VIỆC CẦN LÀM
 - Tạo repo GitHub, nhánh main và develop
 - Bật branch protection: bắt buộc PR, CI xanh
-- Viết CONTRIBUTING: Git Flow, quy ước tên nhánh feature/IMS-xx
+- Viết CONTRIBUTING: Git Flow, quy ước tên nhánh feature/IM-xx
 
 ĐẦU RA
 - Repo GitHub
@@ -946,18 +946,18 @@ THAM CHIẾU
 THÔNG TIN
 - Vai trò: BE (Backend Developer) | WBS 4.1
 - Kế hoạch: 31/08/2026 - 01/09/2026, ước lượng 2 giờ",Medium,tranvietanh0507@gmail.com,17,,7200,31/08/2026,01/09/2026,BE,Sprint-0,WBS-4.1
-1028,Task,"[BE] 4.2 Kết nối Jira với GitHub (GitHub for Jira), quy ước commit/branch chứa mã IMS-xx",4,"MỤC TIÊU
+1028,Task,"[BE] 4.2 Kết nối Jira với GitHub (GitHub for Jira), quy ước commit/branch chứa mã IM-xx",4,"MỤC TIÊU
 Liên kết code với work item Jira.
 
 VIỆC CẦN LÀM
 - Cài app GitHub for Jira, kết nối repo
-- Quy ước commit ""IMS-12: ...""
+- Quy ước commit ""IM-12: ...""
 
 ĐẦU RA
 - Jira hiển thị commit/PR trong work item
 
 TIÊU CHÍ HOÀN THÀNH (DoD)
-- Commit thử có mã IMS-xx hiện trong Jira
+- Commit thử có mã IM-xx hiện trong Jira
 
 PHỤ THUỘC (chỉ bắt đầu khi xong)
 - WBS 4.1 Tạo GitHub repository, bảo vệ nhánh main/develop, quy ước Git Flow và Pull Request

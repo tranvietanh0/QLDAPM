@@ -177,8 +177,8 @@ def build(out):
         [("Thanh bên trái: ", False), ("Projects (Spaces) → Create project", True), (".", False)],
         [("Chọn template ", False), ("Scrum", True), (" → ", False), ("Use template", True), (".", False)],
         [("Ở màn hình chọn loại project, chọn ", False), ("Company-managed", True), (" (không chọn Team-managed).", False)],
-        [("Name: ", False), ("IMS - Intern Management System", True), ("; Key: ", False), ("IMS", True),
-         (" (mọi work item sẽ có mã IMS-1, IMS-2...). Bấm ", False), ("Create", True), (".", False)],
+        [("Name: ", False), ("IMS - Intern Management System", True), ("; Key: ", False), ("IM", True),
+         (" (mọi work item sẽ có mã IM-1, IM-2...). Bấm ", False), ("Create", True), (".", False)],
         [("Bật ước lượng thời gian: ", False), ("Project settings → Features", True),
          (" (hoặc Board settings → Estimation): Estimation = Story points, bật Time tracking.", False)],
     ])
@@ -229,7 +229,7 @@ def build(out):
          ("Use an existing configuration file", True), (".", False)],
         [("Mở ", False), ("Advanced", True), (": File encoding = ", False), ("UTF-8", True), (", CSV delimiter = ", False),
          (",", True), (" (dấu phẩy). Bấm Next.", False)],
-        [("Import to Jira project: ", False), ("IMS", True), ("; Date format: ", False), ("dd/MM/yyyy", True),
+        [("Import to Jira project: ", False), ("IM", True), ("; Date format: ", False), ("dd/MM/yyyy", True),
          (". Bấm Next.", False)],
     ])
     g.p("7.3. Map fields (bước quan trọng nhất)", bold=True)
@@ -261,13 +261,13 @@ def build(out):
         "Backlog: IMS Sprint 0 có các Task chuẩn bị/thiết kế; IMS Sprint 1 có US-01..US-04 kèm Task BA/TEST. Tổng SP hiển thị ở đầu mỗi sprint: 13, 14, 16, 16.",
         "Mở US-01: có 2 Sub-task [BE] 5.2 và [FE] 5.3, Parent = Epic \"5. Sprint 1...\", Story point = 5, Description có 3 AC.",
         "Timeline: 10 Epic xếp đúng thời gian 31/08 → 20/11/2026, giống Gantt Excel.",
-        "Tìm kiếm JQL để đếm: project = IMS → 131 kết quả; project = IMS AND issuetype = Subtask → 31.",
-        [("Nếu đã import không có Sprint: Search với JQL ", False), ("project = IMS AND labels = Sprint-1 AND issuetype in (Story, Task)", True),
+        "Tìm kiếm JQL để đếm: project = IM → 131 kết quả; project = IM AND issuetype = Subtask → 31.",
+        [("Nếu đã import không có Sprint: Search với JQL ", False), ("project = IM AND labels = Sprint-1 AND issuetype in (Story, Task)", True),
          (" → ... → Bulk change → Edit fields → Sprint = IMS Sprint 1. Lặp lại cho Sprint-0..Sprint-5.", False)],
-        [("Nếu chưa gán Assignee: JQL ", False), ("project = IMS AND assignee is EMPTY", True),
+        [("Nếu chưa gán Assignee: JQL ", False), ("project = IM AND assignee is EMPTY", True),
          (" → Bulk change → Edit → Assignee = bạn.", False)],
     ])
-    g.note("Import sai? Xóa hàng loạt bằng JQL project = IMS → Bulk change → Delete, sửa file rồi import lại. "
+    g.note("Import sai? Xóa hàng loạt bằng JQL project = IM → Bulk change → Delete, sửa file rồi import lại. "
            "Đừng import chồng lần 2 lên dữ liệu cũ vì sẽ bị nhân đôi.")
 
     g.h("9. Vận hành Scrum một người trên Jira")
@@ -298,7 +298,7 @@ def build(out):
         "Reports → Burndown chart và Sprint report: chụp cuối mỗi Sprint làm evidence.",
         "Reports → Velocity chart: so sánh SP cam kết và hoàn thành (kế hoạch khoảng 15 SP/Sprint).",
         "Timeline: chụp so sánh với Gantt baseline để trình bày baseline và thực tế khi nghiệm thu.",
-        "Kết nối GitHub: Apps → GitHub for Jira; đặt tên nhánh/commit chứa mã IMS-xx để Jira tự gắn code vào work item.",
+        "Kết nối GitHub: Apps → GitHub for Jira; đặt tên nhánh/commit chứa mã IM-xx để Jira tự gắn code vào work item.",
     ])
 
     g.h("10. Lỗi thường gặp và cách xử lý")
@@ -316,7 +316,7 @@ def build(out):
     g.h("11. Tóm tắt nhanh (checklist 10 bước)")
     g.steps([
         "Tạo site Jira Free.",
-        "Tạo project Scrum company-managed, key IMS.",
+        "Tạo project Scrum company-managed, key IM.",
         "Bật Story points và Time tracking.",
         "Tạo 6 sprint IMS Sprint 0..5.",
         "Lấy sprint ID qua /rest/agile/1.0/board/<id>/sprint.",
