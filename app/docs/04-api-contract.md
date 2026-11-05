@@ -57,5 +57,5 @@ Content-Type: application/json
 ```
 
 - Mã lỗi (body JSON `{"error": "..."}`): 400 dữ liệu không hợp lệ; 401 sai thông tin đăng nhập hoặc thiếu/hết phiên; 403 thiếu quyền hoặc đăng nhập sai ứng dụng; 404 không có bản ghi hoặc đường dẫn không tồn tại; 405 sai HTTP method (kèm header `Allow`); 409 dữ liệu trùng/đang tham chiếu; 415 `Content-Type` không được hỗ trợ (hãy gửi JSON); 429 đăng nhập sai quá nhiều lần; 500 lỗi server không lường trước (được ghi vào log server).
-- Giới hạn đăng nhập: sai 5 lần cho cùng một email trong 15 phút thì các lần đăng nhập tiếp theo trả 429 cho tới khi hết 15 phút tính từ lần sai đầu tiên; đăng nhập đúng sẽ xóa bộ đếm. Bộ đếm lưu trong bộ nhớ, mất khi khởi động lại server.
+- Giới hạn đăng nhập: sai 5 lần cho cùng một email trong 15 phút thì các lần đăng nhập tiếp theo trả 429 cho tới khi hết 15 phút tính từ lần sai đầu tiên; đăng nhập đúng sẽ xóa bộ đếm. Mỗi lần thử được tính trước khi kiểm tra mật khẩu, nên gửi song song cũng chỉ có tối đa 5 lần được kiểm tra. Email dài hơn 254 ký tự bị từ chối với 400. Bộ đếm lưu trong bộ nhớ (tối đa khoảng 10.000 email), mất khi khởi động lại server.
 - Phiên đăng nhập dùng token ngẫu nhiên, lưu SHA-256 token trong bảng `user_sessions`; thời hạn mặc định 12 giờ.

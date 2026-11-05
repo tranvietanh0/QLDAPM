@@ -1,15 +1,18 @@
 package com.example.internms.service;
 import com.example.internms.model.*;
 import com.example.internms.repo.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.server.ResponseStatusException;
 import org.springframework.http.HttpStatus;
+import java.time.Clock;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicReference;
 import java.security.SecureRandom;
 import java.security.MessageDigest;
 import java.nio.charset.StandardCharsets;
@@ -19,10 +22,13 @@ import java.util.*;
 public class AuthService {
  private final UserRepository users;
  private final UserSessionRepository sessions;
+ private final Clock clock;
  private final BCryptPasswordEncoder encoder=new BCryptPasswordEncoder();
  private final SecureRandom random=new SecureRandom();
  @Value("${app.session.hours:12}") private long durationHours;
- public AuthService(UserRepository users,UserSessionRepository sessions){this.users=users;this.sessions=sessions;}
+ @Autowired public AuthService(UserRepository users,UserSessionRepository sessions){this(users,sessions,Clock.systemUTC());}
+ // The clock drives the failed-login window; tests pass a controllable one.
+ public AuthService(UserRepository users,UserSessionRepository sessions,Clock clock){this.users=users;this.sessions=sessions;this.clock=Objects.requireNonNull(clock);}
  public String hash(String raw){return encoder.encode(raw);}
  private String digest(String input){
   try{byte[] hash=MessageDigest.getInstance("SHA-256").digest(input.getBytes(StandardCharsets.UTF_8)); return HexFormat.of().formatHex(hash);}
@@ -32,27 +38,53 @@ public class AuthService {
   if(header==null||!header.startsWith("Bearer ")||header.substring(7).isBlank()) throw new ResponseStatusException(HttpStatus.UNAUTHORIZED,"Vui lòng đăng nhập");
   return header.substring(7).trim();
  }
- // Failed-login throttle, keyed by normalized email (known or unknown, so it does not reveal which accounts exist).
- // The window opens at the first failure; once MAX_FAILED_LOGINS is reached the email is rejected until the window ends.
+ // Failed-login throttle. The key is canonical: when the typed email resolves to an account, the account's stored
+ // email (lower-cased) is used, because the DB collation is accent-insensitive and several typed variants
+ // ("admin@..", "ádmin@..") can match the same user; they must share one counter. Unknown emails are keyed by the
+ // normalized typed string and counted exactly like real ones, but they skip BCrypt, so response timing can still
+ // hint whether an account exists: this limits guessing, not enumeration.
+ // Every attempt reserves a slot atomically (ConcurrentHashMap.compute) BEFORE the password is checked, so concurrent
+ // requests cannot evaluate more than MAX_FAILED_LOGINS passwords per account per window. A successful login clears it.
+ // The window opens at the first attempt; further attempts inside the window get 429 until it ends.
+ // Memory is bounded: emails longer than MAX_EMAIL_LENGTH are rejected before tracking, and at MAX_TRACKED_EMAILS
+ // entries the expired ones are pruned (a full scan at most once per PRUNE_INTERVAL); if still full, one entry is
+ // evicted, preferring an unlocked one from a small sample. Accepted residual risk: once the map is full of LOCKED
+ // entries (an attacker locking ~10,000 fake emails), the sample holds no unlocked entry, so a flood of further fake
+ // emails evicts locked entries too and can reset a real account's counter. Its cost is bounded by the
+ // MAX_TRACKED_EMAILS cap (roughly 300k cheap requests), but it is not prevented.
  // In-memory only: counters reset on restart and are not shared between server instances.
  static final int MAX_FAILED_LOGINS=5;
  static final Duration FAILED_LOGIN_WINDOW=Duration.ofMinutes(15);
- private static final int MAX_TRACKED_EMAILS=10_000;
- private record FailedLogins(int count,Instant windowStart){}
- private final ConcurrentHashMap<String,FailedLogins> failedLogins=new ConcurrentHashMap<>();
- private static boolean expired(FailedLogins f,Instant now){return !now.isBefore(f.windowStart().plus(FAILED_LOGIN_WINDOW));}
- private void rejectIfLocked(String key,Instant now){
-  FailedLogins f=failedLogins.get(key);
-  if(f==null) return;
-  if(expired(f,now)){failedLogins.remove(key,f);return;}
-  if(f.count()>=MAX_FAILED_LOGINS){
-   long minutes=Math.max(1,(Duration.between(now,f.windowStart().plus(FAILED_LOGIN_WINDOW)).toSeconds()+59)/60);
+ static final int MAX_EMAIL_LENGTH=254;
+ static final int MAX_TRACKED_EMAILS=10_000;
+ private static final Duration PRUNE_INTERVAL=Duration.ofMinutes(1);
+ private static final int EVICTION_SAMPLE=8;
+ private record LoginAttempts(int count,Instant windowStart){}
+ private final ConcurrentHashMap<String,LoginAttempts> loginAttempts=new ConcurrentHashMap<>();
+ private final AtomicReference<Instant> lastPrune=new AtomicReference<>(Instant.EPOCH);
+ private static boolean expired(LoginAttempts a,Instant now){return !now.isBefore(a.windowStart().plus(FAILED_LOGIN_WINDOW));}
+ private static boolean locked(LoginAttempts a,Instant now){return a.count()>=MAX_FAILED_LOGINS&&!expired(a,now);}
+ private void makeRoom(Instant now){
+  Instant last=lastPrune.get();
+  if(!now.isBefore(last.plus(PRUNE_INTERVAL))&&lastPrune.compareAndSet(last,now)) loginAttempts.values().removeIf(a->expired(a,now));
+  if(loginAttempts.size()<MAX_TRACKED_EMAILS) return;
+  String victim=null;int seen=0;
+  for(Map.Entry<String,LoginAttempts> e:loginAttempts.entrySet()){
+   if(victim==null) victim=e.getKey();
+   if(!locked(e.getValue(),now)){victim=e.getKey();break;}
+   if(++seen>=EVICTION_SAMPLE) break;
+  }
+  if(victim!=null) loginAttempts.remove(victim);
+ }
+ // Reserves one attempt for key, or throws 429 when the window's attempts are used up.
+ private void reserveAttempt(String key,Instant now){
+  if(loginAttempts.size()>=MAX_TRACKED_EMAILS&&!loginAttempts.containsKey(key)) makeRoom(now);
+  LoginAttempts a=loginAttempts.compute(key,(k,o)->o==null||expired(o,now)?new LoginAttempts(1,now)
+   :new LoginAttempts(Math.min(o.count()+1,MAX_FAILED_LOGINS+1),o.windowStart()));
+  if(a.count()>MAX_FAILED_LOGINS){
+   long minutes=Math.max(1,(Duration.between(now,a.windowStart().plus(FAILED_LOGIN_WINDOW)).toSeconds()+59)/60);
    throw new ResponseStatusException(HttpStatus.TOO_MANY_REQUESTS,"Đăng nhập sai quá nhiều lần, vui lòng thử lại sau "+minutes+" phút");
   }
- }
- private void recordFailure(String key,Instant now){
-  if(failedLogins.size()>=MAX_TRACKED_EMAILS) failedLogins.values().removeIf(f->expired(f,now));
-  failedLogins.compute(key,(k,f)->f==null||expired(f,now)?new FailedLogins(1,now):new FailedLogins(f.count()+1,f.windowStart()));
  }
  @Transactional
  public Map<String,Object> login(String email,String password){ return login(email,password,null); }
@@ -61,11 +93,13 @@ public class AuthService {
  public Map<String,Object> login(String email,String password,Set<Role> portalRoles){
   if(email==null||password==null) throw new ResponseStatusException(HttpStatus.UNAUTHORIZED,"Sai email hoặc mật khẩu");
   String key=email.trim().toLowerCase(Locale.ROOT);
-  Instant now=Instant.now();
-  rejectIfLocked(key,now);
+  if(key.length()>MAX_EMAIL_LENGTH) throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Email không hợp lệ");
+  // Look up first (no BCrypt yet) so the attempt is reserved under the canonical key, still before the password check.
   User u=users.findByEmail(key).orElse(null);
-  if(u==null||!encoder.matches(password,u.getPassword())){recordFailure(key,now);throw new ResponseStatusException(HttpStatus.UNAUTHORIZED,"Sai email hoặc mật khẩu");}
-  failedLogins.remove(key);
+  String lockKey=u!=null&&u.getEmail()!=null?u.getEmail().trim().toLowerCase(Locale.ROOT):key;
+  reserveAttempt(lockKey,clock.instant());
+  if(u==null||!encoder.matches(password,u.getPassword())) throw new ResponseStatusException(HttpStatus.UNAUTHORIZED,"Sai email hoặc mật khẩu");
+  loginAttempts.remove(lockKey);
   if(portalRoles!=null&&!portalRoles.contains(u.getRole())) throw new ResponseStatusException(HttpStatus.FORBIDDEN,portalRoles.contains(Role.INTERN)?"Ứng dụng Client chỉ dành cho thực tập sinh":"Ứng dụng Server chỉ dành cho quản trị viên và mentor");
   byte[] bytes=new byte[32];random.nextBytes(bytes);String token=Base64.getUrlEncoder().withoutPadding().encodeToString(bytes);
   sessions.save(new UserSession(digest(token),u,Instant.now().plusSeconds(Math.max(1,durationHours)*3600)));
