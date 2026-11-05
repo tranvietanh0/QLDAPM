@@ -7,7 +7,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.server.ResponseStatusException;
 import org.springframework.http.HttpStatus;
+import java.time.Duration;
 import java.time.Instant;
+import java.util.concurrent.ConcurrentHashMap;
 import java.security.SecureRandom;
 import java.security.MessageDigest;
 import java.nio.charset.StandardCharsets;
@@ -30,14 +32,41 @@ public class AuthService {
   if(header==null||!header.startsWith("Bearer ")||header.substring(7).isBlank()) throw new ResponseStatusException(HttpStatus.UNAUTHORIZED,"Vui lòng đăng nhập");
   return header.substring(7).trim();
  }
+ // Failed-login throttle, keyed by normalized email (known or unknown, so it does not reveal which accounts exist).
+ // The window opens at the first failure; once MAX_FAILED_LOGINS is reached the email is rejected until the window ends.
+ // In-memory only: counters reset on restart and are not shared between server instances.
+ static final int MAX_FAILED_LOGINS=5;
+ static final Duration FAILED_LOGIN_WINDOW=Duration.ofMinutes(15);
+ private static final int MAX_TRACKED_EMAILS=10_000;
+ private record FailedLogins(int count,Instant windowStart){}
+ private final ConcurrentHashMap<String,FailedLogins> failedLogins=new ConcurrentHashMap<>();
+ private static boolean expired(FailedLogins f,Instant now){return !now.isBefore(f.windowStart().plus(FAILED_LOGIN_WINDOW));}
+ private void rejectIfLocked(String key,Instant now){
+  FailedLogins f=failedLogins.get(key);
+  if(f==null) return;
+  if(expired(f,now)){failedLogins.remove(key,f);return;}
+  if(f.count()>=MAX_FAILED_LOGINS){
+   long minutes=Math.max(1,(Duration.between(now,f.windowStart().plus(FAILED_LOGIN_WINDOW)).toSeconds()+59)/60);
+   throw new ResponseStatusException(HttpStatus.TOO_MANY_REQUESTS,"Đăng nhập sai quá nhiều lần, vui lòng thử lại sau "+minutes+" phút");
+  }
+ }
+ private void recordFailure(String key,Instant now){
+  if(failedLogins.size()>=MAX_TRACKED_EMAILS) failedLogins.values().removeIf(f->expired(f,now));
+  failedLogins.compute(key,(k,f)->f==null||expired(f,now)?new FailedLogins(1,now):new FailedLogins(f.count()+1,f.windowStart()));
+ }
  @Transactional
  public Map<String,Object> login(String email,String password){ return login(email,password,null); }
  @Transactional
- public Map<String,Object> login(String email,String password,Role portalRole){
+ // portalRoles: roles the calling portal accepts; null accepts any role (generic /api/auth/login).
+ public Map<String,Object> login(String email,String password,Set<Role> portalRoles){
   if(email==null||password==null) throw new ResponseStatusException(HttpStatus.UNAUTHORIZED,"Sai email hoặc mật khẩu");
-  User u=users.findByEmail(email.trim().toLowerCase(Locale.ROOT)).orElseThrow(()->new ResponseStatusException(HttpStatus.UNAUTHORIZED,"Sai email hoặc mật khẩu"));
-  if(!encoder.matches(password,u.getPassword())) throw new ResponseStatusException(HttpStatus.UNAUTHORIZED,"Sai email hoặc mật khẩu");
-  if(portalRole!=null&&u.getRole()!=portalRole) throw new ResponseStatusException(HttpStatus.FORBIDDEN,portalRole==Role.ADMIN?"Ứng dụng Server chỉ dành cho quản trị viên":"Ứng dụng Client chỉ dành cho thực tập sinh");
+  String key=email.trim().toLowerCase(Locale.ROOT);
+  Instant now=Instant.now();
+  rejectIfLocked(key,now);
+  User u=users.findByEmail(key).orElse(null);
+  if(u==null||!encoder.matches(password,u.getPassword())){recordFailure(key,now);throw new ResponseStatusException(HttpStatus.UNAUTHORIZED,"Sai email hoặc mật khẩu");}
+  failedLogins.remove(key);
+  if(portalRoles!=null&&!portalRoles.contains(u.getRole())) throw new ResponseStatusException(HttpStatus.FORBIDDEN,portalRoles.contains(Role.INTERN)?"Ứng dụng Client chỉ dành cho thực tập sinh":"Ứng dụng Server chỉ dành cho quản trị viên và mentor");
   byte[] bytes=new byte[32];random.nextBytes(bytes);String token=Base64.getUrlEncoder().withoutPadding().encodeToString(bytes);
   sessions.save(new UserSession(digest(token),u,Instant.now().plusSeconds(Math.max(1,durationHours)*3600)));
   return Map.of("token",token,"role",u.getRole().name(),"name",u.getName(),"userId",u.getId());
