@@ -4,6 +4,8 @@ Hồ sơ quản lý dự án môn Quản lý dự án phần mềm. Sinh viên: 
 
 **Quy trình làm việc và bàn giao giữa các vai trò: [docs/WORKFLOW.md](docs/WORKFLOW.md)**
 
+**Báo cáo triển khai dự án bằng đội AI Agent (AgentKit): [docs/bao-cao-trien-khai-ims-bang-ai-agent.md](docs/bao-cao-trien-khai-ims-bang-ai-agent.md)**
+
 Mọi số liệu (WBS, ngày, giờ công, User Story, test case, rủi ro) nằm trong `src/ims_data.py`.
 Ba file đầu ra được sinh từ cùng nguồn đó nên luôn khớp nhau:
 
