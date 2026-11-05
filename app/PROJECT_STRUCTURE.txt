@@ -1,0 +1,24 @@
+QLDAPM_hoan_thien/
+|-- START_ALL_DEMO.bat             Mo Server+Client (H2)
+|-- START_SERVER_DEMO.bat          Chay Server voi H2, khong can MySQL
+|-- START_SERVER_MYSQL.bat         Chay Server voi MySQL
+|-- START_CLIENT.bat               Chay React/Vite Client
+|-- KIEM_TRA_MOI_TRUONG.bat        Kiem tra Java/Maven/Node/npm
+|-- backend/                       Spring Boot API, validation, session, JPA
+|   |-- src/main/java/...
+|   |-- src/main/resources/application.properties
+|   |-- src/main/resources/application-demo.properties
+|   `-- src/test/java/...         API integration tests
+|-- frontend/
+|   |-- src/App.jsx               Dashboard, forms, role views
+|   |-- src/api.js                HTTP client + Bearer token
+|   |-- src/styles.css            CSS responsive
+|   `-- vite.config.js            Proxy API 8081
+|-- database/
+|   |-- schema.sql                Tao database
+|   `-- schema_full_mysql.sql     DDL bang va quan he
+|-- scripts/smoke_api.py          Kiem tra API khong can pip
+|-- postman/                      Bộ API Postman
+|-- docs/                         Mo ta, BA, PM, test, demo, LAN
+|-- docker-compose.yml           MySQL 8.4 demo
+`-- README.md                    Huong dan cai dat / ket noi

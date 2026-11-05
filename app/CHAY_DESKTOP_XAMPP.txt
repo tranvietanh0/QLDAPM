@@ -1,0 +1,56 @@
+CHẠY HAI ỨNG DỤNG QLDA VỚI MYSQL XAMPP
+
+Mở PowerShell tại thư mục QLDA hoặc QLDAPM_Client_Server.
+
+1. npm run sever  (hoặc npm run server)
+   Mở dist-server\QLDAPM-Server.exe: giao diện ADMIN / SERVER.
+   Tự bật MySQL của C:\xampp nếu chưa chạy và khởi động API.
+   Đăng nhập Admin. Database mới có admin@gmail.com / 123456.
+   Trong Thực tập sinh, chọn "Tạo tài khoản thực tập sinh": nhập email,
+   mật khẩu ban đầu (ít nhất 8 ký tự), phòng ban, người hướng dẫn và kỳ thực tập.
+   Trong Công việc, chọn "Giao công việc" và thực tập sinh cần giao.
+   Trong Báo cáo tuần, chọn "Chấm điểm" để nhận xét báo cáo đã nộp.
+   Admin cũng có thể lập đánh giá cuối kỳ.
+
+2. Mở terminal khác: npm run client
+   Mở dist-electron\QLDAPM-Client.exe: giao diện THỰC TẬP SINH / CLIENT.
+   Đăng nhập bằng email và mật khẩu Admin vừa tạo.
+   Trong Công việc của tôi: Bắt đầu -> Hoàn thành, ghi chú tiến độ/kết quả.
+   Trong Báo cáo tuần: Nộp báo cáo, xem phản hồi và điểm từ Admin.
+   Chỉ xem và cập nhật dữ liệu của chính mình.
+   Tài khoản Admin không đăng nhập được Client; tài khoản intern không
+   đăng nhập được ứng dụng Server.
+
+Hai lệnh tự build exe khi chưa có hoặc mã giao diện/desktop đã thay đổi.
+Lần đầu có thể mất vài phút. Lần sau tự mở exe có sẵn.
+Cửa sổ đăng nhập hiển thị trạng thái kết nối; chờ "Server sẵn sàng".
+Không cần mở trình duyệt hay tìm file exe thủ công.
+
+Database: intern_management, MySQL XAMPP cổng 3306.
+API: http://127.0.0.1:8081/api/health
+Hibernate update giữ dữ liệu hiện có. Apache không bắt buộc.
+Nếu XAMPP ở nơi khác, bật MySQL trong XAMPP Control Panel trước.
+Nếu root có mật khẩu, đặt trong PowerShell trước khi chạy:
+$env:DB_PASSWORD = 'mat-khau-cua-ban'
+npm run sever
+
+Giữ ứng dụng Admin / Server mở trong khi các thực tập sinh làm việc.
+Đóng Admin sẽ dừng backend do ứng dụng đó khởi động; MySQL vẫn chạy.
+Nếu đã chạy API từ terminal khác thì Admin dùng API đó và không tắt nó.
+Đăng xuất Admin chỉ thoát tài khoản; Server vẫn chạy khi cửa sổ còn mở.
+Nhật ký lỗi backend: %APPDATA%\QLDAPM-Admin\server.log
+
+Server.exe cần đi cùng dự án, Java 21+ và Maven (không phải bản cài độc lập).
+Client có thể kết nối máy chủ LAN:
+$env:API_SERVER = 'http://IP_MAY_CHU:8081'
+npm run client
+Máy chủ cần cho phép cổng 8081 trong mạng LAN.
+
+Chạy backend trực tiếp để xem log: npm run server:mysql
+Đóng cửa sổ server cũ trước khi đổi sang bản mới.
+Bản H2 cũ chỉ là tùy chọn, không dùng cho hai ứng dụng desktop này.
+
+Kiểm thử:
+- Backend: cd backend; mvn test (H2 tạm, không sửa dữ liệu MySQL).
+- Hai cửa sổ desktop + quy trình Admin/Intern: npm run test:desktop.
+  Bài kiểm tra tạo tài khoản tạm trên MySQL và xóa dữ liệu tạm khi xong.

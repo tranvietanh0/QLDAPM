@@ -17,3 +17,8 @@ Ba file đầu ra được sinh từ cùng nguồn đó nên luôn khớp nhau:
 | `python src/build_workflow_md.py docs/WORKFLOW.md` | Quy trình làm việc + bảng bàn giao |
 
 Chạy từ thư mục `src/` (các script import `ims_data`). Trên Windows đặt `PYTHONIOENCODING=utf-8` nếu terminal báo lỗi Unicode.
+
+## Mã nguồn ứng dụng
+
+Ứng dụng IMS (Spring Boot API + React/Vite client + Electron desktop) nằm trong [`app/`](app/README.md).
+Chạy nhanh bản demo H2: `cd app/backend && mvn spring-boot:run -Dspring-boot.run.profiles=demo`, sau đó ở terminal khác `cd app && npm run client:browser` và mở http://localhost:5173.

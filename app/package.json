@@ -1,0 +1,27 @@
+{
+  "name": "qldapm-client-server",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "sever": "node scripts/server-entry.mjs",
+    "server": "node scripts/server-entry.mjs",
+    "server:mysql": "call START_SERVER_MYSQL.bat",
+    "client": "node scripts/client-entry.mjs",
+    "client:browser": "node scripts/client-app.mjs",
+    "build:client": "npm --prefix frontend run build",
+    "package:client": "npm run build:client && electron-builder --config electron-builder.client.cjs --win portable",
+    "client:exe": "start \"\" \".\\dist-electron\\QLDAPM-Client.exe\"",
+    "client:dev": "node scripts/client-electron.mjs",
+    "test:desktop": "node scripts/smoke-desktop.mjs",
+    "package:server": "npm run build:client && electron-builder --config electron-builder.server.cjs --win portable",
+    "server:exe": "node scripts/server-entry.mjs",
+    "server:dev": "set QLDAPM_DESKTOP_MODE=admin&& node scripts/client-electron.mjs"
+  },
+  "devDependencies": {
+    "electron": "^45.2.1",
+    "electron-builder": "^26.18.0"
+  },
+  "main": "desktop/main.cjs",
+  "description": "QLDAPM intern management desktop client and Spring Boot server",
+  "author": "QLDAPM"
+}

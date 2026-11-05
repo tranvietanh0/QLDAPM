@@ -1,0 +1,14 @@
+node_modules/
+target/
+dist/
+dist-electron/
+dist-server/
+dist-launchers/
+backend/data/
+*.mv.db
+*.trace.db
+.env
+.env.local
+*.log
+.idea/
+*.iml
