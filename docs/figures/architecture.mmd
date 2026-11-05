@@ -1,0 +1,5 @@
+flowchart LR
+  A["Ứng dụng Admin / Server<br/>(Admin và Mentor)"] -- HTTP/JSON --> API
+  C["Ứng dụng Thực tập sinh"] -- HTTP/JSON --> API
+  API["Spring Boot API :8081<br/>Spring Data JPA · BCrypt<br/>Token phiên · Giới hạn đăng nhập"] -- JDBC --> DB[("MySQL 8.4<br/>(H2 khi test)")]
+  CI["GitHub Actions CI<br/>test + JaCoCo + build"] -. kiểm tra mỗi lần push .-> API

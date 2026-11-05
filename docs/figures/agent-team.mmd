@@ -1,0 +1,12 @@
+flowchart TB
+  O["Điều phối viên<br/>(phiên Claude Code chính)"]
+  O --> PMg["PM<br/>project-manager · planner"]
+  O --> BA["BA<br/>brainstormer · researcher · advisor"]
+  O --> DS["Designer<br/>ui-ux-designer"]
+  O --> DEV["Coder FE + BE<br/>fullstack-developer"]
+  O --> RV["Reviewer<br/>code-reviewer · code-simplifier"]
+  O --> QA["Tester<br/>tester · debugger"]
+  O --> OPS["DevOps / Git<br/>git-manager"]
+  O --> DOC["Tài liệu<br/>docs-manager · journal-writer"]
+  O -.-> KM["Cố vấn<br/>kongming"]
+  SV(["Sinh viên: duyệt và quyết định"]) --> O

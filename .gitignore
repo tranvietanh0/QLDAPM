@@ -6,3 +6,6 @@ out/*.png
 .claude/
 .agentkit/
 .~lock.*#
+
+# Doan video trung gian (dung lai bang src/record_agent_demo.mjs)
+docs/video/agent_ch*.mp4

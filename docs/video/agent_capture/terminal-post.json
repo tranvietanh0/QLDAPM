@@ -1,0 +1,254 @@
+{
+ "capturedAt": "2026-11-05T04:27:39.682Z",
+ "cwd": "C:/Projects/Study/QLDAPM/QLDAPM",
+ "scenes": [
+  {
+   "cmd": "git status --short",
+   "startedAt": "2026-11-05T04:27:39.546Z",
+   "durationMs": 54,
+   "exitCode": 0,
+   "lines": [
+    {
+     "t": 50,
+     "text": " M app/backend/.env.example"
+    },
+    {
+     "t": 50,
+     "text": " M app/backend/src/main/resources/application.properties"
+    },
+    {
+     "t": 50,
+     "text": "?? docs/BaoCao_QLDAPM_AI_Agent_IMS.docx"
+    },
+    {
+     "t": 50,
+     "text": "?? docs/BaoCao_QLDAPM_AI_Agent_IMS.pdf"
+    },
+    {
+     "t": 50,
+     "text": "?? docs/figures/"
+    },
+    {
+     "t": 50,
+     "text": "?? docs/video/"
+    },
+    {
+     "t": 50,
+     "text": "?? plans/reports/code-reviewer-261105-1121-cors-5174.md"
+    },
+    {
+     "t": 50,
+     "text": "?? plans/reports/fullstack-developer-261105-1031-demo-video.md"
+    },
+    {
+     "t": 50,
+     "text": "?? plans/reports/fullstack-developer-261105-1121-cors-5174.md"
+    },
+    {
+     "t": 50,
+     "text": "?? plans/reports/tester-261105-1121-cors-5174.md"
+    },
+    {
+     "t": 50,
+     "text": "?? src/build_agent_report.py"
+    },
+    {
+     "t": 50,
+     "text": "?? src/capture_report_figures.mjs"
+    },
+    {
+     "t": 50,
+     "text": "?? src/cdp_browser.mjs"
+    },
+    {
+     "t": 50,
+     "text": "?? src/record_agent_demo.mjs"
+    },
+    {
+     "t": 50,
+     "text": "?? src/record_demo_video.mjs"
+    }
+   ]
+  },
+  {
+   "cmd": "git diff -- app/backend",
+   "startedAt": "2026-11-05T04:27:39.600Z",
+   "durationMs": 50,
+   "exitCode": 0,
+   "lines": [
+    {
+     "t": 45,
+     "text": "warning: in the working copy of 'app/backend/.env.example', LF will be replaced by CRLF the next time Git touches it"
+    },
+    {
+     "t": 45,
+     "text": "warning: in the working copy of 'app/backend/src/main/resources/application.properties', LF will be replaced by CRLF the next time Git touches it"
+    },
+    {
+     "t": 47,
+     "text": "diff --git a/app/backend/.env.example b/app/backend/.env.example"
+    },
+    {
+     "t": 47,
+     "text": "index 8692daa..4ad3f04 100644"
+    },
+    {
+     "t": 47,
+     "text": "--- a/app/backend/.env.example"
+    },
+    {
+     "t": 47,
+     "text": "+++ b/app/backend/.env.example"
+    },
+    {
+     "t": 47,
+     "text": "@@ -4,4 +4,4 @@"
+    },
+    {
+     "t": 47,
+     "text": " # DB_USER=root"
+    },
+    {
+     "t": 47,
+     "text": " # DB_PASSWORD=change_me"
+    },
+    {
+     "t": 47,
+     "text": " # SESSION_HOURS=12"
+    },
+    {
+     "t": 47,
+     "text": "-# CORS_ORIGINS=http://localhost:5173,http://127.0.0.1:5173"
+    },
+    {
+     "t": 47,
+     "text": "+# CORS_ORIGINS=http://localhost:5173,http://127.0.0.1:5173,http://localhost:5174,http://127.0.0.1:5174"
+    },
+    {
+     "t": 47,
+     "text": "diff --git a/app/backend/src/main/resources/application.properties b/app/backend/src/main/resources/application.properties"
+    },
+    {
+     "t": 47,
+     "text": "index aa56725..84e941b 100644"
+    },
+    {
+     "t": 47,
+     "text": "--- a/app/backend/src/main/resources/application.properties"
+    },
+    {
+     "t": 47,
+     "text": "+++ b/app/backend/src/main/resources/application.properties"
+    },
+    {
+     "t": 47,
+     "text": "@@ -11,4 +11,4 @@ spring.jpa.show-sql=false"
+    },
+    {
+     "t": 47,
+     "text": " spring.jackson.serialization.write-dates-as-timestamps=false"
+    },
+    {
+     "t": 47,
+     "text": " server.error.include-message=never"
+    },
+    {
+     "t": 47,
+     "text": " app.session.hours=${SESSION_HOURS:12}"
+    },
+    {
+     "t": 47,
+     "text": "-app.cors.origins=${CORS_ORIGINS:http://localhost:5173,http://127.0.0.1:5173}"
+    },
+    {
+     "t": 47,
+     "text": "\\ No newline at end of file"
+    },
+    {
+     "t": 47,
+     "text": "+app.cors.origins=${CORS_ORIGINS:http://localhost:5173,http://127.0.0.1:5173,http://localhost:5174,http://127.0.0.1:5174}"
+    },
+    {
+     "t": 47,
+     "text": "\\ No newline at end of file"
+    }
+   ]
+  },
+  {
+   "cmd": "ls plans/reports",
+   "startedAt": "2026-11-05T04:27:39.650Z",
+   "durationMs": 32,
+   "exitCode": 0,
+   "lines": [
+    {
+     "t": 30,
+     "text": "code-reviewer-261105-1002-ims-full-review.md"
+    },
+    {
+     "t": 30,
+     "text": "code-reviewer-261105-1024-changes-review.md"
+    },
+    {
+     "t": 30,
+     "text": "code-reviewer-261105-1040-lockout-hardening-review.md"
+    },
+    {
+     "t": 30,
+     "text": "code-reviewer-261105-1121-cors-5174.md"
+    },
+    {
+     "t": 30,
+     "text": "docs-manager-261105-1024-app-docs-update.md"
+    },
+    {
+     "t": 30,
+     "text": "fullstack-developer-261105-1015-ci-jacoco.md"
+    },
+    {
+     "t": 30,
+     "text": "fullstack-developer-261105-1015-fix-error-handler-login-limit.md"
+    },
+    {
+     "t": 30,
+     "text": "fullstack-developer-261105-1015-mentor-admin-portal.md"
+    },
+    {
+     "t": 30,
+     "text": "fullstack-developer-261105-1031-demo-video.md"
+    },
+    {
+     "t": 30,
+     "text": "fullstack-developer-261105-1031-login-lockout-hardening.md"
+    },
+    {
+     "t": 30,
+     "text": "fullstack-developer-261105-1046-lockout-canonical-key.md"
+    },
+    {
+     "t": 30,
+     "text": "fullstack-developer-261105-1121-cors-5174.md"
+    },
+    {
+     "t": 30,
+     "text": "tester-261105-1002-ims-test-report.md"
+    },
+    {
+     "t": 30,
+     "text": "tester-261105-1015-business-rule-tests.md"
+    },
+    {
+     "t": 30,
+     "text": "tester-261105-1024-regression-after-fixes.md"
+    },
+    {
+     "t": 30,
+     "text": "tester-261105-1040-mutation-check.md"
+    },
+    {
+     "t": 30,
+     "text": "tester-261105-1121-cors-5174.md"
+    }
+   ]
+  }
+ ]
+}

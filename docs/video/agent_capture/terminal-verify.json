@@ -1,0 +1,50 @@
+{
+ "capturedAt": "2026-11-05T04:28:05.372Z",
+ "cwd": "C:/Projects/Study/QLDAPM/QLDAPM",
+ "scenes": [
+  {
+   "cmd": "set -o pipefail; mvn -o -B -Djava.version=17 -f app/backend/pom.xml verify | grep -E \"Tests run:|BUILD|Total time\"",
+   "startedAt": "2026-11-05T04:27:39.755Z",
+   "durationMs": 25616,
+   "exitCode": 0,
+   "lines": [
+    {
+     "t": 12026,
+     "text": "OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended"
+    },
+    {
+     "t": 25596,
+     "text": "[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.119 s -- in com.example.internms.AdminInternFlowTest"
+    },
+    {
+     "t": 25596,
+     "text": "[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.318 s -- in com.example.internms.ApiIntegrationTest"
+    },
+    {
+     "t": 25596,
+     "text": "[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.620 s -- in com.example.internms.BusinessRuleTest"
+    },
+    {
+     "t": 25596,
+     "text": "[INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.328 s -- in com.example.internms.ErrorHandlingAndLoginLimitTest"
+    },
+    {
+     "t": 25596,
+     "text": "[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.394 s -- in com.example.internms.MentorPortalTest"
+    },
+    {
+     "t": 25596,
+     "text": "[INFO] Tests run: 26, Failures: 0, Errors: 0, Skipped: 0"
+    },
+    {
+     "t": 25596,
+     "text": "[INFO] BUILD SUCCESS"
+    },
+    {
+     "t": 25596,
+     "text": "[INFO] Total time:  24.010 s"
+    }
+   ]
+  }
+ ]
+}

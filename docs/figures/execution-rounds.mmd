@@ -1,0 +1,32 @@
+sequenceDiagram
+  autonumber
+  actor SV as Sinh viên
+  participant O as Điều phối viên
+  participant RV as code-reviewer
+  participant T as tester
+  participant DEV as fullstack-developer
+  participant G as GitHub
+  SV->>O: Review dự án, viết báo cáo, triển khai
+  par Vòng 0 · đánh giá hiện trạng
+    O->>RV: Review toàn bộ mã nguồn
+    RV-->>O: 25 phát hiện (3 High)
+  and
+    O->>T: Chạy test, build, smoke API
+    T-->>O: 3/3 test · 53/55 API
+  end
+  SV->>O: Duyệt kế hoạch, chọn phương án Mentor
+  par Vòng 1 · sửa lỗi và bổ sung test
+    O->>DEV: Sửa xử lý lỗi, giới hạn đăng nhập
+    DEV-->>O: 5 test mới
+  and
+    O->>T: Viết test TC04 đến TC18
+    T-->>O: 8 test mới, 16/16 pass
+  end
+  par Vòng 2 · tính năng và CI
+    O->>DEV: Mentor dùng cổng Admin
+  and
+    O->>DEV: GitHub Actions và JaCoCo
+  end
+  O->>T: Hồi quy sau khi khởi động lại server
+  O->>RV: Review lại phần thay đổi
+  O->>G: Commit, push, theo dõi CI

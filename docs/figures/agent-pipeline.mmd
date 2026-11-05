@@ -1,0 +1,14 @@
+flowchart TB
+  PO(["Sinh viên<br/>Product Owner"]) --> B["1. Brainstorm<br/>brainstormer · advisor"]
+  B --> P["2. Plan<br/>planner"]
+  P --> D["3. Design<br/>ui-ux-designer"]
+  D --> I["4. Implement<br/>fullstack-developer"]
+  I --> T["5. Test<br/>tester"]
+  T -- "lỗi" --> DB["debugger"] --> I
+  T --> R["6. Review<br/>code-reviewer"]
+  R -- "cần sửa" --> I
+  R --> S["7. Ship<br/>git-manager"]
+  S --> J["8. Docs · Journal<br/>docs-manager · journal-writer"]
+  PM["project-manager"] -.-> P
+  PM -.-> S
+  K["kongming<br/>cố vấn khi bế tắc"] -.-> I

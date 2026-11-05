@@ -1,0 +1,18 @@
+{
+ "capturedAt": "2026-11-05T04:24:42.485Z",
+ "cwd": "C:/Projects/Study/QLDAPM/QLDAPM",
+ "scenes": [
+  {
+   "cmd": "git show HEAD:app/backend/src/main/resources/application.properties | grep -n \"app.cors.origins\"",
+   "startedAt": "2026-11-05T04:24:42.409Z",
+   "durationMs": 75,
+   "exitCode": 0,
+   "lines": [
+    {
+     "t": 73,
+     "text": "14:app.cors.origins=${CORS_ORIGINS:http://localhost:5173,http://127.0.0.1:5173}"
+    }
+   ]
+  }
+ ]
+}

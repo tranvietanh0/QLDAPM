@@ -1,0 +1,114 @@
+{
+ "capturedAt": "2026-11-05T04:21:11.654Z",
+ "cwd": "C:/Projects/Study/QLDAPM/QLDAPM",
+ "scenes": [
+  {
+   "cmd": "gh run list --limit 3",
+   "startedAt": "2026-11-05T04:21:07.323Z",
+   "durationMs": 1078,
+   "exitCode": 0,
+   "lines": [
+    {
+     "t": 1068,
+     "text": "completed\tsuccess\tfix(auth): make login lockout atomic, bounded and keyed on the accoun…\tCI\tmain\tpush\t41964359167\t33s\t2026-11-05T03:53:19Z"
+    },
+    {
+     "t": 1069,
+     "text": "completed\tsuccess\tdocs: add agent review, test and implementation reports\tCI\tmain\tpush\t41962378003\t58s\t2026-11-05T03:33:51Z"
+    }
+   ]
+  },
+  {
+   "cmd": "gh run view 41964359167",
+   "startedAt": "2026-11-05T04:21:08.401Z",
+   "durationMs": 3253,
+   "exitCode": 0,
+   "lines": [
+    {
+     "t": 3245,
+     "text": ""
+    },
+    {
+     "t": 3246,
+     "text": "✓ main CI · 41964359167"
+    },
+    {
+     "t": 3246,
+     "text": "Triggered via push about 27 minutes ago"
+    },
+    {
+     "t": 3246,
+     "text": ""
+    },
+    {
+     "t": 3246,
+     "text": "JOBS"
+    },
+    {
+     "t": 3246,
+     "text": "✓ Backend (Maven verify + JaCoCo) in 31s (ID 127037808778)"
+    },
+    {
+     "t": 3246,
+     "text": "✓ Frontend (npm build) in 11s (ID 127037809017)"
+    },
+    {
+     "t": 3246,
+     "text": ""
+    },
+    {
+     "t": 3246,
+     "text": "ANNOTATIONS"
+    },
+    {
+     "t": 3246,
+     "text": "- \"The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748\""
+    },
+    {
+     "t": 3246,
+     "text": "Backend (Maven verify + JaCoCo): .github#1"
+    },
+    {
+     "t": 3246,
+     "text": ""
+    },
+    {
+     "t": 3246,
+     "text": "- \"The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748\""
+    },
+    {
+     "t": 3246,
+     "text": "Frontend (npm build): .github#1"
+    },
+    {
+     "t": 3246,
+     "text": ""
+    },
+    {
+     "t": 3246,
+     "text": ""
+    },
+    {
+     "t": 3246,
+     "text": "ARTIFACTS"
+    },
+    {
+     "t": 3246,
+     "text": "jacoco-report"
+    },
+    {
+     "t": 3246,
+     "text": ""
+    },
+    {
+     "t": 3246,
+     "text": "For more information about a job, try: gh run view --job=<job-id>"
+    },
+    {
+     "t": 3246,
+     "text": "View this run on GitHub: https://github.com/tranvietanh0/QLDAPM/actions/runs/41964359167"
+    }
+   ]
+  }
+ ]
+}
