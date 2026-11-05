@@ -1,11 +1,13 @@
 # REST API Contract – QLDAPM
 
-Base URL mặc định: `http://localhost:8081/api`; phía Client Vite dùng đường dẫn tương đối `/api`. Mọi API nghiệp vụ (trừ `/health`, `/auth/login`) yêu cầu `Authorization: Bearer <token>`.
+Base URL mặc định: `http://localhost:8081/api`; phía Client Vite dùng đường dẫn tương đối `/api`. Mọi API nghiệp vụ (trừ `/health` và các endpoint đăng nhập) yêu cầu `Authorization: Bearer <token>`.
 
 | Method | Endpoint | Quyền | Ý nghĩa |
 |---|---|---|---|
 | GET | `/health` | Public | Trạng thái server |
-| POST | `/auth/login` | Public | Đăng nhập, trả token |
+| POST | `/auth/login` | Public | Đăng nhập, trả token (mọi vai trò) |
+| POST | `/auth/admin/login` | Public | Đăng nhập ứng dụng Admin / Server; chỉ ADMIN, MENTOR (INTERN nhận 403) |
+| POST | `/auth/intern/login` | Public | Đăng nhập Client thực tập sinh; chỉ INTERN (vai trò khác nhận 403) |
 | POST | `/auth/logout` | Đã đăng nhập | Xóa phiên đăng nhập |
 | GET | `/auth/me` | Đã đăng nhập | Tài khoản hiện tại |
 | PUT | `/auth/password` | Đã đăng nhập | Đổi mật khẩu, vô hiệu phiên cũ |
@@ -30,7 +32,7 @@ Base URL mặc định: `http://localhost:8081/api`; phía Client Vite dùng đ�
 **Ví dụ login:**
 
 ```http
-POST /api/auth/login
+POST /api/auth/admin/login
 Content-Type: application/json
 
 {"email":"admin@gmail.com","password":"123456"}
@@ -54,5 +56,6 @@ Content-Type: application/json
 {"mentorComment":"Hoàn thành tốt","rating":9}
 ```
 
-- Mã lỗi: 400 dữ liệu không hợp lệ; 401 thiếu/hết phiên; 403 thiếu quyền; 404 không có bản ghi; 409 dữ liệu trùng/đang tham chiếu; 500 lỗi server.
+- Mã lỗi (body JSON `{"error": "..."}`): 400 dữ liệu không hợp lệ; 401 sai thông tin đăng nhập hoặc thiếu/hết phiên; 403 thiếu quyền hoặc đăng nhập sai ứng dụng; 404 không có bản ghi hoặc đường dẫn không tồn tại; 405 sai HTTP method (kèm header `Allow`); 409 dữ liệu trùng/đang tham chiếu; 415 `Content-Type` không được hỗ trợ (hãy gửi JSON); 429 đăng nhập sai quá nhiều lần; 500 lỗi server không lường trước (được ghi vào log server).
+- Giới hạn đăng nhập: sai 5 lần cho cùng một email trong 15 phút thì các lần đăng nhập tiếp theo trả 429 cho tới khi hết 15 phút tính từ lần sai đầu tiên; đăng nhập đúng sẽ xóa bộ đếm. Bộ đếm lưu trong bộ nhớ, mất khi khởi động lại server.
 - Phiên đăng nhập dùng token ngẫu nhiên, lưu SHA-256 token trong bảng `user_sessions`; thời hạn mặc định 12 giờ.

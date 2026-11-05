@@ -1,6 +1,6 @@
 > **Hai ứng dụng desktop dùng MySQL XAMPP**
 >
-> Chạy **npm run sever** để mở **Admin / Server**: tạo tài khoản thực tập sinh, giao việc, theo dõi và chấm báo cáo. Giữ cửa sổ này mở khi thực tập sinh làm việc.
+> Chạy **npm run sever** để mở **Admin / Server**: Admin và Mentor cùng đăng nhập ở đây (Admin tạo tài khoản thực tập sinh; Mentor giao việc, theo dõi và chấm báo cáo cho thực tập sinh được phân công). Giữ cửa sổ này mở khi thực tập sinh làm việc.
 >
 > Chạy **npm run client** ở terminal khác để mở **Client thực tập sinh**: đăng nhập tài khoản Admin cấp, nhận việc, cập nhật tiến độ và nộp báo cáo.
 >
@@ -12,7 +12,8 @@ Project đã được nâng cấp từ mã gốc `QLDAPM.zip`. Mô hình triển
 
 ```
 Admin / Server (.exe)               Intern / Client (.exe)
-  - Quản lý, cấp tài khoản            - Đăng nhập tài khoản được cấp
+  - Admin + Mentor đăng nhập          - Đăng nhập tài khoản được cấp
+  - Quản lý, cấp tài khoản
   - Giao việc, chấm báo cáo           - Nhận việc, nộp báo cáo
   - Tự khởi động API                         │
              │                               │ HTTP/JSON
@@ -21,11 +22,11 @@ Admin / Server (.exe)               Intern / Client (.exe)
                          MySQL XAMPP
 ```
 
-**Tài khoản demo** (chỉ dùng khi thử nghiệm): `admin@gmail.com`, `mentor@gmail.com`, `intern@gmail.com`; mật khẩu chung: **123456**. Hãy đổi mật khẩu sau khi thử nghiệm. Database khởi tạo tài khoản mẫu chỉ khi bảng người dùng chưa có dữ liệu.
+**Tài khoản demo** (chỉ dùng khi thử nghiệm): `admin@gmail.com`, `mentor@gmail.com`, `intern@gmail.com`; mật khẩu chung: **123456**. Hãy đổi mật khẩu sau khi thử nghiệm. Database khởi tạo tài khoản mẫu chỉ khi bảng người dùng chưa có dữ liệu. Màn hình đăng nhập không hiển thị sẵn email/mật khẩu demo. `admin@gmail.com` và `mentor@gmail.com` đăng nhập ở ứng dụng Admin / Server; `intern@gmail.com` đăng nhập ở Client thực tập sinh.
 
 ## 1. Chuẩn bị trên Windows
 
-Cài **JDK 21**, **Maven 3.9+**, **Node.js 20+ / npm**. Nếu chạy MySQL, thêm MySQL 8 hoặc Docker Desktop. Chạy `KIEM_TRA_MOI_TRUONG.bat` để kiểm tra `java`, `mvn`, `node`, `npm`.
+Cài **JDK 21**, **Maven 3.9+**, **Node.js 20+ / npm**. Nếu chạy MySQL, thêm MySQL 8 hoặc Docker Desktop. Chạy `KIEM_TRA_MOI_TRUONG.bat` để kiểm tra `java`, `mvn`, `node`, `npm`. `pom.xml` khai báo Java 21; nếu máy chỉ có JDK 17, thêm `-Djava.version=17` vào lệnh Maven (ví dụ `mvn -Djava.version=17 verify`).
 
 ## 2. Chạy nhanh nhất (không cài MySQL)
 
@@ -105,7 +106,9 @@ START_*.bat          Chạy project trên Windows
 ## 8. Lỗi thường gặp
 
 - **`mvn is not recognized`**: cài Maven, thêm `...\apache-maven-...\bin` vào PATH, mở lại Terminal.
-- **`java version...`**: chọn đúng JDK 21 (`java -version`).
+- **`java version...`**: chọn đúng JDK 21 (`java -version`), hoặc với JDK 17 thêm `-Djava.version=17` vào lệnh Maven.
+- **Đăng nhập bị báo HTTP 403**: tài khoản không thuộc ứng dụng đang mở (Admin/Mentor dùng Admin / Server, Intern dùng Client).
+- **Đăng nhập bị báo HTTP 429**: cùng một email đã đăng nhập sai 5 lần trong 15 phút; chờ hết thời gian khóa rồi thử lại.
 - **Port 8081 đã được dùng**: thay `SERVER_PORT=8090`, và `API_SERVER=http://127.0.0.1:8090` ở terminal Client.
 - **Không kết nối MySQL**: kiểm tra dịch vụ MySQL 3306, `DB_URL`, `DB_USER`, `DB_PASSWORD`; muốn thử ngay hãy dùng `START_SERVER_DEMO.bat`.
 - **Client báo lỗi kết nối Server**: kiểm tra Server đang chạy, địa chỉ/cổng 8081, proxy Vite và firewall.
@@ -114,6 +117,6 @@ START_*.bat          Chạy project trên Windows
 
 ## 9. Trạng thái kiểm tra & lưu ý bảo mật
 
-Kiểm tra tĩnh: mã Java parse bằng JDK 21 và JSX được TypeScript parser chấp nhận. **Chưa xác nhận full build Maven / npm và kiểm thử end-to-end** trong môi trường xử lý này do thiếu các thư viện npm/Maven trong môi trường offline; cần thực hiện `mvn test`, `mvn spring-boot:run` và `npm run build` trên máy có Internet. Có test Spring MockMvc trong `backend/src/test`. Tài liệu kiểm thử nằm tại `docs/05-testing.md`.
+Có test Spring MockMvc trong `backend/src/test`. Trong `backend`, `mvn verify` chạy toàn bộ test và tạo báo cáo độ phủ JaCoCo tại `target/site/jacoco/index.html` (chỉ báo cáo, độ phủ thấp không làm build thất bại). GitHub Actions (`.github/workflows/ci.yml` ở gốc repo) chạy `mvn -B verify` với JDK 21 và `npm run build` cho frontend khi push hoặc mở pull request vào `main`. Kiểm thử end-to-end trên giao diện vẫn làm thủ công. Tài liệu kiểm thử nằm tại `docs/05-testing.md`.
 
-Đây là project phục vụ học tập/demo. Trước khi đưa lên Internet cần thay toàn bộ mật khẩu demo, dùng HTTPS, thêm giới hạn thử đăng nhập, xác thực bảo mật vận hành và công cụ migration CSDL (Flyway/Liquibase). Không đưa file `.env`, dữ liệu H2 hoặc mật khẩu MySQL thật lên Git.
+Đây là project phục vụ học tập/demo. API tạm khóa một email sau 5 lần đăng nhập sai trong 15 phút (HTTP 429), nhưng bộ đếm chỉ nằm trong bộ nhớ: mất khi khởi động lại và không chia sẻ giữa nhiều server. Trước khi đưa lên Internet cần thay toàn bộ mật khẩu demo, dùng HTTPS, xác thực bảo mật vận hành và công cụ migration CSDL (Flyway/Liquibase). Không đưa file `.env`, dữ liệu H2 hoặc mật khẩu MySQL thật lên Git.

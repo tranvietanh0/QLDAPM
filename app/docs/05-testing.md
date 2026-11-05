@@ -42,9 +42,14 @@
 
 ## Cách chạy kiểm thử
 
-1. Trong `backend`: chạy `mvn test` (cần Maven và dependency; dùng H2 memory trong `ApiIntegrationTest`).
+1. Trong `backend`: chạy `mvn verify` (cần Maven và dependency; test dùng H2 memory). Lệnh này chạy toàn bộ test trong `src/test/java/com/example/internms/` và tạo báo cáo độ phủ JaCoCo tại `target/site/jacoco/index.html`. Máy chỉ có JDK 17 thì chạy `mvn -Djava.version=17 verify`.
 2. Chạy `START_SERVER_DEMO.bat`, sau đó từ thư mục gốc chạy `python scripts/smoke_api.py` để kiểm tra health, login, API đọc, logout.
 3. Chạy `START_CLIENT.bat`, đăng nhập với từng vai trò và thực hiện TC01–TC18 trên trình duyệt.
 4. Chạy `cd frontend && npm run build` để xác nhận có thể đóng gói giao diện.
 
-**Chưa có bằng chứng chạy những kiểm thử này trong môi trường tạo gói.** Cần thực hiện trên máy đích có Maven/npm và có thể tải dependency.
+## Trang thai test tu dong
+- `BusinessRuleTest`: TC04, TC05, TC08, TC10, TC13, TC15, TC18.
+- `MentorPortalTest`: Admin / Server nhan ADMIN va MENTOR, tu choi INTERN (403); Client chi nhan INTERN; mentor dang nhap qua Admin / Server giao task, review bao cao va danh gia.
+- `ErrorHandlingAndLoginLimitTest`: 404 duong dan khong ton tai, 405 kem header `Allow`, 415, khoa 429 sau 5 lan login sai, login dung xoa bo dem.
+- `ApiIntegrationTest`, `AdminInternFlowTest`: luong chinh login, phan quyen, task, bao cao, danh gia (khong anh xa theo tung TC).
+- CI: GitHub Actions (`.github/workflows/ci.yml` o goc repo) chay `mvn -B verify` voi JDK 21, tai bao cao JaCoCo len thanh artifact `jacoco-report`, va chay `npm run build` cho frontend.

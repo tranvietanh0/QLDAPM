@@ -2,17 +2,20 @@
 
 ## Actors
 ### Admin
+- Dang nhap qua ung dung Admin / Server.
 - Xem dashboard.
 - Tao/sua/xoa intern.
 - Xem mentor va department.
 
 ### Mentor
+- Dang nhap qua ung dung Admin / Server (cung cong voi Admin).
 - Xem intern duoc phan cong.
 - Tao task cho intern cua minh.
 - Review bao cao tuan.
 - Tao danh gia cuoi ky.
 
 ### Intern
+- Dang nhap qua ung dung Client thuc tap sinh.
 - Xem task cua minh.
 - Cap nhat TODO -> IN_PROGRESS -> COMPLETED.
 - Nop bao cao tuan.
@@ -25,6 +28,9 @@ As a user, I want to login so that I can access functions for my role.
 Acceptance criteria:
 - Email/password dung -> login thanh cong.
 - Sai thong tin -> HTTP 401 va thong bao loi.
+- Ung dung Admin / Server chi nhan ADMIN va MENTOR; Client chi nhan INTERN. Dang nhap sai ung dung -> HTTP 403.
+- Sai 5 lan cho cung mot email trong 15 phut -> HTTP 429 den khi het 15 phut; dang nhap dung se xoa bo dem.
+- Man hinh dang nhap khong hien san email/mat khau demo.
 - Frontend luu token va role.
 
 ### US02 - Admin creates intern
